@@ -6,24 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ApplePlatformer2D/Scenes/Game.unity
+    path: Assets/ApplePlatformer2D/Scenes/Game_.unity
     guid: 665859bc9bd3a9e4aa54119e850f1ff9
   - enabled: 1
-    path: Assets/ApplePlatformer2D/Scenes/GameStart.unity
+    path: Assets/ApplePlatformer2D/Scenes/GameStart_.unity
     guid: f040d3c92b27f3d4998c3f47fa511a31
   - enabled: 1
-    path: Assets/ApplePlatformer2D/Scenes/Level1.unity
+    path: Assets/ApplePlatformer2D/Scenes/Level1_.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/ApplePlatformer2D/Scenes/Level2.unity
+    path: Assets/ApplePlatformer2D/Scenes/Level2_.unity
     guid: 8d7569c0801590f4689378a15d1da89f
   - enabled: 1
-    path: Assets/ApplePlatformer2D/Scenes/Level3.unity
+    path: Assets/ApplePlatformer2D/Scenes/Level3_.unity
     guid: 32322208ddb5a534ba1a2ff48e320ea1
   - enabled: 1
-    path: Assets/ApplePlatformer2D/Scenes/Level5.unity
+    path: Assets/ApplePlatformer2D/Scenes/Level5_.unity
     guid: 95277534fd9cc3a4396a8d3e9f1117ce
   - enabled: 1
-    path: Assets/ApplePlatformer2D/Scenes/Level6.unity
+    path: Assets/ApplePlatformer2D/Scenes/Level6_.unity
     guid: 9563d9115cd30834b8dc9fd9b8263b03
   m_configObjects: {}
