@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace Blue
 {
+    /// <summary>
+    /// 玩家移动控制
+    /// </summary>
     public class PlayerMovement : MonoBehaviour
     {
         private Rigidbody2D mRigidbody2D;

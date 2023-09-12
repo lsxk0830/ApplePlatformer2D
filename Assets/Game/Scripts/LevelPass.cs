@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 namespace Blue
 {
+    /// <summary>
+    /// 游戏通关
+    /// </summary>
     public class LevelPass : MonoBehaviour
     {
         public Text LevelPassText;
