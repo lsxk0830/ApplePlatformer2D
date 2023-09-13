@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Blue
 {
@@ -13,6 +14,10 @@ namespace Blue
 
         public float JumpUpGravity = 3; // 跳跃时上升时重力
         public float FallDownGravity = 6; // 跳跃时下落时重力
+
+        public UnityEvent OnJump;
+        public UnityEvent OnLand;
+
         private void Start()
         {
             mRigidbody2D = GetComponent<Rigidbody2D>();
