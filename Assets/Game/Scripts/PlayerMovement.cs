@@ -30,6 +30,7 @@ namespace Blue
             if (Input.GetKeyDown(KeyCode.K) && CollisionObjectCount > 0)
             {
                 mRigidbody2D.velocity = new Vector2(mRigidbody2D.velocity.x, JumpSpeed); // 设置速度--垂直
+                OnJump?.Invoke();
             }
 
             mRigidbody2D.velocity = new Vector2(horizontal * HorizontalMovementSpeed, mRigidbody2D.velocity.y); // 设置速度--水平
@@ -45,6 +46,7 @@ namespace Blue
         private void OnCollisionEnter2D(Collision2D other)
         {
             CollisionObjectCount++;
+            OnLand?.Invoke();
         }
 
         private void OnCollisionExit2D(Collision2D other)
