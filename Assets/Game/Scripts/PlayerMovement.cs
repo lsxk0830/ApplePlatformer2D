@@ -12,9 +12,8 @@ namespace Blue
         public float HorizontalMovementSpeed = 5; // 水平移动速度
         public float JumpSpeed = 5; // 跳跃速度
 
-        public float JumpUpGravity = 3; // 跳跃时上升时重力
-        public float FallDownGravity = 6; // 跳跃时下落时重力
-
+        public float GravityMultiplier = 2.0f;
+        public float FallMultiplier = 1.0f;
         public UnityEvent OnJump;
         public UnityEvent OnLand;
 
@@ -31,7 +30,6 @@ namespace Blue
             mRigidbody2D = GetComponent<Rigidbody2D>();
         }
 
-
         void Update()
         {
             mHorizontalInput = Input.GetAxis("Horizontal");
@@ -41,7 +39,7 @@ namespace Blue
                 OnJump?.Invoke();
                 mJumpPressed = true;
 
-                if(JumpState == JumpStates.NotJump)
+                if (JumpState == JumpStates.NotJump)
                 {
                     JumpState = JumpStates.MinJump;
                     mCurrentJumpTime = 0f;
@@ -64,20 +62,20 @@ namespace Blue
 
         private void FixedUpdate()
         {
-            if(JumpState ==JumpStates.MinJump)
+            if (JumpState == JumpStates.MinJump)
             {
                 mRigidbody2D.velocity = new Vector2(mRigidbody2D.velocity.x, JumpSpeed); // 设置速度--垂直
 
-                if(mCurrentJumpTime>=MinJumpTime)
+                if (mCurrentJumpTime >= MinJumpTime)
                 {
                     JumpState = JumpStates.ControlJump;
                 }
             }
-            else if(JumpState == JumpStates.ControlJump)
+            else if (JumpState == JumpStates.ControlJump)
             {
                 mRigidbody2D.velocity = new Vector2(mRigidbody2D.velocity.x, JumpSpeed); // 设置速度--垂直
 
-                if(!mJumpPressed || (mJumpPressed && mCurrentJumpTime>=MaxJumpTime))
+                if (!mJumpPressed || (mJumpPressed && mCurrentJumpTime >= MaxJumpTime))
                 {
                     JumpState = JumpStates.NotJump;
                 }
@@ -86,10 +84,20 @@ namespace Blue
             mRigidbody2D.velocity = new Vector2(mHorizontalInput * HorizontalMovementSpeed, mRigidbody2D.velocity.y); // 设置速度--水平
 
             // 调整跳跃上升、下落重力
-            if (mRigidbody2D.velocity.y > 0)
-                mRigidbody2D.gravityScale = JumpUpGravity;
-            else
-                mRigidbody2D.gravityScale = FallDownGravity;
+            if (mRigidbody2D.velocity.y > 0 && JumpState != JumpStates.NotJump)
+            {
+                var progress = mCurrentJumpTime / MaxJumpTime;
+                float jumpGravityMultiplier = GravityMultiplier;
+                if (progress > 0.5f)
+                {
+                    jumpGravityMultiplier = GravityMultiplier * (1 - progress);
+                }
+                mRigidbody2D.velocity += Physics2D.gravity * jumpGravityMultiplier * Time.deltaTime;
+            }
+            else if (mRigidbody2D.velocity.y < 0)
+            {
+                mRigidbody2D.velocity += Physics2D.gravity * FallMultiplier * Time.deltaTime;
+            }
         }
 
         public int CollisionObjectCount;
