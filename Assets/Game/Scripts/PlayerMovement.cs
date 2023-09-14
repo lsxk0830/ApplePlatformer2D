@@ -18,22 +18,72 @@ namespace Blue
         public UnityEvent OnJump;
         public UnityEvent OnLand;
 
+        public float MinJumpTime = 0.2f; // 最小跳跃时间
+        public float MaxJumpTime = 0.5f; // 最大跳跃时间
+
+        private float mHorizontalInput = 0f;
+        private bool mJumpPressed = false; // 按下跳跃
+        private float mCurrentJumpTime = 0f;
+
+        public JumpStates JumpState = JumpStates.NotJump;
         private void Start()
         {
             mRigidbody2D = GetComponent<Rigidbody2D>();
         }
 
+
         void Update()
         {
-            var horizontal = Input.GetAxis("Horizontal");
+            mHorizontalInput = Input.GetAxis("Horizontal");
 
             if (Input.GetKeyDown(KeyCode.K) && CollisionObjectCount > 0)
             {
-                mRigidbody2D.velocity = new Vector2(mRigidbody2D.velocity.x, JumpSpeed); // 设置速度--垂直
                 OnJump?.Invoke();
+                mJumpPressed = true;
+
+                if(JumpState == JumpStates.NotJump)
+                {
+                    JumpState = JumpStates.MinJump;
+                    mCurrentJumpTime = 0f;
+                }
+            }
+            if (Input.GetKeyUp(KeyCode.K))
+            {
+                mJumpPressed = false;
             }
 
-            mRigidbody2D.velocity = new Vector2(horizontal * HorizontalMovementSpeed, mRigidbody2D.velocity.y); // 设置速度--水平
+            mCurrentJumpTime += Time.deltaTime;
+        }
+
+        public enum JumpStates
+        {
+            NotJump,
+            MinJump,
+            ControlJump,
+        }
+
+        private void FixedUpdate()
+        {
+            if(JumpState ==JumpStates.MinJump)
+            {
+                mRigidbody2D.velocity = new Vector2(mRigidbody2D.velocity.x, JumpSpeed); // 设置速度--垂直
+
+                if(mCurrentJumpTime>=MinJumpTime)
+                {
+                    JumpState = JumpStates.ControlJump;
+                }
+            }
+            else if(JumpState == JumpStates.ControlJump)
+            {
+                mRigidbody2D.velocity = new Vector2(mRigidbody2D.velocity.x, JumpSpeed); // 设置速度--垂直
+
+                if(!mJumpPressed || (mJumpPressed && mCurrentJumpTime>=MaxJumpTime))
+                {
+                    JumpState = JumpStates.NotJump;
+                }
+            }
+
+            mRigidbody2D.velocity = new Vector2(mHorizontalInput * HorizontalMovementSpeed, mRigidbody2D.velocity.y); // 设置速度--水平
 
             // 调整跳跃上升、下落重力
             if (mRigidbody2D.velocity.y > 0)
