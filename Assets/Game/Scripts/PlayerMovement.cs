@@ -25,6 +25,8 @@ namespace Blue
         private float mCurrentJumpTime = 0f;
 
         public JumpStates JumpState = JumpStates.NotJump;
+
+        public Trigger2D GroundCheck;
         private void Start()
         {
             mRigidbody2D = GetComponent<Rigidbody2D>();
@@ -34,7 +36,7 @@ namespace Blue
         {
             mHorizontalInput = Input.GetAxis("Horizontal");
 
-            if (Input.GetKeyDown(KeyCode.K) && CollisionObjectCount > 0)
+            if (Input.GetKeyDown(KeyCode.K) && GroundCheck.Triggered)
             {
                 OnJump?.Invoke();
                 mJumpPressed = true;
@@ -98,18 +100,6 @@ namespace Blue
             {
                 mRigidbody2D.velocity += Physics2D.gravity * FallMultiplier * Time.deltaTime;
             }
-        }
-
-        public int CollisionObjectCount;
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            CollisionObjectCount++;
-            OnLand?.Invoke();
-        }
-
-        private void OnCollisionExit2D(Collision2D other)
-        {
-            CollisionObjectCount--;
         }
     }
 }
