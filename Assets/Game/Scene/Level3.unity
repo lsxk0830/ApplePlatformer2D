@@ -1382,6 +1382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1198549853434453182, guid: 4f5748cbc78e3754192f7ded497327d7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f5748cbc78e3754192f7ded497327d7, type: 3}
 --- !u!1001 &510081317
@@ -9245,7 +9249,8 @@ GameObject:
   - component: {fileID: 1959796987}
   - component: {fileID: 1959796986}
   - component: {fileID: 1959796991}
-  m_Layer: 0
+  - component: {fileID: 1959796992}
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9399,6 +9404,33 @@ MonoBehaviour:
   ForwardCheck: {fileID: 1291331282}
   FallCheck: {fileID: 1816180760}
   AttackCheck: {fileID: 646341696}
+--- !u!114 &1959796992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959796985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9469748443a364c8aa5df591e75c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1959796985}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2013080349
 PrefabInstance:
   m_ObjectHideFlags: 0

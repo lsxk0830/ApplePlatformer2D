@@ -18,10 +18,10 @@ namespace Blue
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            OnTriggerEnterWithCollider?.Invoke(other);
-
             if (LayerMaskUtility.Contains(Layers,other.gameObject.layer))
             {
+                OnTriggerEnterWithCollider?.Invoke(other);
+
                 mCollider2Ds.Add(other);
 
                 if (!Triggered && mCollider2Ds.Count > 0)
@@ -35,10 +35,10 @@ namespace Blue
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            OnTriggerExitWithCollider?.Invoke(other);
-
             if (LayerMaskUtility.Contains(Layers,other.gameObject.layer))
             {
+                OnTriggerExitWithCollider?.Invoke(other);
+
                 mCollider2Ds.Remove(other);
 
                 if (Triggered && mCollider2Ds.Count == 0)
