@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Blue
 {
@@ -11,7 +8,8 @@ namespace Blue
         {
             if(other.CompareTag("Player"))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                var hit = other.GetComponent<PlayerHit>();
+                hit.Hit();
             }
         }
 
