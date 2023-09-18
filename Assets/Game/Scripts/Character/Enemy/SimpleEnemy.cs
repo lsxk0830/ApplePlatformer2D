@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace Blue
 {
     public class SimpleEnemy : CharacterController
     {
         public Trigger2D GroundCheck;
+        public Trigger2D ForwardCheck;
+        public Trigger2D FallCheck;
+        public Trigger2D AttackCheck;
 
         private void Awake()
         {
@@ -21,6 +20,25 @@ namespace Blue
             GroundCheck.OnTriggerExit.AddListener(()=>
             {
                 characterMovement.enabled = false;
+            });
+
+            ForwardCheck.OnTriggerEnter.AddListener(()=>
+            {
+                var localScale = transform.localScale;
+                localScale.x *= -1;
+                transform.localScale = localScale;
+            });
+
+            FallCheck.OnTriggerExit.AddListener(()=>
+            {
+                var localScale = transform.localScale;
+                localScale.x *= -1;
+                transform.localScale = localScale;
+            });
+
+            AttackCheck.OnTriggerEnterWithCollider.AddListener((collider)=>
+            {
+                collider.GetComponent<PlayerHit>().Hit();
             });
         }
     }
