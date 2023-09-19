@@ -1,3 +1,6 @@
+using System;
+using UnityEngine;
+
 namespace Blue
 {
     public class SimpleEnemy : CharacterController
@@ -39,7 +42,23 @@ namespace Blue
             AttackCheck.OnTriggerEnterWithCollider.AddListener((collider)=>
             {
                 collider.GetComponent<PlayerHit>().Hit();
+
+                // 玩家攻击主角后，主角向后跳跃一下
+                AttackPhysicsEffect(transform,collider.transform);
             });
+        }
+
+        public int HitterVelocityX = 5; // 攻击时水平方向速度
+        public int HitterVelocityY = 5; // 攻击时垂直方向速度
+
+        // 物理攻击效果,想斜后方跳跃
+        void AttackPhysicsEffect(Transform attack,Transform hitter)
+        {
+            var attackPos = attack.position.x;
+            var hitPos = hitter.position.x;
+            var direction = hitPos - attackPos;
+            var directionNormal = MathF.Sign(direction);
+            hitter.GetComponent<Rigidbody2D>().velocity = new Vector2(directionNormal * HitterVelocityX, HitterVelocityY);
         }
     }
 }

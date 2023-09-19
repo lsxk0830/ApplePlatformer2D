@@ -2,6 +2,10 @@ using UnityEngine;
 
 namespace Blue
 {
+    /// <summary>
+    /// 播放动画、
+    /// 移动时拉伸
+    /// </summary>
     public class PlayAnimation : MonoBehaviour
     {
         private Rigidbody2D mRigidbody2D;
