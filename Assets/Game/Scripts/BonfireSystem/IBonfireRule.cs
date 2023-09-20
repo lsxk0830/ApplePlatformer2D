@@ -5,6 +5,10 @@ namespace Blue
     /// </summary>
     public interface IBonfireRule
     {
+        /// <summary>
+        /// 需要的时间
+        /// </summary>
+        int NeedSeconds{ get; }
         string Key{ get; }
 
         /// <summary>

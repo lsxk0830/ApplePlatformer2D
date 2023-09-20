@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Blue
 {
@@ -17,7 +18,7 @@ namespace Blue
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if(other.CompareTag("Player"))
+            if (other.CompareTag("Player"))
             {
                 mPlayerEntered = true;
 
@@ -27,7 +28,7 @@ namespace Blue
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if(other.CompareTag("Player"))
+            if (other.CompareTag("Player"))
             {
                 mPlayerEntered = false;
 
@@ -36,8 +37,20 @@ namespace Blue
         }
 
         private bool mOpenBonfireUI = false; // 是否打开火堆的UI
+
+        /// <summary>
+        /// 剩余时间
+        /// </summary>
+        public static float RemainSeconds = 60;
         private void Update()
         {
+            RemainSeconds -= Time.deltaTime;
+            if(RemainSeconds<=0)
+            {
+                RemainSeconds = 60;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+
             if (mPlayerEntered && !mOpenBonfireUI)
             {
                 if (Input.GetKeyDown(KeyCode.W))
@@ -45,7 +58,7 @@ namespace Blue
                     mOpenBonfireUI = true;
                 }
             }
-            else if(mOpenBonfireUI)
+            else if (mOpenBonfireUI)
             {
                 if (Input.GetKeyDown(KeyCode.W))
                 {
@@ -57,25 +70,27 @@ namespace Blue
         private List<IBonfireRule> mRules = new List<IBonfireRule>();
         private void OnGUI()
         {
-            GUILayout.BeginArea(new Rect(Screen.width-200,0,200,200)); // 在一个固定的屏幕区域中开始 GUI 控件的 GUILayout 块
+            GUILayout.BeginArea(new Rect(Screen.width - 200, 0, 200, 200)); // 在一个固定的屏幕区域中开始 GUI 控件的 GUILayout 块
 
-            foreach(var bonfireRule in mRules)
+            GUILayout.Label("寿命:" + (int)RemainSeconds + "s", Styles.label.Value);
+
+            foreach (var bonfireRule in mRules)
             {
                 bonfireRule.OnTopRightGUI();
             }
 
             GUILayout.EndArea();
 
-            foreach(var bonfireRule in mRules)
+            foreach (var bonfireRule in mRules)
             {
                 bonfireRule.OnGUI();
             }
 
-            if(mOpenBonfireUI)
+            if (mOpenBonfireUI)
             {
-                GUILayout.Label("火堆 UI");
+                GUILayout.Label("火堆 UI", Styles.label.Value);
 
-                foreach(var bonfireRule in mRules)
+                foreach (var bonfireRule in mRules)
                 {
                     bonfireRule.OnBonfireOnGUI();
                 }

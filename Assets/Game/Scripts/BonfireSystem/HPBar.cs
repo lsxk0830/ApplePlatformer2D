@@ -7,6 +7,8 @@ namespace Blue
     /// </summary>
     public class HPBar : IBonfireRule
     {
+        public int NeedSeconds { get; } = 30;
+
         public string Key { get; }
 
         public bool Unlocked { get; private set; }
@@ -14,14 +16,25 @@ namespace Blue
         public void OnBonfireOnGUI()
         {
             // 未解锁时
-            if(!Unlocked)
+            if (!Unlocked)
             {
                 GUILayout.BeginHorizontal(); // 开始一个水平控件组
-                GUILayout.Label("HPBar");
+                GUILayout.Label("血量条", Styles.label.Value);
+                GUILayout.Label("价格:" + NeedSeconds, Styles.label.Value);
 
-                if(GUILayout.Button("解锁"))
+                GUILayout.FlexibleSpace(); // 插入灵活的空白元素
+
+                if (Bonfire.RemainSeconds > NeedSeconds)
                 {
-                    Unlocked = true;
+                    if (GUILayout.Button("解锁", Styles.Button.Value))
+                    {
+                        Bonfire.RemainSeconds -= NeedSeconds;
+                        Unlocked = true;
+                    }
+                }
+                else
+                {
+                    GUILayout.Label("时间不足", Styles.label.Value);
                 }
                 GUILayout.EndHorizontal();
             }
@@ -29,15 +42,15 @@ namespace Blue
 
         public void OnTopRightGUI()
         {
-            if(Unlocked)
+            if (Unlocked)
             {
-                GUILayout.Label("血量:1/1");
+                GUILayout.Label("血量:1/1", Styles.label.Value);
             }
         }
 
         public void OnGUI()
         {
-            
+
         }
 
         public void Save()
