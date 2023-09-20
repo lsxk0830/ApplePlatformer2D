@@ -21,6 +21,12 @@ namespace Blue
         /// <summary>
         /// 火堆解锁后的UI
         /// 例如 "血量:1/1"
+        /// 在右上方绘制
+        /// </summary>
+        void OnTopRightGUI();
+
+        /// <summary>
+        /// 自定义绘制，在任意处绘制
         /// </summary>
         void OnGUI();
         void Save();

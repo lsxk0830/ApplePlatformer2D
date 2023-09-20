@@ -57,6 +57,15 @@ namespace Blue
         private List<IBonfireRule> mRules = new List<IBonfireRule>();
         private void OnGUI()
         {
+            GUILayout.BeginArea(new Rect(Screen.width-200,0,200,200)); // 在一个固定的屏幕区域中开始 GUI 控件的 GUILayout 块
+
+            foreach(var bonfireRule in mRules)
+            {
+                bonfireRule.OnTopRightGUI();
+            }
+
+            GUILayout.EndArea();
+
             foreach(var bonfireRule in mRules)
             {
                 bonfireRule.OnGUI();

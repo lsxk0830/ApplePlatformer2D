@@ -13,29 +13,31 @@ namespace Blue
 
         public void OnBonfireOnGUI()
         {
-            GUILayout.Label("HPBar");
-
-            if(Unlocked)
+            // 未解锁时
+            if(!Unlocked)
             {
+                GUILayout.BeginHorizontal(); // 开始一个水平控件组
+                GUILayout.Label("HPBar");
 
-            }
-            else
-            {
                 if(GUILayout.Button("解锁"))
                 {
                     Unlocked = true;
                 }
+                GUILayout.EndHorizontal();
+            }
+        }
+
+        public void OnTopRightGUI()
+        {
+            if(Unlocked)
+            {
+                GUILayout.Label("血量:1/1");
             }
         }
 
         public void OnGUI()
         {
-            if(Unlocked)
-            {
-                GUILayout.BeginArea(new Rect(Screen.width-200,0,200,200)); // 在一个固定的屏幕区域中开始 GUI 控件的 GUILayout 块
-                GUILayout.Label("血量:1/1");
-                GUILayout.EndArea();
-            }
+            
         }
 
         public void Save()
@@ -46,5 +48,6 @@ namespace Blue
         {
             return this;
         }
+
     }
 }
