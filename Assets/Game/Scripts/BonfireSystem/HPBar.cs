@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Blue
@@ -7,9 +8,10 @@ namespace Blue
     /// </summary>
     public class HPBar : IBonfireRule
     {
+        Lazy<IPlayerModel> mPlayerModel = new Lazy<IPlayerModel>(() =>  ApplePlatformer2D.Interface.GetModel<IPlayerModel>() );
         public int NeedSeconds { get; } = 30;
 
-        public string Key { get; }
+        public string Key { get; } = nameof(HPBar);
 
         public bool Unlocked { get; private set; }
 
@@ -44,7 +46,7 @@ namespace Blue
         {
             if (Unlocked)
             {
-                GUILayout.Label("血量:1/1", Styles.label.Value);
+                GUILayout.Label($"血量:{mPlayerModel.Value.HP}/{mPlayerModel.Value.MaxHP}", Styles.label.Value);
             }
         }
 

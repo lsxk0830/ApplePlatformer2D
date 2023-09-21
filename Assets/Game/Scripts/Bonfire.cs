@@ -10,12 +10,11 @@ namespace Blue
 
         private bool mPlayerEntered = false; // 主角是否进入
 
-        private void Start()
+        private IBonfireSystem mBonfireSystem;
+        private void Awake()
         {
-            // 添加规则
-            mRules.Add(new HPBar());
+            mBonfireSystem = ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>();
         }
-
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
@@ -67,21 +66,20 @@ namespace Blue
             }
         }
 
-        private List<IBonfireRule> mRules = new List<IBonfireRule>();
         private void OnGUI()
         {
             GUILayout.BeginArea(new Rect(Screen.width - 200, 0, 200, 200)); // 在一个固定的屏幕区域中开始 GUI 控件的 GUILayout 块
 
             GUILayout.Label("寿命:" + (int)RemainSeconds + "s", Styles.label.Value);
 
-            foreach (var bonfireRule in mRules)
+            foreach (var bonfireRule in mBonfireSystem.Rules)
             {
                 bonfireRule.OnTopRightGUI();
             }
 
             GUILayout.EndArea();
 
-            foreach (var bonfireRule in mRules)
+            foreach (var bonfireRule in mBonfireSystem.Rules)
             {
                 bonfireRule.OnGUI();
             }
@@ -90,11 +88,16 @@ namespace Blue
             {
                 GUILayout.Label("火堆 UI", Styles.label.Value);
 
-                foreach (var bonfireRule in mRules)
+                foreach (var bonfireRule in mBonfireSystem.Rules)
                 {
                     bonfireRule.OnBonfireOnGUI();
                 }
             }
+        }
+
+        private void OnDestroy()
+        {
+            mBonfireSystem = null;
         }
     }
 }
