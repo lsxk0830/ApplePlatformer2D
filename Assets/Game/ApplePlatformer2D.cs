@@ -4,6 +4,7 @@ namespace Blue
 {
     public class ApplePlatformer2D : Architecture<ApplePlatformer2D>
     {
+        public static EasyEvent OnOpenBonfireUI = new EasyEvent();
         protected override void Init()
         {
             RegisterSystem();

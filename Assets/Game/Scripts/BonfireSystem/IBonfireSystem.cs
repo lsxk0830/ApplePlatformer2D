@@ -19,6 +19,7 @@ namespace Blue
             // 添加规则
             Rules.Add(new HPBar());
             Rules.Add(new MaxHPPlus1());
+            Rules.Add(new BonfireOpenUIRebornEnemy());
         }
 
         public IBonfireRule GetRuleByKey(string key)

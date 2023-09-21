@@ -55,6 +55,7 @@ namespace Blue
                 if (Input.GetKeyDown(KeyCode.W))
                 {
                     mOpenBonfireUI = true;
+                    ApplePlatformer2D.OnOpenBonfireUI.Trigger();
                 }
             }
             else if (mOpenBonfireUI)
