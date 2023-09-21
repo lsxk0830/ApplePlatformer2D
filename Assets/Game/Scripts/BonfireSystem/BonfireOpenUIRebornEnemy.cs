@@ -52,6 +52,10 @@ namespace Blue
         public void Save()
         {
         }
+        public void Reset()
+        {
+            Unlocked = false;
+        }
 
         public IBonfireRule Load()
         {

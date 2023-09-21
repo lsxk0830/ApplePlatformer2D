@@ -59,7 +59,10 @@ namespace Blue
         {
 
         }
-
+        public void Reset()
+        {
+            Unlocked = false;
+        }
         public void Save()
         {
 

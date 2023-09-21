@@ -8,7 +8,7 @@ namespace Blue
     /// </summary>
     public class MinusHP : MonoBehaviour
     {
-        public UnityEvent OnDeath;
+        //public UnityEvent OnDeath;
         public void Execute(int hp)
         {
             var playerModel = ApplePlatformer2D.Interface.GetModel<IPlayerModel>();
@@ -17,7 +17,9 @@ namespace Blue
 
             if(playerModel.HP<=0)
             {
-                OnDeath?.Invoke();
+                //OnDeath?.Invoke();
+
+                ApplePlatformer2D.IsGameOver = true;
             }
         }
     }

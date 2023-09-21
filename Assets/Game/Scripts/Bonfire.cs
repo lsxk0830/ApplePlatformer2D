@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -43,11 +44,13 @@ namespace Blue
         public static float RemainSeconds = 60;
         private void Update()
         {
+            if (ApplePlatformer2D.IsGameOver)
+                return;
+
             RemainSeconds -= Time.deltaTime;
-            if(RemainSeconds<=0)
+            if (RemainSeconds <= 0)
             {
-                RemainSeconds = 60;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                ApplePlatformer2D.IsGameOver = true;
             }
 
             if (mPlayerEntered && !mOpenBonfireUI)
@@ -93,6 +96,43 @@ namespace Blue
                 {
                     bonfireRule.OnBonfireOnGUI();
                 }
+            }
+
+            if (ApplePlatformer2D.IsGameOver)
+            {
+                // 游戏结束界面
+                GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
+
+                GUILayout.FlexibleSpace();
+
+                GUILayout.BeginHorizontal();
+                {
+                    GUILayout.FlexibleSpace();
+                    GUILayout.Label("游戏结束", Styles.Biglabel.Value);
+                    GUILayout.FlexibleSpace();
+                }
+                GUILayout.EndHorizontal();
+                GUILayout.Space(50); // 设置间距
+                GUILayout.BeginHorizontal();
+                {
+                    GUILayout.FlexibleSpace();
+                    if (GUILayout.Button("重新开始", Styles.BigButton.Value))
+                    {
+                        ApplePlatformer2D.IsGameOver = false;
+                        ApplePlatformer2D.Interface.GetModel<IPlayerModel>().HP = 1;
+                        ApplePlatformer2D.Interface.GetModel<IPlayerModel>().MaxHP = 1;
+                        foreach (var bonfireRule in ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>().Rules)
+                        {
+                            bonfireRule.Reset();
+                        }
+                        RemainSeconds = 60;
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    }
+                    GUILayout.FlexibleSpace();
+                }
+                GUILayout.EndHorizontal();
+                GUILayout.FlexibleSpace();
+                GUILayout.EndArea();
             }
         }
 

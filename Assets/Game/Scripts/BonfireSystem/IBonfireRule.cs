@@ -17,6 +17,11 @@ namespace Blue
         bool Unlocked{ get; }
 
         /// <summary>
+        /// 重置
+        /// </summary>
+        void Reset();
+
+        /// <summary>
         /// 火堆未解锁时的UI，
         /// 例如 "HPBar"、"解锁"
         /// </summary>
