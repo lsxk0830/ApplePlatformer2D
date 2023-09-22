@@ -21,5 +21,17 @@ namespace Blue
         {
             this.RegisterSystem<IBonfireSystem>(new BonfireSystem());
         }
+
+        public static void ResetGameData()
+        {
+            ApplePlatformer2D.IsGameOver = false;
+            ApplePlatformer2D.Interface.GetModel<IPlayerModel>().HP = 1;
+            ApplePlatformer2D.Interface.GetModel<IPlayerModel>().MaxHP = 1;
+            foreach (var bonfireRule in ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>().Rules)
+            {
+                bonfireRule.Reset();
+            }
+            Bonfire.RemainSeconds = 60;
+        }
     }
 }

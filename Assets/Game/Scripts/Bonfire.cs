@@ -118,16 +118,16 @@ namespace Blue
                     GUILayout.FlexibleSpace();
                     if (GUILayout.Button("重新开始", Styles.BigButton.Value))
                     {
-                        ApplePlatformer2D.IsGameOver = false;
-                        ApplePlatformer2D.Interface.GetModel<IPlayerModel>().HP = 1;
-                        ApplePlatformer2D.Interface.GetModel<IPlayerModel>().MaxHP = 1;
-                        foreach (var bonfireRule in ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>().Rules)
-                        {
-                            bonfireRule.Reset();
-                        }
-                        RemainSeconds = 60;
+                        ApplePlatformer2D.ResetGameData();
                         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                     }
+
+                    if (GUILayout.Button("回到主页", Styles.BigButton.Value))
+                    {
+                        ApplePlatformer2D.ResetGameData();
+                        SceneManager.LoadScene("GameStart");
+                    }
+
                     GUILayout.FlexibleSpace();
                 }
                 GUILayout.EndHorizontal();
