@@ -11,7 +11,7 @@ namespace Blue
 
         public bool Unlocked { get; private set; }
 
-        Lazy<IBonfireRule> mHPBarRule = new Lazy<IBonfireRule>(()=>
+        Lazy<IBonfireRule> mHPBarRule = new Lazy<IBonfireRule>(() =>
             ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>().GetRuleByKey(nameof(HPBar)));
         public void OnBonfireOnGUI()
         {
@@ -44,11 +44,6 @@ namespace Blue
                 GUILayout.EndHorizontal();
             }
         }
-        public IBonfireRule Load()
-        {
-            return this;
-        }
-
 
         public void OnGUI()
         {
@@ -65,7 +60,12 @@ namespace Blue
         }
         public void Save()
         {
-
+            PlayerPrefs.SetInt(nameof(MaxHPPlus1), Unlocked ? 1 : 0);
+        }
+        public IBonfireRule Load()
+        {
+            Unlocked = PlayerPrefs.GetInt(nameof(MaxHPPlus1), 0) == 1;
+            return this;
         }
     }
 }

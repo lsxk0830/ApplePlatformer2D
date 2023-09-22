@@ -8,7 +8,7 @@ namespace Blue
     /// </summary>
     public class HPBar : IBonfireRule
     {
-        Lazy<IPlayerModel> mPlayerModel = new Lazy<IPlayerModel>(() =>  ApplePlatformer2D.Interface.GetModel<IPlayerModel>() );
+        Lazy<IPlayerModel> mPlayerModel = new Lazy<IPlayerModel>(() => ApplePlatformer2D.Interface.GetModel<IPlayerModel>());
         public int NeedSeconds { get; } = 30;
 
         public string Key { get; } = nameof(HPBar);
@@ -55,16 +55,17 @@ namespace Blue
 
         }
 
-        public void Save()
-        {
-
-        }
         public void Reset()
         {
             Unlocked = false;
         }
+        public void Save()
+        {
+            PlayerPrefs.SetInt(nameof(HPBar), Unlocked ? 1 : 0);
+        }
         public IBonfireRule Load()
         {
+            Unlocked = PlayerPrefs.GetInt(nameof(HPBar), 0) == 1;
             return this;
         }
 
