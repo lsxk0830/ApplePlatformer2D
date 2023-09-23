@@ -6,6 +6,7 @@ namespace Blue
     public class ApplePlatformer2D : Architecture<ApplePlatformer2D>
     {
         public static EasyEvent OnOpenBonfireUI = new EasyEvent();
+        public static EasyEvent<string> OnBonfireRuleUnlocked = new EasyEvent<string>();
         private static bool mIsGameOver = false;
         public static bool IsGameOver
         {
