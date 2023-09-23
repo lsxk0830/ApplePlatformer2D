@@ -4,7 +4,7 @@ using UnityEngine.Events;
 namespace Blue
 {
     /// <summary>
-    /// 火堆规则解锁状态
+    /// 火堆规则解锁状态，解锁时触发IsUnlocked事件
     /// </summary>
     public class BonfireRuleUnlockCondition : MonoBehaviour
     {
@@ -15,7 +15,7 @@ namespace Blue
         {
             var rule = ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>().GetRuleByKey(Key);
 
-            if(rule.Unlocked)
+            if (rule.Unlocked)
             {
                 IsUnlocked?.Invoke();
             }

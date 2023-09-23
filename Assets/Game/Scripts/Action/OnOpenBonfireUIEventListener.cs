@@ -5,7 +5,7 @@ using UnityEngine.Events;
 namespace Blue
 {
     /// <summary>
-    /// 打开火堆UI事件监听
+    /// 打开火堆UI事件监听，ApplePlatformer2D.OnOpenBonfireUI事件触发时触发OnOpenBonfireUI事件
     /// </summary>
     public class OnOpenBonfireUIEventListener : MonoBehaviour
     {
@@ -13,7 +13,7 @@ namespace Blue
 
         private void Start()
         {
-            ApplePlatformer2D.OnOpenBonfireUI.Register(()=>
+            ApplePlatformer2D.OnOpenBonfireUI.Register(() =>
             {
                 OnOpenBonfireUI?.Invoke();
             }).UnRegisterWhenGameObjectDestroyed(gameObject);

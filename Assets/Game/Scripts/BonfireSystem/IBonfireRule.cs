@@ -8,13 +8,17 @@ namespace Blue
         /// <summary>
         /// 需要的时间
         /// </summary>
-        int NeedSeconds{ get; }
-        string Key{ get; }
+        int NeedSeconds { get; }
+
+        /// <summary>
+        /// 火堆规则名，如 nameof(HPBar)
+        /// </summary>
+        string Key { get; }
 
         /// <summary>
         /// 是否解锁
         /// </summary>
-        bool Unlocked{ get; }
+        bool Unlocked { get; }
 
         /// <summary>
         /// 重置
@@ -38,7 +42,15 @@ namespace Blue
         /// 自定义绘制，在任意处绘制
         /// </summary>
         void OnGUI();
+
+        /// <summary>
+        /// 保存当前的火堆规则
+        /// </summary>
         void Save();
+
+        /// <summary>
+        /// 加载保存的火堆规则
+        /// </summary>
         IBonfireRule Load();
     }
 }

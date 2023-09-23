@@ -6,13 +6,11 @@ namespace Blue
     public class MaxHPPlus1 : IBonfireRule
     {
         public int NeedSeconds { get; } = 10;
-
         public string Key { get; } = nameof(MaxHPPlus1);
-
         public bool Unlocked { get; private set; }
-
         Lazy<IBonfireRule> mHPBarRule = new Lazy<IBonfireRule>(() =>
             ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>().GetRuleByKey(nameof(HPBar)));
+
         public void OnBonfireOnGUI()
         {
             // 未解锁时
@@ -54,14 +52,17 @@ namespace Blue
         {
 
         }
+
         public void Reset()
         {
             Unlocked = false;
         }
+
         public void Save()
         {
             PlayerPrefs.SetInt(nameof(MaxHPPlus1), Unlocked ? 1 : 0);
         }
+
         public IBonfireRule Load()
         {
             Unlocked = PlayerPrefs.GetInt(nameof(MaxHPPlus1), 0) == 1;

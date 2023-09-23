@@ -10,9 +10,7 @@ namespace Blue
     {
         Lazy<IPlayerModel> mPlayerModel = new Lazy<IPlayerModel>(() => ApplePlatformer2D.Interface.GetModel<IPlayerModel>());
         public int NeedSeconds { get; } = 30;
-
         public string Key { get; } = nameof(HPBar);
-
         public bool Unlocked { get; private set; }
 
         public void OnBonfireOnGUI()
@@ -59,10 +57,12 @@ namespace Blue
         {
             Unlocked = false;
         }
+
         public void Save()
         {
             PlayerPrefs.SetInt(nameof(HPBar), Unlocked ? 1 : 0);
         }
+
         public IBonfireRule Load()
         {
             Unlocked = PlayerPrefs.GetInt(nameof(HPBar), 0) == 1;

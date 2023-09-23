@@ -8,11 +8,8 @@ namespace Blue
     public class BonfireOpenUIRebornEnemy : IBonfireRule
     {
         public int NeedSeconds { get; } = 5;
-
         public string Key { get; } = nameof(BonfireOpenUIRebornEnemy);
-
         public bool Unlocked { get; private set; }
-
 
         public void OnBonfireOnGUI()
         {
@@ -53,7 +50,6 @@ namespace Blue
         {
             Unlocked = false;
         }
-
         public void Save()
         {
             PlayerPrefs.SetInt(nameof(BonfireOpenUIRebornEnemy), Unlocked ? 1 : 0);
