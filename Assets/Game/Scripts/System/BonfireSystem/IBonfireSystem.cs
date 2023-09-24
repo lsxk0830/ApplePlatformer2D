@@ -20,6 +20,7 @@ namespace Blue
             Rules.Add(new HPBar());
             Rules.Add(new MaxHPPlus1());
             Rules.Add(new BonfireOpenUIRebornEnemy());
+            Rules.Add(new Level1());
             Rules.Add(new Level4());
         }
 
