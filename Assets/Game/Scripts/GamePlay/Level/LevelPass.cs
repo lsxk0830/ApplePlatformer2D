@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Blue
@@ -24,16 +23,12 @@ namespace Blue
 
             StartCoroutine(Delay(2, () =>
             {
-                OnLevelPassDelayFinish?.Invoke();
                 if (ResetPlayerOriginPoint)
                 {
                     GameObject.FindWithTag("Player").transform.position = Vector2.zero;
                 }
-                else
-                {
-                    var currentScene = SceneManager.GetActiveScene();
-                    SceneManager.LoadScene(currentScene.name);
-                };
+
+                OnLevelPassDelayFinish?.Invoke();
             }));
 
         }
