@@ -44,6 +44,8 @@ namespace Blue
                 {
                     bonfireRule.Save();
                 }
+
+                Interface.GetSystem<ISaveSystem>().Save();
             });
         }
 
@@ -55,6 +57,7 @@ namespace Blue
         private void RegisterSystem()
         {
             this.RegisterSystem<IBonfireSystem>(new BonfireSystem());
+            this.RegisterSystem<ISaveSystem>(new SaveSystem());
         }
 
         /// <summary>
@@ -69,6 +72,7 @@ namespace Blue
             {
                 bonfireRule.Reset();
             }
+            Interface.GetSystem<ISaveSystem>().Clear();
             Bonfire.RemainSeconds = 60;
         }
 
@@ -79,6 +83,7 @@ namespace Blue
         {
             Interface.GetModel<IPlayerModel>().HP = PlayerPrefs.GetInt("HP", 1);
             Interface.GetModel<IPlayerModel>().MaxHP = PlayerPrefs.GetInt("MaxHP", 1);
+            Interface.GetSystem<ISaveSystem>().Load();
             Bonfire.RemainSeconds = PlayerPrefs.GetFloat("RemainSeconds", 60);
             foreach (var bonfireRule in Interface.GetSystem<IBonfireSystem>().Rules)
             {

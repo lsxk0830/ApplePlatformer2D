@@ -13,24 +13,32 @@ namespace Blue
     public class LevelPass : MonoBehaviour
     {
         public Text LevelPassText;
-
         public UnityEvent OnLevelPass;
+        public UnityEvent OnLevelPassDelayFinish; // 通关延时完成事件
+        public bool ResetPlayerOriginPoint = false; // 玩家是否回到原点
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            var currentScene = SceneManager.GetActiveScene();
-
             LevelPassText.gameObject.SetActive(true);
-
             OnLevelPass?.Invoke();
 
-            StartCoroutine(Delay(2,()=>
+            StartCoroutine(Delay(2, () =>
             {
-                SceneManager.LoadScene(currentScene.name);
+                OnLevelPassDelayFinish?.Invoke();
+                if (ResetPlayerOriginPoint)
+                {
+                    GameObject.FindWithTag("Player").transform.position = Vector2.zero;
+                }
+                else
+                {
+                    var currentScene = SceneManager.GetActiveScene();
+                    SceneManager.LoadScene(currentScene.name);
+                };
             }));
+
         }
 
-        private IEnumerator Delay(float seconds,Action onFinish)
+        private IEnumerator Delay(float seconds, Action onFinish)
         {
             yield return new WaitForSeconds(seconds);
             onFinish?.Invoke();

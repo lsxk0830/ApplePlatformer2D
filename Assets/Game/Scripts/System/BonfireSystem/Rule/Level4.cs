@@ -26,8 +26,8 @@ namespace Blue
                 {
                     if (GUILayout.Button("解锁", Styles.Button.Value))
                     {
+                        Bonfire.RemainSeconds -= NeedSeconds;
                         ApplePlatformer2D.OnBonfireRuleUnlocked.Trigger(Key);
-                        //Bonfire.RemainSeconds -= NeedSeconds;
                         Unlocked = true;
                     }
                 }

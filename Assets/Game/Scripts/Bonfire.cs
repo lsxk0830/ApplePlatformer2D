@@ -113,6 +113,7 @@ namespace Blue
                 }
                 GUILayout.EndHorizontal();
                 GUILayout.Space(50); // 设置间距
+
                 GUILayout.BeginHorizontal();
                 {
                     GUILayout.FlexibleSpace();
@@ -121,16 +122,22 @@ namespace Blue
                         ApplePlatformer2D.ResetGameData();
                         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                     }
+                    GUILayout.FlexibleSpace();
+                }
+                GUILayout.EndHorizontal();
 
+                GUILayout.BeginHorizontal();
+                {
+                    GUILayout.FlexibleSpace();
                     if (GUILayout.Button("回到主页", Styles.BigButton.Value))
                     {
                         ApplePlatformer2D.ResetGameData();
                         SceneManager.LoadScene("GameStart");
                     }
-
                     GUILayout.FlexibleSpace();
                 }
                 GUILayout.EndHorizontal();
+
                 GUILayout.FlexibleSpace();
                 GUILayout.EndArea();
             }
