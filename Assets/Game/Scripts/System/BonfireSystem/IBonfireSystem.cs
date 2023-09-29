@@ -21,6 +21,8 @@ namespace Blue
             Rules.Add(new MaxHPPlus1());
             Rules.Add(new BonfireOpenUIRebornEnemy());
             Rules.Add(new Level1());
+            Rules.Add(new Level2());
+            Rules.Add(new Level3());
             Rules.Add(new Level4());
         }
 
