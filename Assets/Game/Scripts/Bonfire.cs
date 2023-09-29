@@ -120,7 +120,7 @@ namespace Blue
                     if (GUILayout.Button("重新开始", Styles.BigButton.Value))
                     {
                         ApplePlatformer2D.ResetGameData();
-                        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                        SceneManager.LoadScene("Game");
                     }
                     GUILayout.FlexibleSpace();
                 }
