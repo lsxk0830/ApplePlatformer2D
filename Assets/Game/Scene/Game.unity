@@ -4463,15 +4463,43 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
-      propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.size
+      propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
+      propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
+      propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
+      propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 828367536}
+    - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
+      propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
+      propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Execute
       objectReference: {fileID: 0}
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
+      propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1452720055}
+    - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
+      propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 836310197}
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
@@ -4479,15 +4507,39 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
+      propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
+      propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
+      propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Blue.SaveHideState, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
+      propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
+      propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
+      propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4497,6 +4549,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8327002276423306584, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
   m_PrefabInstance: {fileID: 828367533}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &828367535 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8327002276423306588, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
+  m_PrefabInstance: {fileID: 828367533}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &828367536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828367535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fa334a8eee4d94486a8cc5918e285f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SaveKey: GameLevel4Controller
 --- !u!1 &836310197 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 30408866, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
@@ -7416,6 +7486,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1283541394}
   - component: {fileID: 1283541395}
+  - component: {fileID: 1283541396}
   m_Layer: 0
   m_Name: Level2Controller
   m_TagString: Untagged
@@ -7467,6 +7538,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &1283541396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283541392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0b52c20f22f954580a2f03f5a73c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1295206477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8217,6 +8300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1452720058}
   - component: {fileID: 1452720059}
+  - component: {fileID: 1452720060}
   m_Layer: 0
   m_Name: Level4Controller
   m_TagString: Untagged
@@ -8269,6 +8353,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &1452720060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452720055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0b52c20f22f954580a2f03f5a73c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1452951128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9200,6 +9296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1607593839}
   - component: {fileID: 1607593838}
+  - component: {fileID: 1607593840}
   m_Layer: 0
   m_Name: Level1Controller
   m_TagString: Untagged
@@ -9251,6 +9348,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1607593840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607593837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0b52c20f22f954580a2f03f5a73c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1631513809
 GameObject:
   m_ObjectHideFlags: 0
@@ -9774,6 +9883,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1676617962}
   - component: {fileID: 1676617963}
+  - component: {fileID: 1676617964}
   m_Layer: 0
   m_Name: Level3Controller
   m_TagString: Untagged
@@ -9825,6 +9935,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &1676617964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676617960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0b52c20f22f954580a2f03f5a73c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1695795200
 GameObject:
   m_ObjectHideFlags: 0
