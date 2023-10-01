@@ -25,7 +25,11 @@ namespace Blue
             {
                 if (ResetPlayerOriginPoint)
                 {
-                    GameObject.FindWithTag("Player").transform.position = Vector2.zero;
+                    var player = GameObject.FindWithTag("Player");
+                    player.transform.position = Vector2.zero;
+
+                    var trigger2D = player.transform.Find("GroundCheck").GetComponent<Trigger2D>();
+                    trigger2D.Reset();
                 }
 
                 OnLevelPassDelayFinish?.Invoke();

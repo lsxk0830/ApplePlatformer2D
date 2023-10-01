@@ -8,6 +8,13 @@ namespace Blue
     {
         public bool Triggered = false;
         private HashSet<Collider2D> mCollider2Ds = new HashSet<Collider2D>(3);
+
+        public void Reset()
+        {
+            Triggered = false;
+            mCollider2Ds.Clear();
+        }
+
         public LayerMask Layers;
 
         public UnityEvent OnTriggerEnter = new UnityEvent();
