@@ -25,7 +25,6 @@ namespace Blue
         public Trigger2D GroundCheck;
         public Trigger2D ForwardCheck;
         public Trigger2D FallCheck;
-        public Trigger2D AttackCheck;
         public Trigger2D ShootArea;
 
         public GameObject BulletPrefab;
@@ -61,14 +60,6 @@ namespace Blue
                 transform.localScale = localScale;
             });
 
-            AttackCheck.OnTriggerEnterWithCollider.AddListener((collider) =>
-            {
-                collider.GetComponent<PlayerHit>().Hit();
-
-                // 玩家攻击主角后，主角向后跳跃一下
-                AttackPhysicsEffect(transform, collider.transform);
-            });
-
             ShootArea.OnTriggerEnter.AddListener(() =>
             {
                 state = States.Shoot;
@@ -80,19 +71,6 @@ namespace Blue
                 state = States.Patrol;
                 characterMovement.enabled = true;
             });
-        }
-
-        public int HitterVelocityX = 5; // 攻击时水平方向速度
-        public int HitterVelocityY = 5; // 攻击时垂直方向速度
-
-        // 物理攻击效果,想斜后方跳跃
-        void AttackPhysicsEffect(Transform attack, Transform hitter)
-        {
-            var attackPos = attack.position.x;
-            var hitPos = hitter.position.x;
-            var direction = hitPos - attackPos;
-            var directionNormal = MathF.Sign(direction);
-            hitter.GetComponent<Rigidbody2D>().velocity = new Vector2(directionNormal * HitterVelocityX, HitterVelocityY);
         }
 
         private float mPreviousShootTime; // 上一次攻击时间
