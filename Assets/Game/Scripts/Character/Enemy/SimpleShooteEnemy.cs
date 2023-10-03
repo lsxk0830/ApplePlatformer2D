@@ -63,7 +63,7 @@ namespace Blue
             ShootArea.OnTriggerEnter.AddListener(() =>
             {
                 state = States.Shoot;
-                mPreviousShootTime = Time.time;
+                mPreviousShootTime = Time.time - 0.8f;
                 characterMovement.enabled = false;
             });
             ShootArea.OnTriggerExit.AddListener(() =>

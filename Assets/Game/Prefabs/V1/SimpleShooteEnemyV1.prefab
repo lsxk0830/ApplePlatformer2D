@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2705734395396815829}
   - component: {fileID: 2705734395396815835}
   - component: {fileID: 2705734395396815828}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: ShootArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}

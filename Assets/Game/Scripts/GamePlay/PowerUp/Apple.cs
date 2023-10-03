@@ -9,9 +9,12 @@ namespace Blue
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            OnGet?.Invoke();
+            if (other.CompareTag("Player"))
+            {
+                OnGet?.Invoke();
 
-            Destroy(gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 }
