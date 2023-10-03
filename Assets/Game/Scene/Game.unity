@@ -6654,8 +6654,7 @@ MonoBehaviour:
   OnEnter:
     m_PersistentCalls:
       m_Calls:
-      - {m_Target: {fileID: 1191173295}, m_TargetAssemblyTypeName: Blue.LoadScene, Assembly-CSharp, m_MethodName: Execute, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-    m_CallsDirty: 1
+      - {m_Target: {fileID: 1191173295}, m_TargetAssemblyTypeName: Blue.LoadScene, Assembly-CSharp: }
 --- !u!61 &1191173297
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7756,15 +7755,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1283541392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 275a5c48c9822234093770e2feb8de4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a042b78727165c42b0a03241e9bfdfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Key: Level2
   OnUnlock:
     m_PersistentCalls:
       m_Calls:
-      - {m_Target: {fileID: 1454608512}, m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine, m_MethodName: SetActive, m_Mode: 6, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 1}, m_CallState: 2}
-    m_CallsDirty: 1
+      - m_Target: {fileID: 1454608512}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1283541396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8561,15 +8570,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1452720055}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 275a5c48c9822234093770e2feb8de4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a042b78727165c42b0a03241e9bfdfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Key: Level4
   OnUnlock:
     m_PersistentCalls:
       m_Calls:
-      - {m_Target: {fileID: 236621575}, m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine, m_MethodName: SetActive, m_Mode: 6, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 1}, m_CallState: 2}
-    m_CallsDirty: 1
+      - m_Target: {fileID: 236621575}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1452720060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9308,14 +9327,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1531384908}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3045563dc3894db42a869532406b50fb, type: 3}
+  m_Script: {fileID: 11500000, guid: a092bc54c49e31b4b9b78771eb37d4be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnOpenBonfireUI:
     m_PersistentCalls:
       m_Calls:
-      - {m_Target: {fileID: 1531384909}, m_TargetAssemblyTypeName: Blue.BonfireRuleUnlockCondition, Assembly-CSharp, m_MethodName: Execute, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 1}, m_CallState: 2}
-    m_CallsDirty: 1
+      - m_Target: {fileID: 1531384909}
+        m_TargetAssemblyTypeName: Blue.BonfireRuleUnlockCondition, Assembly-CSharp
+        m_MethodName: Execute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1531384911
 Transform:
   m_ObjectHideFlags: 0
@@ -9612,15 +9641,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1607593837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 275a5c48c9822234093770e2feb8de4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a042b78727165c42b0a03241e9bfdfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Key: Level1
   OnUnlock:
     m_PersistentCalls:
       m_Calls:
-      - {m_Target: {fileID: 1191173294}, m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine, m_MethodName: SetActive, m_Mode: 6, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 1}, m_CallState: 2}
-    m_CallsDirty: 1
+      - m_Target: {fileID: 1191173294}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!4 &1607593839
 Transform:
   m_ObjectHideFlags: 0
@@ -10205,15 +10244,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1676617960}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 275a5c48c9822234093770e2feb8de4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a042b78727165c42b0a03241e9bfdfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Key: Level3
   OnUnlock:
     m_PersistentCalls:
       m_Calls:
-      - {m_Target: {fileID: 779338129}, m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine, m_MethodName: SetActive, m_Mode: 6, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 1}, m_CallState: 2}
-    m_CallsDirty: 1
+      - m_Target: {fileID: 779338129}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1676617964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11190,10 +11239,7 @@ MonoBehaviour:
   OnEnter:
     m_PersistentCalls:
       m_Calls:
-      - {m_Target: {fileID: 1750569167}, m_TargetAssemblyTypeName: Blue.SetVelocity2D, Assembly-CSharp, m_MethodName: Execute, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-      - {m_Target: {fileID: 1750569172}, m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine, m_MethodName: SetTrigger, m_Mode: 5, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: Activate, m_BoolArgument: 0}, m_CallState: 2}
-      - {m_Target: {fileID: 1074056372}, m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine, m_MethodName: Play, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-    m_CallsDirty: 1
+      - {m_Target: {fileID: 1750569167}, m_TargetAssemblyTypeName: Blue.SetVelocity2D, Assembly-CSharp: }
 --- !u!61 &1750569169
 BoxCollider2D:
   m_ObjectHideFlags: 0
