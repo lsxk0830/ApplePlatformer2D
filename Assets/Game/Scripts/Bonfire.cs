@@ -68,6 +68,7 @@ namespace Blue
                 {
                     mOpenBonfireUI = true;
                     ApplePlatformer2D.OnOpenBonfireUI.Trigger();
+                    AudioSystem.PlayUIFeedback();
                 }
             }
             else if (mOpenBonfireUI)
@@ -75,6 +76,7 @@ namespace Blue
                 if (Input.GetKeyDown(KeyCode.W))
                 {
                     mOpenBonfireUI = false;
+                    AudioSystem.PlayUIFeedback();
                 }
             }
         }
@@ -129,6 +131,7 @@ namespace Blue
                     if (GUILayout.Button("重新开始", Styles.BigButton.Value))
                     {
                         ApplePlatformer2D.ResetGameData();
+                        AudioSystem.PlayUIFeedback();
                         SceneManager.LoadScene("Game");
                     }
                     GUILayout.FlexibleSpace();
@@ -141,6 +144,7 @@ namespace Blue
                     if (GUILayout.Button("回到主页", Styles.BigButton.Value))
                     {
                         ApplePlatformer2D.ResetGameData();
+                        AudioSystem.PlayUIFeedback();
                         SceneManager.LoadScene("GameStart");
                     }
                     GUILayout.FlexibleSpace();

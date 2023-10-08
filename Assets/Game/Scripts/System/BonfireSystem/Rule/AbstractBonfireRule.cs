@@ -29,9 +29,9 @@ namespace Blue
                     if (GUILayout.Button("解锁", Styles.Button.Value))
                     {
                         Bonfire.RemainSeconds -= NeedSeconds;
+                        AudioSystem.PlayUIFeedback();
 
                         OnUnlock();
-
                         Unlocked = true;
                     }
                 }
