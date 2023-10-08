@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using QFramework;
 
 namespace Blue
 {
@@ -13,6 +14,16 @@ namespace Blue
         private void Awake()
         {
             mBonfireSystem = ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>();
+
+            ApplePlatformer2D.OnOpenBonfireUI.Register(() =>
+            {
+                var rule = mBonfireSystem.GetRuleByKey(nameof(BonfireOpenUIRecoverHP));
+                if (rule.Unlocked)
+                {
+                    var playerModel = ApplePlatformer2D.Interface.GetModel<IPlayerModel>();
+                    playerModel.HP = playerModel.MaxHP;
+                }
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
