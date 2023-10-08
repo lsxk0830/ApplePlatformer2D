@@ -25,6 +25,7 @@ namespace Blue
             Rules.Add(new Level3());
             Rules.Add(new Level4());
             Rules.Add(new Level5());
+            Rules.Add(new Level6());
         }
 
         public IBonfireRule GetRuleByKey(string key)
