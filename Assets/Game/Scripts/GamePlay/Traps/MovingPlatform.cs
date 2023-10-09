@@ -9,8 +9,7 @@ namespace Blue
             Stop,
             Moving
         }
-
-        public States state = States.Stop;
+        public FSM<States> FSM = new FSM<States>();
         public Transform Pos1;
         public Transform Pos2;
 
@@ -27,25 +26,21 @@ namespace Blue
 
             mToPosition = mPos2;
 
-            mStopTime = Time.time;
-        }
+            var stopTime = Time.time;
 
-        private float mStopTime;
-        private void Update()
-        {
-            if (state == States.Stop)
+            FSM.State(States.Stop)
+            .OnEnter(() => { stopTime = Time.time; })
+            .OnUpdate(() =>
             {
-                if (Time.time - mStopTime >= StopSeconds)
+                if (Time.time - stopTime >= StopSeconds)
                 {
-                    if (mToPosition == mPos2)
-                        mToPosition = mPos1;
-                    else
-                        mToPosition = mPos2;
-
-                    state = States.Moving;
+                    FSM.ChangeState(States.Moving);
                 }
-            }
-            else if (state == States.Moving)
+            });
+
+            FSM.State(States.Moving)
+            .OnEnter(() => { mToPosition = mToPosition == mPos2 ? mPos1 : mPos2;})
+            .OnUpdate(() =>
             {
                 var currentPosition = transform.position;
                 var moveDirection = mToPosition - currentPosition; // 移动方向
@@ -53,10 +48,21 @@ namespace Blue
                 transform.Translate(moveDirection * MovementSpeed * Time.deltaTime);
                 if (Vector3.Distance(currentPosition, mToPosition) < 0.1f)
                 {
-                    mStopTime = Time.time;
-                    state = States.Stop;
+                    FSM.ChangeState(States.Stop);
                 }
-            }
+            });
+
+            FSM.StartState(States.Stop);
+        }
+
+        private void Update()
+        {
+            FSM.Update();
+        }
+        private void OnDestroy()
+        {
+            FSM.Clear();
+            FSM = null;
         }
 
         private void OnCollisionEnter2D(Collision2D other)
