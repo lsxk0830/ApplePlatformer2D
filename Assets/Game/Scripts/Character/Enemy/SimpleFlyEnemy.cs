@@ -32,12 +32,18 @@ namespace Blue
                 var enemyPos = transform.position;
                 var direction = playerPos - enemyPos;
                 direction = direction.normalized;
+
+                if (direction.x > 0)
+                    transform.localScale = new Vector3(1, 1, 1);
+                else
+                    transform.localScale = new Vector3(-1, 1, 1);
+
                 mRigidbody2D.velocity = direction * MovementSpeed;
             });
 
             mFSM.StartState(States.Idle);
 
-            WarnigArea.OnTriggerEnter.AddListener(()=>
+            WarnigArea.OnTriggerEnter.AddListener(() =>
             {
                 mFSM.ChangeState(States.FollowPlayer);
             });
@@ -46,7 +52,7 @@ namespace Blue
                 mFSM.ChangeState(States.Idle);
             });
 
-            AttackArea.OnTriggerEnter.AddListener(()=>
+            AttackArea.OnTriggerEnter.AddListener(() =>
             {
                 playerTransform.GetComponent<PlayerHit>().Hit();
             });
