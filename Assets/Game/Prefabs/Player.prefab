@@ -721,8 +721,8 @@ MonoBehaviour:
   OnHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3608247052026370878}
-        m_TargetAssemblyTypeName: PlayerAudioSource, Assembly-CSharp
+      - m_Target: {fileID: 7256603237804568175}
+        m_TargetAssemblyTypeName: Blue.PlayAudioSource, Assembly-CSharp
         m_MethodName: Execute
         m_Mode: 1
         m_Arguments:
@@ -1122,7 +1122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8247739637740050026}
   - component: {fileID: 8776277665037750268}
-  - component: {fileID: 3608247052026370878}
+  - component: {fileID: 7256603237804568175}
   m_Layer: 0
   m_Name: Hit
   m_TagString: Untagged
@@ -1241,7 +1241,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3608247052026370878
+--- !u!114 &7256603237804568175
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1250,7 +1250,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8629076983439771411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20b2c0bf0c1fe44419d815cb9d69e4ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ffd17a6d4b3b20498158500acd805df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnFinish:
