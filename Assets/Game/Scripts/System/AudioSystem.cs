@@ -9,12 +9,13 @@ namespace Blue
 
         private void Awake()
         {
+            DontDestroyOnLoad(gameObject);
             mAudioSystem = this;
         }
 
         public static void PlayUIFeedback()
         {
-            mAudioSystem.UIFeedback?.Play();
+            mAudioSystem?.UIFeedback?.Play();
         }
 
         private void OnDestroy()

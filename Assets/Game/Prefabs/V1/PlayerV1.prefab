@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 971788690143902503}
   - component: {fileID: 971788690143902502}
   - component: {fileID: 971788690143902490}
-  - component: {fileID: 971788690143902491}
   - component: {fileID: 4310294565156563046}
   - component: {fileID: 8594315698246862866}
   m_Layer: 6
@@ -180,18 +179,6 @@ MonoBehaviour:
   MaxJumpTime: 0.3
   JumpState: 0
   GroundCheck: {fileID: 971788691330412920}
---- !u!114 &971788690143902491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971788690143902497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8d2562d1c976a4484c409988b625e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4310294565156563046
 MonoBehaviour:
   m_ObjectHideFlags: 0
