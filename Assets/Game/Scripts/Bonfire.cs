@@ -11,8 +11,16 @@ namespace Blue
         private bool mPlayerEntered = false; // 主角是否进入
 
         private IBonfireSystem mBonfireSystem;
+
+        public int DebugInitRemainSeconds = 60;
+        public bool IsDebug = false;
         private void Awake()
         {
+            if (IsDebug)
+            {
+                RemainSeconds = DebugInitRemainSeconds;
+            }
+
             mBonfireSystem = ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>();
 
             ApplePlatformer2D.OnOpenBonfireUI.Register(() =>

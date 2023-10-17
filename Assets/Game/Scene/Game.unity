@@ -3421,6 +3421,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2152269923373971461, guid: 41fac86a208cc7c4bb3c5826e565dbc9, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.816135
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 971788690143902491, guid: 41fac86a208cc7c4bb3c5826e565dbc9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 41fac86a208cc7c4bb3c5826e565dbc9, type: 3}
@@ -4806,6 +4810,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyTips: {fileID: 333080944}
+  DebugInitRemainSeconds: 150
+  IsDebug: 0
 --- !u!61 &1460533723
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5532,6 +5538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyTips: {fileID: 1024596995}
+  DebugInitRemainSeconds: 60
+  IsDebug: 0
 --- !u!1 &1727835278
 GameObject:
   m_ObjectHideFlags: 0

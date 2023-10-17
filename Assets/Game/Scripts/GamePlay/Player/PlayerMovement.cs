@@ -27,19 +27,33 @@ namespace Blue
         public JumpStates JumpState = JumpStates.NotJump;
 
         public Trigger2D GroundCheck;
+
+        private IBonfireRule mDoubleJumpRule;
         private void Start()
         {
             mRigidbody2D = GetComponent<Rigidbody2D>();
+
+            GroundCheck.OnTriggerEnter.AddListener(() =>
+            {
+                CurrentJumpCount = 0;
+            });
+            var bonfireSystem = ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>();
+            mDoubleJumpRule = bonfireSystem.GetRuleByKey(nameof(DoubleJumpRule));
         }
+
+        public int CurrentJumpCount;
+        bool mCanJump => (CurrentJumpCount == 0 && GroundCheck.Triggered ||
+                         mDoubleJumpRule.Unlocked && CurrentJumpCount > 0 && CurrentJumpCount < 2);
 
         void Update()
         {
             mHorizontalInput = Input.GetAxis("Horizontal");
 
-            if (Input.GetKeyDown(KeyCode.K) && GroundCheck.Triggered)
+            if (Input.GetKeyDown(KeyCode.K) && mCanJump)
             {
                 OnJump?.Invoke();
                 mJumpPressed = true;
+                CurrentJumpCount++;
 
                 if (JumpState == JumpStates.NotJump)
                 {
