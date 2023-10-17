@@ -2818,7 +2818,7 @@ PrefabInstance:
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1452720055}
+      objectReference: {fileID: 236621575}
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -2841,7 +2841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Blue.SaveHideState, Assembly-CSharp
+      value: Blue.LockBonfireRule, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -2884,10 +2884,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 828367535}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7fa334a8eee4d94486a8cc5918e285f, type: 3}
+  m_Script: {fileID: 11500000, guid: e40ac17a244169149ade8f7d652da1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SaveKey: GameLevel4Controller
+  RuleName: Level4
 --- !u!1 &831134654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2898,7 +2898,6 @@ GameObject:
   m_Component:
   - component: {fileID: 831134657}
   - component: {fileID: 831134656}
-  - component: {fileID: 831134655}
   m_Layer: 0
   m_Name: Level5Controller
   m_TagString: Untagged
@@ -2906,18 +2905,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &831134655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831134654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb0b52c20f22f954580a2f03f5a73c91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &831134656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3861,7 +3848,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1283541394}
   - component: {fileID: 1283541395}
-  - component: {fileID: 1283541396}
   m_Layer: 0
   m_Name: Level2Controller
   m_TagString: Untagged
@@ -3913,18 +3899,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &1283541396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283541392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb0b52c20f22f954580a2f03f5a73c91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1295206477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4548,7 +4522,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1452720058}
   - component: {fileID: 1452720059}
-  - component: {fileID: 1452720060}
   m_Layer: 0
   m_Name: Level4Controller
   m_TagString: Untagged
@@ -4601,18 +4574,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &1452720060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452720055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb0b52c20f22f954580a2f03f5a73c91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1454608512
 GameObject:
   m_ObjectHideFlags: 0
@@ -5102,7 +5063,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1607593839}
   - component: {fileID: 1607593838}
-  - component: {fileID: 1607593840}
   m_Layer: 0
   m_Name: Level1Controller
   m_TagString: Untagged
@@ -5154,18 +5114,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1607593840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1607593837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb0b52c20f22f954580a2f03f5a73c91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1631513809
 GameObject:
   m_ObjectHideFlags: 0
@@ -5348,7 +5296,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1676617962}
   - component: {fileID: 1676617963}
-  - component: {fileID: 1676617964}
   m_Layer: 0
   m_Name: Level3Controller
   m_TagString: Untagged
@@ -5400,18 +5347,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &1676617964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676617960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb0b52c20f22f954580a2f03f5a73c91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1695795200
 GameObject:
   m_ObjectHideFlags: 0
@@ -6720,7 +6655,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1877209230}
   - component: {fileID: 1877209229}
-  - component: {fileID: 1877209228}
   m_Layer: 0
   m_Name: Level6Controller
   m_TagString: Untagged
@@ -6728,18 +6662,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1877209228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877209227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb0b52c20f22f954580a2f03f5a73c91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1877209229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7892,7 +7814,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2030866433}
   - component: {fileID: 2030866432}
-  - component: {fileID: 2030866431}
   m_Layer: 0
   m_Name: Level7Controller
   m_TagString: Untagged
@@ -7900,18 +7821,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2030866431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2030866430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb0b52c20f22f954580a2f03f5a73c91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2030866432
 MonoBehaviour:
   m_ObjectHideFlags: 0

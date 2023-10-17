@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 6339890823416974672}
   - component: {fileID: 6339890823416974673}
   - component: {fileID: 2626906377323511821}
-  - component: {fileID: 2626906377323511820}
+  - component: {fileID: 8319858812170120740}
   m_Layer: 0
   m_Name: LevelPassV1
   m_TagString: Untagged
@@ -384,8 +384,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2626906377323511820}
-        m_TargetAssemblyTypeName: Blue.SaveHideState, Assembly-CSharp
+      - m_Target: {fileID: 8319858812170120740}
+        m_TargetAssemblyTypeName: Blue.LockBonfireRule, Assembly-CSharp
         m_MethodName: Execute
         m_Mode: 1
         m_Arguments:
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: Game
---- !u!114 &2626906377323511820
+--- !u!114 &8319858812170120740
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -434,10 +434,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6339890823416974674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7fa334a8eee4d94486a8cc5918e285f, type: 3}
+  m_Script: {fileID: 11500000, guid: e40ac17a244169149ade8f7d652da1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SaveKey: GameLevel6Controller
+  RuleName: Level6
 --- !u!1 &8799266309701749446
 GameObject:
   m_ObjectHideFlags: 0

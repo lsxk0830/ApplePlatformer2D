@@ -671,7 +671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Blue.SaveHideState, Assembly-CSharp
+      value: Blue.LockBonfireRule, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -714,10 +714,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 547797403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7fa334a8eee4d94486a8cc5918e285f, type: 3}
+  m_Script: {fileID: 11500000, guid: e40ac17a244169149ade8f7d652da1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SaveKey: GameLevel2Controller
+  RuleName: Level2
 --- !u!1 &568475734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,6 +1423,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyTips: {fileID: 889159138}
+  DebugInitRemainSeconds: 60
+  IsDebug: 0
 --- !u!61 &1035076195
 BoxCollider2D:
   m_ObjectHideFlags: 0

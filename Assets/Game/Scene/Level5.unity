@@ -457,7 +457,7 @@ PrefabInstance:
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 229475805}
+      objectReference: {fileID: 229475807}
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -484,7 +484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Blue.SaveHideState, Assembly-CSharp
+      value: Blue.LockBonfireRule, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8327002276423306591, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: OnLevelPassDelayFinish.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -505,19 +505,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8327002276423306588, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
   m_PrefabInstance: {fileID: 229475803}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &229475805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 229475804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7fa334a8eee4d94486a8cc5918e285f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SaveKey: GameLevel5Controller
 --- !u!114 &229475806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,6 +518,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: Game
+--- !u!114 &229475807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229475804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40ac17a244169149ade8f7d652da1e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RuleName: Level5
 --- !u!1001 &276204591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4743,6 +4743,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyTips: {fileID: 847224764}
+  DebugInitRemainSeconds: 60
+  IsDebug: 0
 --- !u!61 &1394432859
 BoxCollider2D:
   m_ObjectHideFlags: 0
