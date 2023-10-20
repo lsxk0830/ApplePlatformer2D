@@ -509,6 +509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FollowPlayerSpeed: 6
+  WarningSeconds: 0.15
   GroundCheck: {fileID: 4515476742370670696}
   ForwardCheck: {fileID: 4515476741575188553}
   FallCheck: {fileID: 4515476741046156931}

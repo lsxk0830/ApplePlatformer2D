@@ -7,6 +7,7 @@ namespace Blue
     public class SimpleFollowEnemy : MonoBehaviour
     {
         public float FollowPlayerSpeed = 6;
+        public float WarningSeconds = 0.3f;
         public enum States
         {
             Idle,
@@ -49,7 +50,7 @@ namespace Blue
             })
             .OnUpdate(() =>
             {
-                if (currentWarningSeconds > 1.0f)
+                if (currentWarningSeconds > WarningSeconds)
                 {
                     mFSM.ChangeState(States.Following);
                 }
