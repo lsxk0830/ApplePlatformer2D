@@ -49,6 +49,13 @@ namespace Blue
         {
             mHorizontalInput = Input.GetAxis("Horizontal");
 
+            if (mHorizontalInput * transform.localScale.x < 0)
+            {
+                var localScale = transform.localScale;
+                localScale.x *= -1;
+                transform.localScale = localScale;
+            }
+
             if (Input.GetKeyDown(KeyCode.K) && mCanJump)
             {
                 OnJump?.Invoke();
