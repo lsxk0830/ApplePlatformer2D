@@ -28,6 +28,7 @@ namespace Blue
             Rules.Add(new Level5());
             Rules.Add(new Level6());
             Rules.Add(new Level7());
+            Rules.Add(new Level8());
             Rules.Add(new DoubleJumpRule());
         }
 
