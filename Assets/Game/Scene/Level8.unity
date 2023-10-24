@@ -5191,6 +5191,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1996327789306357956, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
+      propertyPath: LevelName
+      value: Level8
+      objectReference: {fileID: 0}
     - target: {fileID: 2626906377335046314, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
       propertyPath: m_Text
       value: "\u7B2C\u516B\u5173 \u901A\u8FC7"
@@ -5244,6 +5248,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8319858812170120740, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
+      propertyPath: RuleName
+      value: Level8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9049648939747545393, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
       propertyPath: RuleName
       value: Level8
       objectReference: {fileID: 0}

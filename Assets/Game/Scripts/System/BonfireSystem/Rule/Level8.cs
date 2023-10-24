@@ -1,8 +1,8 @@
 namespace Blue
 {
-    public class Level8 : AbstractBonfireRule
+    public class Level8 : AbstractBonfireLevelRule
     {
-        public override int NeedSeconds { get; } = 30;
+        public override int NeedSeconds { get; set; } = 30;
         public override string Key { get; } = nameof(Level8);
         public override string DisplayName { get; } = "关卡 8";
 

@@ -9,7 +9,7 @@ namespace Blue
     public class HPBar : AbstractBonfireRule
     {
         Lazy<IPlayerModel> mPlayerModel = new Lazy<IPlayerModel>(() => ApplePlatformer2D.Interface.GetModel<IPlayerModel>());
-        public override int NeedSeconds { get; } = 30;
+        public override int NeedSeconds { get; set; } = 30;
         public override string Key { get; } = nameof(HPBar);
         public override string DisplayName { get; } = "血量条";
 

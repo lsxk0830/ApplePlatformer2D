@@ -5641,6 +5641,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1996327789306357956, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
+      propertyPath: LevelName
+      value: Level7
+      objectReference: {fileID: 0}
     - target: {fileID: 2626906377323511820, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
       propertyPath: SaveKey
       value: GameLevel7Controller
@@ -5651,18 +5655,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6339890823416974673, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
       propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6339890823416974673, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
       propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6339890823416974673, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
+      propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339890823416974673, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
       propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 719058201}
     - target: {fileID: 6339890823416974673, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
+      propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 2021822991}
+    - target: {fileID: 6339890823416974673, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
       propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339890823416974673, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
+      propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6339890823416974673, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
@@ -5670,11 +5686,23 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 6339890823416974673, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
+      propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: Execute
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339890823416974673, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
       propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6339890823416974673, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
+      propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: Blue.LockBonfireRule, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339890823416974673, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
       propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339890823416974673, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
+      propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6339890823416974674, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
@@ -5729,8 +5757,23 @@ PrefabInstance:
       propertyPath: RuleName
       value: Level7
       objectReference: {fileID: 0}
+    - target: {fileID: 9049648939747545393, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
+      propertyPath: RuleName
+      value: Level7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
+--- !u!114 &2021822991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9049648939747545393, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
+  m_PrefabInstance: {fileID: 2021822990}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40ac17a244169149ade8f7d652da1e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2038672664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8133813483155481870, guid: 77409969f7af38a49a83324f78d2c8a8, type: 3}

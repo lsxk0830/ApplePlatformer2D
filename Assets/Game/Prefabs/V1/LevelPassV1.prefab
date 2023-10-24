@@ -253,7 +253,8 @@ GameObject:
   - component: {fileID: 6339890823416974672}
   - component: {fileID: 6339890823416974673}
   - component: {fileID: 2626906377323511821}
-  - component: {fileID: 8319858812170120740}
+  - component: {fileID: 1996327789306357956}
+  - component: {fileID: 9049648939747545393}
   m_Layer: 0
   m_Name: LevelPassV1
   m_TagString: Untagged
@@ -384,7 +385,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8319858812170120740}
+      - m_Target: {fileID: 1996327789306357956}
+        m_TargetAssemblyTypeName: Blue.PassBonfireLevelRule, Assembly-CSharp
+        m_MethodName: Execute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9049648939747545393}
         m_TargetAssemblyTypeName: Blue.LockBonfireRule, Assembly-CSharp
         m_MethodName: Execute
         m_Mode: 1
@@ -425,7 +438,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: Game
---- !u!114 &8319858812170120740
+--- !u!114 &1996327789306357956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6339890823416974674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1678b0829984c20419ae435fbe64d8e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelName: Level6
+--- !u!114 &9049648939747545393
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

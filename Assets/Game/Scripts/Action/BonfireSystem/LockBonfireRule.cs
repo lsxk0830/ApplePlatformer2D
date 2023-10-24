@@ -11,7 +11,7 @@ namespace Blue
         public void Execute()
         {
             var rule = ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>().GetRuleByKey(RuleName);
-            rule.Reset();
+            rule.Unlocked = false;
         }
     }
 }

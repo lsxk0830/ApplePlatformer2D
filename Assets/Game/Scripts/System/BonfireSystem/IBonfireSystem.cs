@@ -16,7 +16,17 @@ namespace Blue
 
         protected override void OnInit()
         {
-            // 添加规则
+            var level1 = new Level1()
+                            .SecondsCost(10)
+                            .Condition(self => !self.Passed)
+                            .AddToRules(Rules);
+
+            var level2 = new Level2()
+                            .SecondsCost(10)
+                            .Condition(self => !self.Passed && level1.Passed)
+                            .AddToRules(Rules);
+
+            /*
             Rules.Add(new HPBar());
             Rules.Add(new MaxHPPlus1());
             Rules.Add(new BonfireOpenUIRebornEnemy());
@@ -30,6 +40,7 @@ namespace Blue
             Rules.Add(new Level7());
             Rules.Add(new Level8());
             Rules.Add(new DoubleJumpRule());
+            */
         }
 
         public IBonfireRule GetRuleByKey(string key)

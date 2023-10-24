@@ -2,7 +2,7 @@ namespace Blue
 {
     public class DoubleJumpRule : AbstractBonfireRule
     {
-        public override int NeedSeconds { get; } = 100;
+        public override int NeedSeconds { get; set; } = 100;
         public override string Key { get; } = nameof(DoubleJumpRule);
         public override string DisplayName { get; } = "二段跳";
     }

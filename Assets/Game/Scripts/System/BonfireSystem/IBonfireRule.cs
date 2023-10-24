@@ -18,7 +18,7 @@ namespace Blue
         /// <summary>
         /// 是否解锁
         /// </summary>
-        bool Unlocked { get; }
+        bool Unlocked { get; set; }
 
         /// <summary>
         /// 重置
