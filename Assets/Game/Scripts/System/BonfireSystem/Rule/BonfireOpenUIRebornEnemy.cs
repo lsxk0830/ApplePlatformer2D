@@ -6,7 +6,7 @@ namespace Blue
     public class BonfireOpenUIRebornEnemy : AbstractBonfireRule
     {
         public override int NeedSeconds { get; set; } = 5;
-        public override string Key { get; } = nameof(BonfireOpenUIRebornEnemy);
+        public override string Key { get; set; } = nameof(BonfireOpenUIRebornEnemy);
         public override string DisplayName { get; } = "在火堆重生敌人";
     }
 }

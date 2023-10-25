@@ -10,7 +10,7 @@ namespace Blue
     {
         Lazy<IPlayerModel> mPlayerModel = new Lazy<IPlayerModel>(() => ApplePlatformer2D.Interface.GetModel<IPlayerModel>());
         public override int NeedSeconds { get; set; } = 30;
-        public override string Key { get; } = nameof(HPBar);
+        public override string Key { get; set; } = nameof(HPBar);
         public override string DisplayName { get; } = "血量条";
 
         public override void OnTopRightGUI()

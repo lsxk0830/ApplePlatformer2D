@@ -9,7 +9,7 @@ namespace Blue
         public Func<AbstractBonfireRule, bool> mVisibleCondition { get; set; } = _ => true;
 
         public abstract int NeedSeconds { get; set; }
-        public abstract string Key { get; }
+        public abstract string Key { get; set; }
         public bool Unlocked { get; set; }
         public abstract string DisplayName { get; }
 
@@ -88,6 +88,12 @@ namespace Blue
 
     public static class AbstractBonfireRuleExtension
     {
+        public static T WithKey<T>(this T self, string key) where T : AbstractBonfireRule
+        {
+            self.Key = key;
+            return self;
+        }
+
         public static T SecondsCost<T>(this T self, int needSeconds) where T : AbstractBonfireRule
         {
             self.NeedSeconds = needSeconds;

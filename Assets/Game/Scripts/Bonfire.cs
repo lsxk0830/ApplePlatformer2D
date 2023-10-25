@@ -13,12 +13,16 @@ namespace Blue
         private IBonfireSystem mBonfireSystem;
 
         public int DebugInitRemainSeconds = 60;
+        public int DebugInitPlayerHp = 5;
         public bool IsDebug = false;
         private void Awake()
         {
             if (IsDebug)
             {
                 RemainSeconds = DebugInitRemainSeconds;
+                var playerModel = ApplePlatformer2D.Interface.GetModel<IPlayerModel>();
+                playerModel.HP = DebugInitPlayerHp;
+                playerModel.MaxHP = DebugInitPlayerHp;
             }
 
             mBonfireSystem = ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>();

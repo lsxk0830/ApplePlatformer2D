@@ -3588,6 +3588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   KeyTips: {fileID: 1651167465}
   DebugInitRemainSeconds: 60
+  DebugInitPlayerHp: 100
   IsDebug: 0
 --- !u!61 &889632674
 BoxCollider2D:
