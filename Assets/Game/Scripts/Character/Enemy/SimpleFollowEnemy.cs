@@ -122,10 +122,13 @@ namespace Blue
 
             AttackCheck.OnTriggerEnterWithCollider.AddListener((collider) =>
             {
-                collider.GetComponent<PlayerHit>().Hit();
-
-                // 玩家攻击主角后，主角向后跳跃一下
-                AttackPhysicsEffect(transform, collider.transform);
+                var playerHit = collider.GetComponent<PlayerHit>();
+                if (playerHit.CanHit)
+                {
+                    playerHit.Hit();
+                    // 玩家攻击主角后，主角向后跳跃一下
+                    AttackPhysicsEffect(transform, collider.transform);
+                }
             });
         }
 

@@ -3,13 +3,21 @@ using UnityEngine;
 
 namespace Blue
 {
+    /// <summary>
+    /// 攻击玩家效果
+    /// </summary>
     public class AttackPlayerEffect : MonoBehaviour
     {
         public void Execute()
         {
             var playerObj = GameObject.FindWithTag("Player");
-            playerObj.GetComponent<PlayerHit>().Hit();
-            AttackPhysicsEffect(this.transform, playerObj.transform);
+            var playerHit = playerObj.GetComponent<PlayerHit>();
+
+            if (playerHit.CanHit)
+            {
+                playerHit.Hit();
+                AttackPhysicsEffect(this.transform, playerObj.transform);
+            }
         }
 
         public int HitterVelocityX = 5; // 攻击时水平方向速度

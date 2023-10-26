@@ -10,9 +10,16 @@ namespace Blue
     {
         public UnityEvent OnHit = new UnityEvent();
 
+        private float mPreviousHitTime = 0;
+        public bool CanHit => Time.time - mPreviousHitTime > 1.0f;
+
         public void Hit()
         {
-            OnHit?.Invoke();
+            if (CanHit)
+            {
+                OnHit?.Invoke();
+                mPreviousHitTime = Time.time;
+            }
         }
     }
 }

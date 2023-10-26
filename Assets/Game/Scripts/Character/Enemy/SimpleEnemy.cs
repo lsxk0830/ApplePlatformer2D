@@ -14,37 +14,40 @@ namespace Blue
         {
             var characterMovement = GetComponent<CharacterMovement>();
             characterMovement.enabled = false;
-            GroundCheck.OnTriggerEnter.AddListener(()=>
+            GroundCheck.OnTriggerEnter.AddListener(() =>
             {
                 // 触发这个之后，在进行移动
                 characterMovement.enabled = true;
             });
 
-            GroundCheck.OnTriggerExit.AddListener(()=>
+            GroundCheck.OnTriggerExit.AddListener(() =>
             {
                 characterMovement.enabled = false;
             });
 
-            ForwardCheck.OnTriggerEnter.AddListener(()=>
+            ForwardCheck.OnTriggerEnter.AddListener(() =>
             {
                 var localScale = transform.localScale;
                 localScale.x *= -1;
                 transform.localScale = localScale;
             });
 
-            FallCheck.OnTriggerExit.AddListener(()=>
+            FallCheck.OnTriggerExit.AddListener(() =>
             {
                 var localScale = transform.localScale;
                 localScale.x *= -1;
                 transform.localScale = localScale;
             });
 
-            AttackCheck.OnTriggerEnterWithCollider.AddListener((collider)=>
+            AttackCheck.OnTriggerEnterWithCollider.AddListener((collider) =>
             {
-                collider.GetComponent<PlayerHit>().Hit();
-
-                // 玩家攻击主角后，主角向后跳跃一下
-                AttackPhysicsEffect(transform,collider.transform);
+                var playerHit = collider.GetComponent<PlayerHit>();
+                if (playerHit.CanHit)
+                {
+                    playerHit.Hit();
+                    // 玩家攻击主角后，主角向后跳跃一下
+                    AttackPhysicsEffect(transform, collider.transform);
+                }
             });
         }
 
@@ -52,7 +55,7 @@ namespace Blue
         public int HitterVelocityY = 5; // 攻击时垂直方向速度
 
         // 物理攻击效果,想斜后方跳跃
-        void AttackPhysicsEffect(Transform attack,Transform hitter)
+        void AttackPhysicsEffect(Transform attack, Transform hitter)
         {
             var attackPos = attack.position.x;
             var hitPos = hitter.position.x;

@@ -54,7 +54,11 @@ namespace Blue
 
             AttackArea.OnTriggerEnter.AddListener(() =>
             {
-                playerTransform.GetComponent<PlayerHit>().Hit();
+                var playerHit = playerTransform.GetComponent<PlayerHit>();
+                if (playerHit.CanHit)
+                {
+                    playerHit.Hit();
+                }
             });
         }
 
