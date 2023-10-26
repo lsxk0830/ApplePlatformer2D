@@ -63,12 +63,18 @@ namespace Blue
         /// 剩余时间
         /// </summary>
         public static float RemainSeconds = 60;
+
+        /// <summary>
+        /// 存活时间
+        /// </summary>
+        public static float LiveSeconds = 0;
         private void Update()
         {
             if (ApplePlatformer2D.IsGameOver)
                 return;
 
             RemainSeconds -= Time.deltaTime;
+            LiveSeconds += Time.deltaTime;
             if (RemainSeconds <= 0)
             {
                 ApplePlatformer2D.IsGameOver = true;
@@ -111,7 +117,13 @@ namespace Blue
 
             GUILayout.BeginArea(new Rect(WIDTH - 200, 0, 200, 200)); // 在一个固定的屏幕区域中开始 GUI 控件的 GUILayout 块
 
+            GUILayout.BeginHorizontal();
             GUILayout.Label("寿命:" + (int)RemainSeconds + "s", Styles.label.Value);
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("已存活:" + (int)LiveSeconds + "s", Styles.label.Value);
+            GUILayout.EndHorizontal();
 
             foreach (var bonfireRule in mBonfireSystem.Rules)
             {
