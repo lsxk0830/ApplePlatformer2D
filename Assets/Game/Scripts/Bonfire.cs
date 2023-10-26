@@ -93,9 +93,23 @@ namespace Blue
             }
         }
 
+        private const int WIDTH = 1024;
+        private const int HEIGHT = 768;
+
+        public void SetDsignResolution(int width, int height)
+        {
+            var scaleX = Screen.width / width;
+            var scaleY = Screen.height / height;
+
+            var scale = Mathf.Max(scaleX, scaleY);
+            GUIUtility.ScaleAroundPivot(new Vector2(scale, scale), new Vector2(0, 0));
+        }
+
         private void OnGUI()
         {
-            GUILayout.BeginArea(new Rect(Screen.width - 200, 0, 200, 200)); // 在一个固定的屏幕区域中开始 GUI 控件的 GUILayout 块
+            SetDsignResolution(WIDTH,HEIGHT);
+
+            GUILayout.BeginArea(new Rect(WIDTH - 200, 0, 200, 200)); // 在一个固定的屏幕区域中开始 GUI 控件的 GUILayout 块
 
             GUILayout.Label("寿命:" + (int)RemainSeconds + "s", Styles.label.Value);
 
@@ -124,7 +138,7 @@ namespace Blue
             if (ApplePlatformer2D.IsGameOver)
             {
                 // 游戏结束界面
-                GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
+                GUILayout.BeginArea(new Rect(0, 0, WIDTH, HEIGHT));
 
                 GUILayout.FlexibleSpace();
 
