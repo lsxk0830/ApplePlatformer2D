@@ -21,6 +21,11 @@ namespace Blue
         bool Unlocked { get; set; }
 
         /// <summary>
+        /// 解锁
+        /// </summary>
+        void Unlock();
+
+        /// <summary>
         /// 重置
         /// </summary>
         void Reset();

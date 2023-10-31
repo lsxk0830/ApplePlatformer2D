@@ -7,9 +7,23 @@ namespace Blue
     {
         public UnityEvent OnStartEvent = new UnityEvent();
 
+        public bool CallOnceInGlobsl = false;
+        private static bool mCalled = false;
+
         private void Start()
         {
-            OnStartEvent?.Invoke();
+            if (CallOnceInGlobsl)
+            {
+                if (!mCalled)
+                {
+                    OnStartEvent?.Invoke();
+                    mCalled = true;
+                }
+            }
+            else
+            {
+                OnStartEvent?.Invoke();
+            }
         }
     }
 }

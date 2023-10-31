@@ -13,6 +13,15 @@ namespace Blue
         public bool Unlocked { get; set; }
         public abstract string DisplayName { get; }
 
+        public void Unlock()
+        {
+            Bonfire.RemainSeconds -= NeedSeconds;
+            AudioSystem.PlayUIFeedback();
+
+            OnUnlock();
+            Unlocked = true;
+        }
+
         public void Reset()
         {
             Unlocked = false;
@@ -37,11 +46,7 @@ namespace Blue
                 {
                     if (GUILayout.Button("解锁", Styles.Button.Value))
                     {
-                        Bonfire.RemainSeconds -= NeedSeconds;
-                        AudioSystem.PlayUIFeedback();
-
-                        OnUnlock();
-                        Unlocked = true;
+                        Unlock();
                     }
                 }
                 else

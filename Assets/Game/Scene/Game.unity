@@ -303,14 +303,20 @@ CompositeCollider2D:
     m_ColliderPaths:
     - - X: 110000000
         Y: -70000000
-      - X: -99999900
+      - X: -19999900
         Y: -70000000
-      - X: -99999900
+      - X: -19999900
         Y: -70000041
-      - X: -99999959
+      - X: -19999959
         Y: -70000100
+      - X: -30000041
+        Y: -70000100
+      - X: -30000100
+        Y: -70000041
+      - X: -30000100
+        Y: -70000000
       - X: -110000000
-        Y: -70000100
+        Y: -70000000
       - X: -110000000
         Y: -80000000
       - X: 110000000
@@ -331,7 +337,7 @@ CompositeCollider2D:
       - {x: 14.000029, y: -8}
     - - {x: 10.99997, y: -8}
       - {x: 10.99997, y: -7}
-      - {x: -11, y: -7.000039}
+      - {x: -11, y: -7.0000296}
       - {x: -10.99997, y: -8}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
@@ -733,7 +739,7 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -11, y: -9, z: 0}
-  m_Size: {x: 53, y: 19, z: 1}
+  m_Size: {x: 53, y: 20, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -3345,6 +3351,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: Level5
+  Keys:
+  - Level5_2
   OnUnlock:
     m_PersistentCalls:
       m_Calls:
@@ -4052,6 +4060,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6961143746032714211, guid: 5ff0237570f0e1e46b6b7a736942d533, type: 3}
+      propertyPath: orthographic size
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ff0237570f0e1e46b6b7a736942d533, type: 3}
 --- !u!1 &1155838364 stripped
@@ -4089,6 +4101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: Level8
+  Keys:
+  - Level8_2
   OnUnlock:
     m_PersistentCalls:
       m_Calls:
@@ -4309,6 +4323,118 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1195415416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1195415419}
+  - component: {fileID: 1195415418}
+  - component: {fileID: 1195415417}
+  - component: {fileID: 1195415420}
+  m_Layer: 0
+  m_Name: Debug
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1195415417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195415416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b76161cccad6a084ebe792b7f3cfdc13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RuleName: DoubleJumpRule
+--- !u!114 &1195415418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195415416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a056c2f6565ee3f478071f6857495277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStartEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1195415420}
+        m_TargetAssemblyTypeName: Blue.AddRemainSeconds, Assembly-CSharp
+        m_MethodName: Execute
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1000
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1195415417}
+        m_TargetAssemblyTypeName: Blue.UnLockBonfireRule, Assembly-CSharp
+        m_MethodName: Execute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1363752613}
+        m_TargetAssemblyTypeName: Blue.UnLockBonfireRule, Assembly-CSharp
+        m_MethodName: Execute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  CallOnceInGlobsl: 1
+--- !u!4 &1195415419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195415416}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1363752612}
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1195415420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195415416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 260e61656babc56419b6d8a9685f83b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1214324542
 GameObject:
   m_ObjectHideFlags: 0
@@ -4527,6 +4653,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: Level2
+  Keys:
+  - Level2_2
   OnUnlock:
     m_PersistentCalls:
       m_Calls:
@@ -5028,6 +5156,51 @@ Transform:
   m_Father: {fileID: 236621576}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1363752611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1363752612}
+  - component: {fileID: 1363752613}
+  m_Layer: 0
+  m_Name: UnlockLevel1_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1363752612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363752611}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1195415419}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1363752613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363752611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b76161cccad6a084ebe792b7f3cfdc13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RuleName: Level1_2
 --- !u!1 &1389954642 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7832167245767334593, guid: ee1bb994b81dc46468ad8e1a559fb531, type: 3}
@@ -5202,6 +5375,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: Level4
+  Keys:
+  - Level4_2
   OnUnlock:
     m_PersistentCalls:
       m_Calls:
@@ -5727,6 +5902,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: Level1
+  Keys:
+  - Level1_2
   OnUnlock:
     m_PersistentCalls:
       m_Calls:
@@ -5987,6 +6164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: Level3
+  Keys:
+  - Level3_2
   OnUnlock:
     m_PersistentCalls:
       m_Calls:
@@ -6618,6 +6797,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  CallOnceInGlobsl: 0
 --- !u!4 &1777677013
 Transform:
   m_ObjectHideFlags: 0
@@ -7528,6 +7708,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: Level6
+  Keys:
+  - Level6_2
   OnUnlock:
     m_PersistentCalls:
       m_Calls:
@@ -8877,6 +9059,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: Level7
+  Keys:
+  - Level7_2
   OnUnlock:
     m_PersistentCalls:
       m_Calls:

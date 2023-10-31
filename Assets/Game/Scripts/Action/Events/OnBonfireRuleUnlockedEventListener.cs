@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using QFramework;
 using UnityEngine.Events;
@@ -10,24 +11,29 @@ namespace Blue
     public class OnBonfireRuleUnlockedEventListener : MonoBehaviour
     {
         public string Key;
+        public List<string> Keys = new List<string>();
         public UnityEvent OnUnlock = new UnityEvent();
 
         private void Start()
         {
-            var rule = ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>().GetRuleByKey(Key);
-
-            if (rule.Unlocked)
+            Keys.Add(Key);
+            foreach (var key in Keys)
             {
-                OnUnlock?.Invoke();
-            }
+                var rule = ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>().GetRuleByKey(Key);
 
-            ApplePlatformer2D.OnBonfireRuleUnlocked.Register(key =>
-            {
-                if (key == Key)
+                if (rule.Unlocked)
                 {
                     OnUnlock?.Invoke();
                 }
-            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+                ApplePlatformer2D.OnBonfireRuleUnlocked.Register(key =>
+                {
+                    if (Keys.Contains(key))
+                    {
+                        OnUnlock?.Invoke();
+                    }
+                }).UnRegisterWhenGameObjectDestroyed(gameObject);
+            }
         }
     }
 }

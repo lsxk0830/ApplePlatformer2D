@@ -121,9 +121,54 @@ namespace Blue
                 .Condition(_ => level8.Passed)
                 .AddToRules(Rules);
 
-            new DoubleJumpRule()
+            var doubleJump = new DoubleJumpRule()
                 .SecondsCost(30)
                 .Condition(_ => level8.Passed)
+                .AddToRules(Rules);
+
+            var level1_2 = new Level1()
+                .WithKey("Level1_2")
+                .SecondsCost(20)
+                .Condition(_ => doubleJump.Unlocked)
+                .AddToRules(Rules);
+            var level2_2 = new Level2()
+                .WithKey("Level2_2")
+                .SecondsCost(20)
+                .Condition(self => !self.Passed && level1_2.Passed && doubleJump.Unlocked)
+                .AddToRules(Rules);
+            var level3_2 = new Level3()
+                .WithKey("Level3_2")
+                .SecondsCost(20)
+                .Condition(self => !self.Passed && level2_2.Passed && doubleJump.Unlocked)
+                .AddToRules(Rules);
+            var level4_2 = new Level4()
+                .WithKey("Level4_2")
+                .SecondsCost(20)
+                .Condition(self => !self.Passed && level3_2.Passed && doubleJump.Unlocked)
+                .AddToRules(Rules);
+            var level5_2 = new Level5()
+                .WithKey("Level5_2")
+                .SecondsCost(20)
+                .Condition(self => !self.Passed && level4_2.Passed && doubleJump.Unlocked)
+                .AddToRules(Rules);
+            var level6_2 = new Level1()
+                .WithKey("Level6_2")
+                .SecondsCost(20)
+                .Condition(self => !self.Passed && level5_2.Passed && doubleJump.Unlocked)
+                .AddToRules(Rules);
+            var level7_2 = new Level7()
+                .WithKey("Level7_2")
+                .SecondsCost(20)
+                .Condition(self => !self.Passed && level6_2.Passed && doubleJump.Unlocked)
+                .AddToRules(Rules);
+            var level8_2 = new Level8()
+                .WithKey("Level8_2")
+                .SecondsCost(20)
+                .Condition(self => !self.Passed && level7_2.Passed && doubleJump.Unlocked)
+                .AddToRules(Rules);
+
+            new PassAllLevel()
+                .Condition(_ => level8_2.Passed)
                 .AddToRules(Rules);
         }
 
