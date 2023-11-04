@@ -149,7 +149,8 @@ namespace Blue
             var level5_2 = new Level5()
                 .WithKey("Level5_2")
                 .SecondsCost(20)
-                .Condition(self => !self.Passed && level4_2.Passed && doubleJump.Unlocked)
+                //.Condition(self => !self.Passed && level4_2.Passed && doubleJump.Unlocked)
+                .Condition(self => false)
                 .AddToRules(Rules);
             var level6_2 = new Level1()
                 .WithKey("Level6_2")
@@ -168,7 +169,7 @@ namespace Blue
                 .AddToRules(Rules);
 
             new PassAllLevel()
-                .Condition(_ => level8_2.Passed)
+                .Condition(_ => level4_2.Passed)
                 .AddToRules(Rules);
         }
 
