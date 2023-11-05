@@ -97,6 +97,10 @@ namespace Blue
                 .Condition(_ => level6.Passed)
                 .AddToRules(Rules);
 
+            new AddHPEvery10ApplesRule()
+                .Condition(_ => level6.Passed)
+                .AddToRules(Rules);
+
             // 第7关
             var level7 = new Level7()
                             .SecondsCost(10)
