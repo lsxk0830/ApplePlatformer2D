@@ -35,6 +35,9 @@ namespace Blue
                     var playerModel = ApplePlatformer2D.Interface.GetModel<IPlayerModel>();
                     playerModel.HP = playerModel.MaxHP;
                 }
+
+                ApplePlatformer2D.Save(); // 每次打开火堆时进行存储操作
+
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
         }
         private void OnTriggerEnter2D(Collider2D other)
@@ -163,6 +166,7 @@ namespace Blue
                 GUILayout.EndHorizontal();
                 GUILayout.Space(50); // 设置间距
 
+                /*
                 GUILayout.BeginHorizontal();
                 {
                     GUILayout.FlexibleSpace();
@@ -175,13 +179,14 @@ namespace Blue
                     GUILayout.FlexibleSpace();
                 }
                 GUILayout.EndHorizontal();
+                */
 
                 GUILayout.BeginHorizontal();
                 {
                     GUILayout.FlexibleSpace();
                     if (GUILayout.Button("回到主页", Styles.BigButton.Value))
                     {
-                        ApplePlatformer2D.ResetGameData();
+                        //ApplePlatformer2D.ResetGameData();
                         AudioSystem.PlayUIFeedback();
                         SceneManager.LoadScene("GameStart");
                     }
