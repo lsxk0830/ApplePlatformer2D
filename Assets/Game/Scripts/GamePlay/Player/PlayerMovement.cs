@@ -31,6 +31,10 @@ namespace Blue
         private IBonfireRule mDoubleJumpRule;
 
         private IInputSystem mInputSystem;
+
+        public int LeaveGroundFrame = 0; // 土狼时间
+        public int JumpPressFrameCount = -10000; // 输入缓冲
+
         private void Start()
         {
             mRigidbody2D = GetComponent<Rigidbody2D>();
@@ -38,7 +42,19 @@ namespace Blue
             GroundCheck.OnTriggerEnter.AddListener(() =>
             {
                 CurrentJumpCount = 0;
+
+                // 当落地时判断是否缓存了输入
+                if (Time.frameCount - JumpPressFrameCount <= 10)
+                {
+                    JumpStart(); // 触发起跳
+                }
             });
+
+            GroundCheck.OnTriggerEnter.AddListener(() =>
+            {
+                LeaveGroundFrame = Time.frameCount;// 记录主角离开地面时的帧数
+            });
+
             var bonfireSystem = ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>();
             mDoubleJumpRule = bonfireSystem.GetRuleByKey(nameof(DoubleJumpRule));
             mInputSystem = ApplePlatformer2D.Interface.GetSystem<IInputSystem>();
@@ -51,14 +67,28 @@ namespace Blue
         }
 
         public int CurrentJumpCount;
-        bool mCanJump => (CurrentJumpCount == 0 && GroundCheck.Triggered ||
-                         mDoubleJumpRule.Unlocked && CurrentJumpCount > 0 && CurrentJumpCount < 2);
+        bool mCanJump => CurrentJumpCount == 0 && Time.frameCount - LeaveGroundFrame <= 10 || // 10帧约0.15秒左右
+                         CurrentJumpCount == 0 && GroundCheck.Triggered ||
+                         mDoubleJumpRule.Unlocked && CurrentJumpCount > 0 && CurrentJumpCount < 2;
+
+        private void JumpStart()
+        {
+            OnJump?.Invoke();
+            mJumpPressed = true;
+            CurrentJumpCount++;
+
+            if (JumpState == JumpStates.NotJump)
+            {
+                JumpState = JumpStates.MinJump;
+                mCurrentJumpTime = 0f;
+            }
+        }
 
         void Update()
         {
-            if(ApplePlatformer2D.IsGameOver) return;
+            if (ApplePlatformer2D.IsGameOver) return;
 
-            mHorizontalInput =mInputSystem.HorizontalInput;
+            mHorizontalInput = mInputSystem.HorizontalInput;
 
             if (mHorizontalInput * transform.localScale.x < 0)
             {
@@ -67,18 +97,16 @@ namespace Blue
                 transform.localScale = localScale;
             }
 
+            if (mInputSystem.JumpDown)
+            {
+                JumpPressFrameCount = Time.frameCount; // 记录跳跃键按下时的帧数
+            }
+
             if (mInputSystem.JumpDown && mCanJump)
             {
-                OnJump?.Invoke();
-                mJumpPressed = true;
-                CurrentJumpCount++;
-
-                if (JumpState == JumpStates.NotJump)
-                {
-                    JumpState = JumpStates.MinJump;
-                    mCurrentJumpTime = 0f;
-                }
+                JumpStart();
             }
+
             if (mInputSystem.JumpUp)
             {
                 mJumpPressed = false;

@@ -14,8 +14,8 @@ namespace Blue
 
     public class InputSystem : AbstractSystem, IInputSystem
     {
-        public float HorizontalInput => Input.GetAxis("Horizontal");
-        public float VerticalInput => Input.GetAxis("Vrtical");
+        public float HorizontalInput => Input.GetAxisRaw("Horizontal");
+        public float VerticalInput => Input.GetAxisRaw("Vrtical");
 
         public bool JumpDown => Input.GetButtonDown("Jump");
         public bool Jump => Input.GetButton("Jump");
