@@ -17,8 +17,12 @@ namespace Blue
 
         private FSM<States> mFSM = new FSM<States>();
 
+        private IInputSystem mInputSystem;
+
         private void Awake()
         {
+            mInputSystem = ApplePlatformer2D.Interface.GetSystem<IInputSystem>();
+
             var playerMovement = GetComponent<PlayerMovement>();
             var rigidBody = GetComponent<Rigidbody2D>();
             var gravityScale = rigidBody.gravityScale;
@@ -31,7 +35,7 @@ namespace Blue
             })
             .OnUpdate(() =>
             {
-                if (mCanClimb && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+                if (mCanClimb && mInputSystem.VerticalInput != 0)
                 {
                     mFSM.ChangeState(States.Climb);
                 }
@@ -46,8 +50,8 @@ namespace Blue
             })
             .OnUpdate(() =>
             {
-                var verticalMovement = Input.GetAxis("Vertical");
-                var horizontalMovement = Input.GetAxis("Horizontal");
+                var verticalMovement = mInputSystem.VerticalInput;
+                var horizontalMovement = mInputSystem.HorizontalInput;
                 rigidBody.velocity = new Vector2(horizontalMovement, verticalMovement) * 5;
             });
 
@@ -61,6 +65,7 @@ namespace Blue
 
         private void OnDestroy()
         {
+            mInputSystem = null;
             mFSM.Clear();
             mFSM = null;
         }

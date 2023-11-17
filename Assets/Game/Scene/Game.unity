@@ -2104,6 +2104,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spring
       objectReference: {fileID: 0}
+    - target: {fileID: 8780425263723850022, guid: 314e6832645a8b34182fda0b52eb5edf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8780425263723850023, guid: 314e6832645a8b34182fda0b52eb5edf, type: 3}
       propertyPath: Rigidbody2D
       value: 

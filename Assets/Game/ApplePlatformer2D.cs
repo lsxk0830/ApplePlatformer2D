@@ -38,6 +38,7 @@ namespace Blue
         {
             this.RegisterSystem<IBonfireSystem>(new BonfireSystem());
             this.RegisterSystem<ISaveSystem>(new SaveSystem());
+            this.RegisterSystem<IInputSystem>(new InputSystem());
         }
 
         /// <summary>

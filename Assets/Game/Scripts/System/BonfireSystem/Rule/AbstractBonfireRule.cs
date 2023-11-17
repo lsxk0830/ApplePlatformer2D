@@ -38,7 +38,7 @@ namespace Blue
             {
                 GUILayout.BeginHorizontal(); // 开始一个水平控件组
                 GUILayout.Label(DisplayName, Styles.label.Value);
-                GUILayout.Label("价格:" + NeedSeconds, Styles.label.Value);
+                GUILayout.Label("价格:" + NeedSeconds + "s", Styles.label.Value);
 
                 GUILayout.FlexibleSpace(); // 插入灵活的空白元素
 

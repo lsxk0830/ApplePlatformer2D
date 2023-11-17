@@ -116,7 +116,7 @@ namespace Blue
 
         private void OnGUI()
         {
-            SetDsignResolution(WIDTH,HEIGHT);
+            SetDsignResolution(WIDTH, HEIGHT);
 
             GUILayout.BeginArea(new Rect(WIDTH - 200, 0, 200, 200)); // 在一个固定的屏幕区域中开始 GUI 控件的 GUILayout 块
 
@@ -142,12 +142,27 @@ namespace Blue
 
             if (mOpenBonfireUI)
             {
-                GUILayout.Label("火堆 UI", Styles.label.Value);
-
-                foreach (var bonfireRule in mBonfireSystem.Rules)
+                var windowPosition = new Rect
                 {
-                    bonfireRule.OnBonfireOnGUI();
-                }
+                    size = new Vector2(640, 480),
+                    center = new Vector2(WIDTH * 0.5f, HEIGHT * 0.5f)
+                };
+
+                GUILayout.Window(0, windowPosition, id =>
+                {
+                    GUILayout.BeginHorizontal();
+                    GUILayout.FlexibleSpace();
+                    if (GUILayout.Button("x", GUILayout.Width(20)))
+                    {
+                        mOpenBonfireUI = false;
+                    }
+                    GUILayout.EndHorizontal();
+
+                    foreach (var bonfireRule in mBonfireSystem.Rules)
+                    {
+                        bonfireRule.OnBonfireOnGUI();
+                    }
+                }, "火堆 UI");
             }
 
             if (ApplePlatformer2D.IsGameOver)

@@ -29,6 +29,8 @@ namespace Blue
         public Trigger2D GroundCheck;
 
         private IBonfireRule mDoubleJumpRule;
+
+        private IInputSystem mInputSystem;
         private void Start()
         {
             mRigidbody2D = GetComponent<Rigidbody2D>();
@@ -39,6 +41,13 @@ namespace Blue
             });
             var bonfireSystem = ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>();
             mDoubleJumpRule = bonfireSystem.GetRuleByKey(nameof(DoubleJumpRule));
+            mInputSystem = ApplePlatformer2D.Interface.GetSystem<IInputSystem>();
+        }
+
+        private void OnDestroy()
+        {
+            mInputSystem = null;
+            mDoubleJumpRule = null;
         }
 
         public int CurrentJumpCount;
@@ -47,7 +56,9 @@ namespace Blue
 
         void Update()
         {
-            mHorizontalInput = Input.GetAxis("Horizontal");
+            if(ApplePlatformer2D.IsGameOver) return;
+
+            mHorizontalInput =mInputSystem.HorizontalInput;
 
             if (mHorizontalInput * transform.localScale.x < 0)
             {
@@ -56,7 +67,7 @@ namespace Blue
                 transform.localScale = localScale;
             }
 
-            if (Input.GetKeyDown(KeyCode.K) && mCanJump)
+            if (mInputSystem.JumpDown && mCanJump)
             {
                 OnJump?.Invoke();
                 mJumpPressed = true;
@@ -68,7 +79,7 @@ namespace Blue
                     mCurrentJumpTime = 0f;
                 }
             }
-            if (Input.GetKeyUp(KeyCode.K))
+            if (mInputSystem.JumpUp)
             {
                 mJumpPressed = false;
             }
