@@ -130,6 +130,12 @@ namespace Blue
                 .Condition(_ => level8.Passed)
                 .AddToRules(Rules);
 
+            // 第9关
+            var level9 = new Level9()
+                            .SecondsCost(10)
+                            .Condition(self => !self.Passed && level8.Passed)
+                            .AddToRules(Rules);
+
             var level1_2 = new Level1()
                 .WithKey("Level1_2")
                 .SecondsCost(20)
