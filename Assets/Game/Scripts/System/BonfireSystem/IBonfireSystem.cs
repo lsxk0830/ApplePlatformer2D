@@ -135,6 +135,10 @@ namespace Blue
                             .SecondsCost(10)
                             .Condition(self => !self.Passed && level8.Passed)
                             .AddToRules(Rules);
+            var simpleGun = new SimpleGunRule()
+                .SecondsCost(100)
+                .Condition(_ => level9.Passed)
+                .AddToRules(Rules);
 
             var level1_2 = new Level1()
                 .WithKey("Level1_2")
@@ -149,12 +153,12 @@ namespace Blue
             var level3_2 = new Level3()
                 .WithKey("Level3_2")
                 .SecondsCost(20)
-                .Condition(self => !self.Passed && level2_2.Passed && doubleJump.Unlocked)
+                .Condition(self => !self.Passed && level2_2.Passed && simpleGun.Unlocked)
                 .AddToRules(Rules);
             var level4_2 = new Level4()
                 .WithKey("Level4_2")
                 .SecondsCost(20)
-                .Condition(self => !self.Passed && level3_2.Passed && doubleJump.Unlocked)
+                .Condition(self => !self.Passed && level3_2.Passed && simpleGun.Unlocked)
                 .AddToRules(Rules);
             var level5_2 = new Level5()
                 .WithKey("Level5_2")
