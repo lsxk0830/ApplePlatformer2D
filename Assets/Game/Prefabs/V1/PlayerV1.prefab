@@ -1248,9 +1248,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2539662020981782362}
-  - component: {fileID: 3914364364259110740}
   - component: {fileID: 4286754330196164043}
   - component: {fileID: 5523391487890174105}
+  - component: {fileID: 4063158209641852887}
   m_Layer: 0
   m_Name: HeadCheck
   m_TagString: Untagged
@@ -1273,46 +1273,6 @@ Transform:
   m_Father: {fileID: 971788690143902501}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3914364364259110740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2230784979818637593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5596fa316cb9e414bba9bf0a1aa944db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Triggered: 0
-  Layers:
-    serializedVersion: 2
-    m_Bits: 8
-  OnTriggerEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5523391487890174105}
-        m_TargetAssemblyTypeName: Blue.SetPlayerMovementNotJump, Assembly-CSharp
-        m_MethodName: Execute
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTriggerExit:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerEnterWithCollider:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitWithCollider:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &4286754330196164043
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1351,6 +1311,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b876c750a3b554d841ed857964876c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4063158209641852887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2230784979818637593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27261d5c27c0c444aa7a25b1e6512a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 4
+  Tags:
+  - OneWayPlatform
+  Layers:
+    serializedVersion: 2
+    m_Bits: 8
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5523391487890174105}
+        m_TargetAssemblyTypeName: Blue.SetPlayerMovementNotJump, Assembly-CSharp
+        m_MethodName: Execute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3539923393003645122
 GameObject:
   m_ObjectHideFlags: 0

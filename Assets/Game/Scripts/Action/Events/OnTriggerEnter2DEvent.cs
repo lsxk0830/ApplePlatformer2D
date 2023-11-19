@@ -11,7 +11,8 @@ namespace Blue
             Tags,
             Layers,
             TagsAndLayers,
-            TagsOrLayers
+            TagsOrLayers,
+            NotTagsAndLayers
         }
 
         public TriggerType Type = TriggerType.Tags;
@@ -40,6 +41,14 @@ namespace Blue
             if (Type == TriggerType.TagsAndLayers)
             {
                 if (LayerMaskUtility.Contains(Layers, other.gameObject.layer) && Tags.Any(tag => other.CompareTag(tag)))
+                {
+                    OnEnter?.Invoke();
+                }
+            }
+
+            if (Type == TriggerType.NotTagsAndLayers)
+            {
+                if (LayerMaskUtility.Contains(Layers, other.gameObject.layer) && !Tags.Any(tag => other.CompareTag(tag)))
                 {
                     OnEnter?.Invoke();
                 }
