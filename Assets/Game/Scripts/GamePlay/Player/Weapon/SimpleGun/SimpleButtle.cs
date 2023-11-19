@@ -1,10 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Blue
 {
     public class SimpleButtle : MonoBehaviour
     {
+        public UnityEvent OnAttackEnemy = new UnityEvent(); // 攻击到敌人触发的事件
+        public UnityEvent OnAttackWall = new UnityEvent(); // 攻击到墙触发的事件
+
         private IEnumerator Start()
         {
             var rigidbody2D = GetComponent<Rigidbody2D>();
@@ -25,10 +29,13 @@ namespace Blue
             {
                 //如果是敌人，则攻击敌人
                 other.collider.GetComponent<CharacterHit>().Hit();
+                OnAttackEnemy?.Invoke();
+                Destroy(gameObject);
             }
             else if (LayerMaskUtility.Contains(groundLayer, other.collider.gameObject.layer))
             {
                 //如果是墻毀自己
+                OnAttackWall?.Invoke();
                 Destroy(gameObject);
             }
         }
