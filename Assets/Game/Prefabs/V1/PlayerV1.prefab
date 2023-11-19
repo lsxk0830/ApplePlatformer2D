@@ -585,6 +585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 971788691330412932}
   - component: {fileID: 971788691330412920}
+  - component: {fileID: 1075281253162285826}
   - component: {fileID: 5952510277792959322}
   m_Layer: 0
   m_Name: GroundCheck
@@ -627,9 +628,9 @@ MonoBehaviour:
   OnTriggerEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2152269923249041375}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
+      - m_Target: {fileID: 1075281253162285826}
+        m_TargetAssemblyTypeName: Blue.IsPlayerVelocityYLessZeroCondition, Assembly-CSharp
+        m_MethodName: Execute
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -648,6 +649,33 @@ MonoBehaviour:
   OnTriggerExitWithCollider:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1075281253162285826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971788691330412935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a851df759f42144a9a81789639dd62e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsLess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2152269923249041375}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &5952510277792959322
 BoxCollider2D:
   m_ObjectHideFlags: 0
