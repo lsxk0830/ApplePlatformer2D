@@ -36,5 +36,12 @@ namespace Blue
                 CurrentCheckPoint = this;
             }
         }
+
+        // 跳转场景清空检查点记录
+        private void OnDestroy()
+        {
+            if(CurrentCheckPoint)
+                ClearCheckPoint();
+        }
     }
 }
