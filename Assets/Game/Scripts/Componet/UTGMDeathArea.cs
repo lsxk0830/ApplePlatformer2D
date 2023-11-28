@@ -17,7 +17,8 @@ namespace Blue
                 }
                 else
                 {
-                    SceneManager.LoadScene("Game");
+                    other.GetComponent<PlayerHit>().OnHit?.Invoke(); // 触发主角的受伤效果
+                    CheckPoint.SendPlayerToLastCheckPoint(); // 送回临近的检查点
                 }
             }
         }
