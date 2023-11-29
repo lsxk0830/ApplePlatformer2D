@@ -606,7 +606,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "v.0.0.11\r\n* \u6240\u6709\u5173\u5361\u90FD\u586B\u5145\u68C0\u67E5\u70B9\r\n\r\nv0.0.10\r\n*
+  m_Text: "v.0.0.12\r\n* \u7B80\u5355\u654C\u4EBA\u589E\u52A0 HP\r\n\r\nv.0.0.11\r\n*
+    \u6240\u6709\u5173\u5361\u90FD\u586B\u5145\u68C0\u67E5\u70B9\r\n\r\nv0.0.10\r\n*
     \u68C0\u67E5\u70B9\u529F\u80FD\u5B9E\u73B0\r\n\r\nv0.0.9 \u7B2C\u4E00\u4E2A\u8BD5\u73A9\u7248\u672C\u6539\u8FDB\r\n*
     \u589E\u52A0\u5173\u5361\u5730\u5757\u6837\u5F0F\r\n* \u7B2C\u4E5D\u5173\r\n*
     \u68AF\u5B50&\u5355\u5411\u5E73\u53F0\u6539\u5584\r\n* \u57FA\u7840\u5C04\u51FB\r\n*
