@@ -15,6 +15,28 @@ namespace Blue
         public int DebugInitRemainSeconds = 60;
         public int DebugInitPlayerHp = 5;
         public bool IsDebug = false;
+
+        /// <summary>
+        /// 对外提供一个打开UI的方法
+        /// </summary>
+        public void OpenUI()
+        {
+            ApplePlatformer2D.GamePause();
+            mOpenBonfireUI = true;
+            ApplePlatformer2D.OnOpenBonfireUI.Trigger();
+            AudioSystem.PlayUIFeedback();
+        }
+
+        /// <summary>
+        /// 对外提供一个关闭UI的方法
+        /// </summary>
+        public void CloseUI()
+        {
+            ApplePlatformer2D.GameResume();
+            mOpenBonfireUI = false;
+            AudioSystem.PlayUIFeedback();
+        }
+
         private void Awake()
         {
             if (IsDebug)
@@ -87,17 +109,14 @@ namespace Blue
             {
                 if (Input.GetKeyDown(KeyCode.W))
                 {
-                    mOpenBonfireUI = true;
-                    ApplePlatformer2D.OnOpenBonfireUI.Trigger();
-                    AudioSystem.PlayUIFeedback();
+                    OpenUI();
                 }
             }
             else if (mOpenBonfireUI)
             {
                 if (Input.GetKeyDown(KeyCode.W))
                 {
-                    mOpenBonfireUI = false;
-                    AudioSystem.PlayUIFeedback();
+                    CloseUI();
                 }
             }
         }
@@ -154,7 +173,7 @@ namespace Blue
                     GUILayout.FlexibleSpace();
                     if (GUILayout.Button("x", GUILayout.Width(20)))
                     {
-                        mOpenBonfireUI = false;
+                        CloseUI();
                     }
                     GUILayout.EndHorizontal();
 

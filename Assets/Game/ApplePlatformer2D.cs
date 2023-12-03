@@ -8,10 +8,38 @@ namespace Blue
         public static EasyEvent OnOpenBonfireUI = new EasyEvent();
         public static EasyEvent<string> OnBonfireRuleUnlocked = new EasyEvent<string>();
         private static bool mIsGameOver = false;
-        public static bool IsGameOver
+        public static bool IsGameOver { get; set; } = false;
+
+        /// <summary>
+        /// 暂停之前的事件缩放缓存
+        /// </summary>
+        private static float mCachedTimeScale;
+        /// <summary>
+        /// 暂停游戏
+        /// </summary>
+        public static void GamePause()
         {
-            get => mIsGameOver;
-            set => mIsGameOver = value;
+            if (!IsGamePause)
+            {
+                mCachedTimeScale = Time.timeScale;
+                Time.timeScale = 0;
+                IsGamePause = true;
+            }
+        }
+        /// <summary>
+        /// 对外提供用于查询
+        /// </summary>
+        public static bool IsGamePause { get; set; } = false;
+        /// <summary>
+        /// 继续游戏
+        /// </summary>
+        public static void GameResume()
+        {
+            if (IsGamePause)
+            {
+                Time.timeScale = mCachedTimeScale;
+                IsGamePause = false;
+            }
         }
 
         /// <summary>
