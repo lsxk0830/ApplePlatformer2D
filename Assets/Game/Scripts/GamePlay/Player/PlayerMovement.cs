@@ -24,7 +24,32 @@ namespace Blue
         private bool mJumpPressed = false; // 按下跳跃
         private float mCurrentJumpTime = 0f;
 
+        /// <summary>
+        /// 横向移动状态
+        /// </summary>
+        public enum HorizontalMovementStates
+        {
+            /// <summary>
+            /// 停止状态
+            /// </summary>
+            Stop,
+            /// <summary>
+            /// 加速状态
+            /// </summary>
+            Increase,
+            /// <summary>
+            /// 最大速度
+            /// </summary>
+            MaxSpeed,
+            /// <summary>
+            /// 减速状态
+            /// </summary>
+            Decrease
+        }
+
         public JumpStates JumpState = JumpStates.NotJump;
+
+        public HorizontalMovementStates HorizontalMovementState = HorizontalMovementStates.Stop;
 
         public Trigger2D GroundCheck;
 
@@ -113,8 +138,55 @@ namespace Blue
             }
 
             mCurrentJumpTime += Time.deltaTime;
+
+            if (mHorizontalInput > 0)
+            {
+                MovementDirection = 1;
+                HorizontalMovementSpeed = MovementDirection * Mathf.Abs(HorizontalMovementSpeed);
+            }
+            else if (mHorizontalInput < 0)
+            {
+                MovementDirection = -1;
+                HorizontalMovementSpeed = MovementDirection * Mathf.Abs(HorizontalMovementSpeed);
+            }
+
+            // 停止、停止 -> 加速
+            if (mHorizontalInput != 0 && (HorizontalMovementState == HorizontalMovementStates.Stop || HorizontalMovementState == HorizontalMovementStates.Decrease))
+            {
+                HorizontalMovementState = HorizontalMovementStates.Increase;
+                CurrentHorizontalSpeed = 0;
+            } // 加速 -> 最大速度
+            else if (mHorizontalInput != 0 && HorizontalMovementState == HorizontalMovementStates.Increase)
+            {
+                CurrentHorizontalSpeed = Mathf.Lerp(CurrentHorizontalSpeed, HorizontalMovementSpeed, SpeedIncreaseRate);
+                Debug.Log($"Current:{CurrentHorizontalSpeed},Horizontal:{HorizontalMovementSpeed}");
+                if (Mathf.Abs(CurrentHorizontalSpeed - HorizontalMovementSpeed) < 0.1f)
+                {
+                    CurrentHorizontalSpeed = HorizontalMovementSpeed;
+                    HorizontalMovementState = HorizontalMovementStates.MaxSpeed;
+                }
+            } // 最大速度
+            else if (mHorizontalInput != 0 && HorizontalMovementState == HorizontalMovementStates.MaxSpeed)
+            {
+                CurrentHorizontalSpeed = HorizontalMovementSpeed;
+            } // 最大速度-> 减速
+            else if (mHorizontalInput == 0 && HorizontalMovementState == HorizontalMovementStates.MaxSpeed)
+            {
+                HorizontalMovementState = HorizontalMovementStates.Decrease;
+            } // 速度-> 停止
+            else if (mHorizontalInput == 0 && HorizontalMovementState == HorizontalMovementStates.Decrease)
+            {
+                CurrentHorizontalSpeed = Mathf.Lerp(CurrentHorizontalSpeed, 0, SpeedDecreaseRate);
+                if (Mathf.Abs(CurrentHorizontalSpeed) < 0.1f)
+                {
+                    CurrentHorizontalSpeed = 0;
+                    HorizontalMovementState = HorizontalMovementStates.Stop;
+                }
+            }
         }
 
+        public float CurrentHorizontalSpeed = 0;
+        public float MovementDirection = 1; // 移动方向
         public enum JumpStates
         {
             NotJump,
@@ -122,6 +194,8 @@ namespace Blue
             ControlJump,
         }
 
+        public float SpeedIncreaseRate = 0.8f; // 速度递增速率
+        public float SpeedDecreaseRate = 0.8f; // 速度递减速率
         private void FixedUpdate()
         {
             if (JumpState == JumpStates.MinJump)
@@ -143,7 +217,8 @@ namespace Blue
                 }
             }
 
-            mRigidbody2D.velocity = new Vector2(mHorizontalInput * HorizontalMovementSpeed, mRigidbody2D.velocity.y); // 设置速度--水平
+            // 横向移动的核心代码
+            mRigidbody2D.velocity = new Vector2(CurrentHorizontalSpeed, mRigidbody2D.velocity.y); // 设置速度--水平
 
             // 调整跳跃上升、下落重力
             if (mRigidbody2D.velocity.y > 0 && JumpState != JumpStates.NotJump)

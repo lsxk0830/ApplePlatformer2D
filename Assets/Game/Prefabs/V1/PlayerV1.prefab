@@ -418,10 +418,15 @@ MonoBehaviour:
   MinJumpTime: 0.1
   MaxJumpTime: 0.3
   JumpState: 0
+  HorizontalMovementState: 0
   GroundCheck: {fileID: 971788691330412920}
   LeaveGroundFrame: 0
   JumpPressFrameCount: -10000
   CurrentJumpCount: 0
+  CurrentHorizontalSpeed: 0
+  MovementDirection: 1
+  SpeedIncreaseRate: 0.3
+  SpeedDecreaseRate: 0.15
 --- !u!114 &4310294565156563046
 MonoBehaviour:
   m_ObjectHideFlags: 0
