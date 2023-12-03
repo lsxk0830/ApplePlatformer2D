@@ -159,7 +159,7 @@ namespace Blue
             else if (mHorizontalInput != 0 && HorizontalMovementState == HorizontalMovementStates.Increase)
             {
                 CurrentHorizontalSpeed = Mathf.Lerp(CurrentHorizontalSpeed, HorizontalMovementSpeed, SpeedIncreaseRate);
-                Debug.Log($"Current:{CurrentHorizontalSpeed},Horizontal:{HorizontalMovementSpeed}");
+                //Debug.Log($"Current:{CurrentHorizontalSpeed},Horizontal:{HorizontalMovementSpeed}");
                 if (Mathf.Abs(CurrentHorizontalSpeed - HorizontalMovementSpeed) < 0.1f)
                 {
                     CurrentHorizontalSpeed = HorizontalMovementSpeed;
