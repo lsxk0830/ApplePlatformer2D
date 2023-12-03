@@ -183,7 +183,7 @@ namespace Blue
                     }
                 }, "火堆 UI");
             }
-
+            /*
             if (ApplePlatformer2D.IsGameOver)
             {
                 // 游戏结束界面
@@ -199,21 +199,6 @@ namespace Blue
                 }
                 GUILayout.EndHorizontal();
                 GUILayout.Space(50); // 设置间距
-
-                /*
-                GUILayout.BeginHorizontal();
-                {
-                    GUILayout.FlexibleSpace();
-                    if (GUILayout.Button("重新开始", Styles.BigButton.Value))
-                    {
-                        ApplePlatformer2D.ResetGameData();
-                        AudioSystem.PlayUIFeedback();
-                        SceneManager.LoadScene("Game");
-                    }
-                    GUILayout.FlexibleSpace();
-                }
-                GUILayout.EndHorizontal();
-                */
 
                 GUILayout.BeginHorizontal();
                 {
@@ -231,6 +216,7 @@ namespace Blue
                 GUILayout.FlexibleSpace();
                 GUILayout.EndArea();
             }
+            */
         }
 
         private void OnDestroy()

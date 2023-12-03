@@ -1,5 +1,6 @@
 using QFramework;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Blue
 {
@@ -8,7 +9,16 @@ namespace Blue
         public static EasyEvent OnOpenBonfireUI = new EasyEvent();
         public static EasyEvent<string> OnBonfireRuleUnlocked = new EasyEvent<string>();
         private static bool mIsGameOver = false;
-        public static bool IsGameOver { get; set; } = false;
+        public static bool IsGameOver
+        {
+            get => mIsGameOver;
+            set
+            {
+                mIsGameOver = value;
+                if (value)
+                    SceneManager.LoadScene("GameOver");
+            }
+        }
 
         /// <summary>
         /// 暂停之前的事件缩放缓存
