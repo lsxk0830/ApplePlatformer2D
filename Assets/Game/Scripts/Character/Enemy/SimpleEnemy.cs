@@ -8,7 +8,7 @@ namespace Blue
         public Trigger2D GroundCheck;
         public Trigger2D ForwardCheck;
         public Trigger2D FallCheck;
-        public Trigger2D AttackCheck;
+        public OnTriggerStay2DEvent AttackCheck;
 
         private void Awake()
         {
@@ -39,7 +39,7 @@ namespace Blue
                 transform.localScale = localScale;
             });
 
-            AttackCheck.OnTriggerEnterWithCollider.AddListener((collider) =>
+            AttackCheck.OnStayWithCollider.AddListener((collider) =>
             {
                 var playerHit = collider.GetComponent<PlayerHit>();
                 if (playerHit.CanHit)

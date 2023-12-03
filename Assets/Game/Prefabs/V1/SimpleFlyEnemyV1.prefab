@@ -442,7 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WarnigArea: {fileID: 3736450520318728945}
-  AttackArea: {fileID: 3736450521797073244}
+  AttackArea: {fileID: 6460818296359349809}
   MovementSpeed: 5
 --- !u!95 &3736450519783220682
 Animator:
@@ -628,7 +628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3736450521797073246}
   - component: {fileID: 3736450521797073247}
-  - component: {fileID: 3736450521797073244}
+  - component: {fileID: 6460818296359349809}
   m_Layer: 0
   m_Name: AttackCheck
   m_TagString: Untagged
@@ -667,7 +667,7 @@ CircleCollider2D:
   m_Offset: {x: 0.002731204, y: -0.03378737}
   serializedVersion: 2
   m_Radius: 0.5180527
---- !u!114 &3736450521797073244
+--- !u!114 &6460818296359349809
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -676,23 +676,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3736450521797073245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5596fa316cb9e414bba9bf0a1aa944db, type: 3}
+  m_Script: {fileID: 11500000, guid: d37b5f4735321ee45b03f9801387a083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Triggered: 0
+  Type: 0
+  Tags:
+  - Player
   Layers:
     serializedVersion: 2
-    m_Bits: 64
-  OnTriggerEnter:
+    m_Bits: 0
+  OnStay:
     m_PersistentCalls:
       m_Calls: []
-  OnTriggerExit:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerEnterWithCollider:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitWithCollider:
+  OnStayWithCollider:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &8874214376843110194

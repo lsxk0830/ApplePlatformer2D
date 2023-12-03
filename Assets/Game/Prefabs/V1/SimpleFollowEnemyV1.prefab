@@ -709,7 +709,7 @@ MonoBehaviour:
   GroundCheck: {fileID: 4515476742370670696}
   ForwardCheck: {fileID: 4515476741575188553}
   FallCheck: {fileID: 4515476741046156931}
-  AttackCheck: {fileID: 4515476742283911899}
+  AttackCheck: {fileID: 969526054957079129}
   WarningCheck: {fileID: 2722945699652691588}
   OnIdle:
     m_PersistentCalls:
@@ -857,7 +857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4515476742283911844}
   - component: {fileID: 4515476742283911898}
-  - component: {fileID: 4515476742283911899}
+  - component: {fileID: 969526054957079129}
   m_Layer: 0
   m_Name: AttackCheck
   m_TagString: Untagged
@@ -906,7 +906,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.15, y: 0.8476702}
   m_EdgeRadius: 0
---- !u!114 &4515476742283911899
+--- !u!114 &969526054957079129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -915,23 +915,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4515476742283911845}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5596fa316cb9e414bba9bf0a1aa944db, type: 3}
+  m_Script: {fileID: 11500000, guid: d37b5f4735321ee45b03f9801387a083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Triggered: 0
+  Type: 0
+  Tags:
+  - Player
   Layers:
     serializedVersion: 2
-    m_Bits: 64
-  OnTriggerEnter:
+    m_Bits: 0
+  OnStay:
     m_PersistentCalls:
       m_Calls: []
-  OnTriggerExit:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerEnterWithCollider:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitWithCollider:
+  OnStayWithCollider:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &4515476742370670697

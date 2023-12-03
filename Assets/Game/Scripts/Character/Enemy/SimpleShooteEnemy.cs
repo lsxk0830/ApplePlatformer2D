@@ -26,6 +26,7 @@ namespace Blue
         public Trigger2D ForwardCheck;
         public Trigger2D FallCheck;
         public Trigger2D ShootArea;
+        public OnTriggerStay2DEvent AttackCheck;
 
         public GameObject BulletPrefab;
 
@@ -70,6 +71,14 @@ namespace Blue
             {
                 state = States.Patrol;
                 characterMovement.enabled = true;
+            });
+            AttackCheck.OnStayWithCollider.AddListener(collider=>
+            {
+                var playerHit = collider.GetComponent<PlayerHit>();
+                if(playerHit.CanHit)
+                {
+                    playerHit.Hit();
+                }
             });
         }
 

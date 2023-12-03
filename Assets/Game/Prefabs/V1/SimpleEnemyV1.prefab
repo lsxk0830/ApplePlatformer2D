@@ -335,7 +335,7 @@ MonoBehaviour:
   GroundCheck: {fileID: 477477394077498976}
   ForwardCheck: {fileID: 477477392226362945}
   FallCheck: {fileID: 477477392753244299}
-  AttackCheck: {fileID: 477477393663059155}
+  AttackCheck: {fileID: 3255270981361837318}
   HitterVelocityX: 8
   HitterVelocityY: 8
 --- !u!114 &477477392894828947
@@ -457,7 +457,7 @@ GameObject:
   m_Component:
   - component: {fileID: 477477393663059116}
   - component: {fileID: 477477393663059154}
-  - component: {fileID: 477477393663059155}
+  - component: {fileID: 3255270981361837318}
   m_Layer: 0
   m_Name: AttackCheck
   m_TagString: Untagged
@@ -506,7 +506,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.15, y: 0.8476702}
   m_EdgeRadius: 0
---- !u!114 &477477393663059155
+--- !u!114 &3255270981361837318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -515,23 +515,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 477477393663059117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5596fa316cb9e414bba9bf0a1aa944db, type: 3}
+  m_Script: {fileID: 11500000, guid: d37b5f4735321ee45b03f9801387a083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Triggered: 0
+  Type: 1
+  Tags: []
   Layers:
     serializedVersion: 2
     m_Bits: 64
-  OnTriggerEnter:
+  OnStay:
     m_PersistentCalls:
       m_Calls: []
-  OnTriggerExit:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerEnterWithCollider:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitWithCollider:
+  OnStayWithCollider:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &477477394077498977

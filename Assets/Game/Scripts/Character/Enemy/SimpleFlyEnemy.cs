@@ -5,7 +5,7 @@ namespace Blue
     public class SimpleFlyEnemy : MonoBehaviour
     {
         public Trigger2D WarnigArea;
-        public Trigger2D AttackArea;
+        public OnTriggerStay2DEvent AttackArea;
 
         public enum States
         {
@@ -52,7 +52,7 @@ namespace Blue
                 mFSM.ChangeState(States.Idle);
             });
 
-            AttackArea.OnTriggerEnter.AddListener(() =>
+            AttackArea.OnStay.AddListener(() =>
             {
                 var playerHit = playerTransform.GetComponent<PlayerHit>();
                 if (playerHit.CanHit)
