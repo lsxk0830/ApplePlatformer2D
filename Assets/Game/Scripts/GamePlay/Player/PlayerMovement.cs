@@ -150,7 +150,7 @@ namespace Blue
                 HorizontalMovementSpeed = MovementDirection * Mathf.Abs(HorizontalMovementSpeed);
             }
 
-            // 停止、停止 -> 加速
+            // 停止 、 减速 -> 加速
             if (mHorizontalInput != 0 && (HorizontalMovementState == HorizontalMovementStates.Stop || HorizontalMovementState == HorizontalMovementStates.Decrease))
             {
                 HorizontalMovementState = HorizontalMovementStates.Increase;
@@ -173,8 +173,8 @@ namespace Blue
             else if (mHorizontalInput == 0 && HorizontalMovementState == HorizontalMovementStates.MaxSpeed)
             {
                 HorizontalMovementState = HorizontalMovementStates.Decrease;
-            } // 速度-> 停止
-            else if (mHorizontalInput == 0 && HorizontalMovementState == HorizontalMovementStates.Decrease)
+            } // 减速、加速-> 停止
+            else if (mHorizontalInput == 0 && (HorizontalMovementState == HorizontalMovementStates.Decrease || HorizontalMovementState == HorizontalMovementStates.Increase))
             {
                 CurrentHorizontalSpeed = Mathf.Lerp(CurrentHorizontalSpeed, 0, SpeedDecreaseRate);
                 if (Mathf.Abs(CurrentHorizontalSpeed) < 0.1f)
