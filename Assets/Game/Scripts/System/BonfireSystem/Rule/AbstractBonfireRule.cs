@@ -15,7 +15,7 @@ namespace Blue
 
         public void Unlock()
         {
-            Bonfire.RemainSeconds -= NeedSeconds;
+            Bonfire.SetRemainSecondsWithChangerEvent(Bonfire.RemainSeconds - NeedSeconds);
             AudioSystem.PlayUIFeedback();
 
             OnUnlock();

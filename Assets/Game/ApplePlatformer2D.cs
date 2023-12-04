@@ -93,7 +93,7 @@ namespace Blue
                 bonfireRule.Reset();
             }
             Interface.GetSystem<ISaveSystem>().Clear();
-            Bonfire.RemainSeconds = 60;
+            Bonfire.SetRemainSecondsWithoutChangeEvent(60);
             Bonfire.LiveSeconds = 0;
         }
 
@@ -108,7 +108,7 @@ namespace Blue
             Interface.GetModel<IPlayerModel>().MaxHP = PlayerPrefs.GetInt("MaxHP", 1);
             Interface.GetModel<IPlayerModel>().CurrentAppleCount = PlayerPrefs.GetInt("CurrentAppleCount", 0);
 
-            Bonfire.RemainSeconds = PlayerPrefs.GetFloat("RemainSeconds", 60);
+            Bonfire.SetRemainSecondsWithoutChangeEvent(PlayerPrefs.GetFloat("RemainSeconds", 60));
             Bonfire.LiveSeconds = PlayerPrefs.GetFloat("LiveSeconds", 0);
 
             foreach (var bonfireRule in Interface.GetSystem<IBonfireSystem>().Rules)

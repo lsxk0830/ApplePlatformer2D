@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using QFramework;
+using System;
 
 namespace Blue
 {
@@ -41,7 +42,7 @@ namespace Blue
         {
             if (IsDebug)
             {
-                RemainSeconds = DebugInitRemainSeconds;
+                SetRemainSecondsWithoutChangeEvent(DebugInitRemainSeconds);
                 var playerModel = ApplePlatformer2D.Interface.GetModel<IPlayerModel>();
                 playerModel.HP = DebugInitPlayerHp;
                 playerModel.MaxHP = DebugInitPlayerHp;
@@ -87,18 +88,28 @@ namespace Blue
         /// <summary>
         /// 剩余时间
         /// </summary>
-        public static float RemainSeconds
+        public static float RemainSeconds => mRemainSeconds;
+
+        /// <summary>
+        /// 触发寿命变更事件的设置方式
+        /// </summary>
+        /// <param name="newRemainSeconds"></param>
+        public static void SetRemainSecondsWithChangerEvent(float newRemainSeconds)
         {
-            get => mRemainSeconds;
-            set
+            if (Mathf.Abs(mRemainSeconds - newRemainSeconds) > 0.01f)
             {
-                if (Mathf.Abs(mRemainSeconds - value) > 0.01f)
-                {
-                    OnRemainSecondsChanged.Trigger(value - mRemainSeconds);
-                    mRemainSeconds = value;
-                }
+                OnRemainSecondsChanged.Trigger(newRemainSeconds - mRemainSeconds);
+                mRemainSeconds = newRemainSeconds;
             }
         }
+        /// <summary>
+        /// 不触发寿命変更的事件方式
+        /// </summary>
+        public static void SetRemainSecondsWithoutChangeEvent(float newRemainSeconds)
+        {
+            mRemainSeconds = newRemainSeconds;
+        }
+
         private static float mRemainSeconds = 60;
         public static EasyEvent<float> OnRemainSecondsChanged = new EasyEvent<float>();
 
@@ -111,7 +122,7 @@ namespace Blue
             if (ApplePlatformer2D.IsGameOver)
                 return;
 
-            RemainSeconds -= Time.deltaTime;
+            SetRemainSecondsWithoutChangeEvent(RemainSeconds - Time.deltaTime);
             LiveSeconds += Time.deltaTime;
             if (RemainSeconds <= 0)
             {

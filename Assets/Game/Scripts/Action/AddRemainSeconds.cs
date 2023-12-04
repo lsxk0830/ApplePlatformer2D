@@ -9,7 +9,7 @@ namespace Blue
     {
         public void Execute(int seconds)
         {
-            Bonfire.RemainSeconds += seconds;
+            Bonfire.SetRemainSecondsWithChangerEvent(Bonfire.RemainSeconds + seconds);
         }
     }
 }

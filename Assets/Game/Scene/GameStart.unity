@@ -289,46 +289,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Hello World
-
-    Hello World
-
-    Hello World
-
-    Hello World
-
-    Hello
-    World
-
-    Hello World
-
-    Hello World
-
-    Hello World
-
-    Hello World
-
-    Hello
-    World
-
-    Hello World
-
-    Hello World
-
-    Hello World
-
-    Hello World
-
-    Hello
-    World
-
-    Hello World
-
-    Hello World
-
-    Hello World
-
-    Hello World'
+  m_Text: "W\u3001A\u3001S\u3001D\uFF1A\u524D\u540E\u79FB\u52A8\nK\u3001\u7A7A\u683C\uFF1A\u8DF3\u8DC3\nJ\uFF1A\u5F00\u67AA"
 --- !u!222 &96242454
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -408,7 +369,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u5173\u4E8E"
+  m_Text: "\u6309\u952E"
 --- !u!222 &113875350
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -606,10 +567,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "v0.0.15\r\n* \u8BBE\u8BA1\u5C1D\u8BD5\u589E\u52A0\u9650\u5236\r\n\r\nv0.0.14\r\n*
-    \u4E3B\u89D2\u6B7B\u4EA1\u540E\u8DF3\u5230\u6E38\u675F\u754C\u9762\r\n* \u4E3B\u89D2\u7684\u6A2A\u5411\u79FB\u52A8\u5897\u52A0\u6163\u6027\r\n*
-    \u6545\u4EBA\u7684\u78C1\u649E\u5224\u5B9A\u6539\r\n\r\nv0.0.13\r\n* \u6253\u5F00\u706B\u5806
-    UI \u54F2\u505C\u6E38\r\n* \u5897\u52A0\u6545\u4EBA\u6B7B\u4EA1\u540E\u9707\u5C4F\u6548\u679C\r\n\r\nv.0.0.12\r\n*
+  m_Text: "v0.0.16\r\n* \u5BFF\u547D\u53D8\u66F4\u7684\u5B57\u4F53\u64AD\u653E\u6548\u679C\r\n\r\nv0.0.15\r\n*
+    \u8BBE\u8BA1\u5C1D\u8BD5\u589E\u52A0\u9650\u5236\r\n\r\nv0.0.14\r\n* \u4E3B\u89D2\u6B7B\u4EA1\u540E\u8DF3\u5230\u6E38\u675F\u754C\u9762\r\n*
+    \u4E3B\u89D2\u7684\u6A2A\u5411\u79FB\u52A8\u5897\u52A0\u6163\u6027\r\n* \u6545\u4EBA\u7684\u78C1\u649E\u5224\u5B9A\u6539\r\n\r\nv0.0.13\r\n*
+    \u6253\u5F00\u706B\u5806 UI \u54F2\u505C\u6E38\r\n* \u5897\u52A0\u6545\u4EBA\u6B7B\u4EA1\u540E\u9707\u5C4F\u6548\u679C\r\n\r\nv.0.0.12\r\n*
     \u7B80\u5355\u654C\u4EBA\u589E\u52A0 HP\r\n\r\nv.0.0.11\r\n* \u6240\u6709\u5173\u5361\u90FD\u586B\u5145\u68C0\u67E5\u70B9\r\n\r\nv0.0.10\r\n*
     \u68C0\u67E5\u70B9\u529F\u80FD\u5B9E\u73B0\r\n\r\nv0.0.9 \u7B2C\u4E00\u4E2A\u8BD5\u73A9\u7248\u672C\u6539\u8FDB\r\n*
     \u589E\u52A0\u5173\u5361\u5730\u5757\u6837\u5F0F\r\n* \u7B2C\u4E5D\u5173\r\n*
