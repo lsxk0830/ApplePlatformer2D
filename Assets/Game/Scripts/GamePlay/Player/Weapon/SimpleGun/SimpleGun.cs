@@ -9,9 +9,14 @@ namespace Blue
 
         public override void ShootDown()
         {
-            var bullet = Instantiate(BulletTempleta);
-            bullet.transform.position = BulletTempleta.transform.position;
-            bullet.gameObject.SetActive(true);
+            if (Bonfire.RemainSeconds > 10)
+            {
+                Bonfire.RemainSeconds -= 10; // 每次开枪消耗10秒
+
+                var bullet = Instantiate(BulletTempleta);
+                bullet.transform.position = BulletTempleta.transform.position;
+                bullet.gameObject.SetActive(true);
+            }
         }
     }
 }
