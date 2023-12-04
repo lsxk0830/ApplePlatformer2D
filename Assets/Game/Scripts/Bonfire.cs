@@ -87,7 +87,20 @@ namespace Blue
         /// <summary>
         /// 剩余时间
         /// </summary>
-        public static float RemainSeconds = 60;
+        public static float RemainSeconds
+        {
+            get => mRemainSeconds;
+            set
+            {
+                if (Mathf.Abs(mRemainSeconds - value) > 0.01f)
+                {
+                    OnRemainSecondsChanged.Trigger(value - mRemainSeconds);
+                    mRemainSeconds = value;
+                }
+            }
+        }
+        private static float mRemainSeconds = 60;
+        public static EasyEvent<float> OnRemainSecondsChanged = new EasyEvent<float>();
 
         /// <summary>
         /// 存活时间
