@@ -75,6 +75,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260e61656babc56419b6d8a9685f83b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GivenType: 1
+  WeightItems:
+  - Comment: 70% 8-18
+    MinSeconds: 8
+    MaxSeconds: 18
+    Weight: 0.7
+  - Comment: 5% 23-25
+    MinSeconds: 23
+    MaxSeconds: 25
+    Weight: 0.05
 --- !u!114 &3773942721537409824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,6 +281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260e61656babc56419b6d8a9685f83b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GivenType: 0
+  WeightItems: []
 --- !u!114 &7780947960342752405
 MonoBehaviour:
   m_ObjectHideFlags: 0

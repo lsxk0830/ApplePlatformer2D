@@ -9,11 +9,12 @@ namespace Blue
         public UnityEvent OnAttackEnemy = new UnityEvent(); // 攻击到敌人触发的事件
         public UnityEvent OnAttackWall = new UnityEvent(); // 攻击到墙触发的事件
 
+        public float Speed = 15;
         private IEnumerator Start()
         {
             var rigidbody2D = GetComponent<Rigidbody2D>();
             var player = GameObject.FindWithTag("Player");
-            rigidbody2D.velocity = Vector2.right * 10 * player.transform.localScale.x;
+            rigidbody2D.velocity = Vector2.right * Speed * player.transform.localScale.x;
 
             yield return new WaitForSeconds(15);
 

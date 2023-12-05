@@ -961,6 +961,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260e61656babc56419b6d8a9685f83b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GivenType: 1
+  WeightItems:
+  - Comment: "50%\u7684\u51E0\u7387\u4F1A\u7ED95-10\u79D2\u7684\u5BFF\u547D"
+    MinSeconds: 5
+    MaxSeconds: 10
+    Weight: 0.5
+  - Comment: "10%\u7684\u51E0\u7387\u4F1A\u7ED925-40\u79D2\u7684\u5BFF\u547D\n40%\u7684\u51E0\u7387\u4EC0\u4E48\u90FD\u4E0D\u7ED9"
+    MinSeconds: 25
+    MaxSeconds: 40
+    Weight: 0.1
 --- !u!114 &3290583131065513484
 MonoBehaviour:
   m_ObjectHideFlags: 0

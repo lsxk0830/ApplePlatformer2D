@@ -807,6 +807,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260e61656babc56419b6d8a9685f83b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GivenType: 0
+  WeightItems: []
 --- !u!114 &8010341404620380907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1498,6 +1500,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260e61656babc56419b6d8a9685f83b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GivenType: 1
+  WeightItems:
+  - Comment: 
+    MinSeconds: 9
+    MaxSeconds: 16
+    Weight: 0.7
+  - Comment: 
+    MinSeconds: 23
+    MaxSeconds: 25
+    Weight: 0.1
 --- !u!114 &204003289748863694
 MonoBehaviour:
   m_ObjectHideFlags: 0

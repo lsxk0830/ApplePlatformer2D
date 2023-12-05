@@ -1027,9 +1027,9 @@ GameObject:
   m_Component:
   - component: {fileID: 901429571240268910}
   - component: {fileID: 2367598148639284992}
-  - component: {fileID: 4914887512329429162}
   - component: {fileID: 65705283693534681}
   - component: {fileID: 1419449938640369566}
+  - component: {fileID: 4914887512329429162}
   m_Layer: 0
   m_Name: DeathAction
   m_TagString: Untagged
@@ -1080,18 +1080,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4914887512329429162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4820156606157979118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 260e61656babc56419b6d8a9685f83b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &65705283693534681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1202,6 +1190,28 @@ MonoBehaviour:
       Version: 1.7.1
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
+--- !u!114 &4914887512329429162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4820156606157979118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 260e61656babc56419b6d8a9685f83b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GivenType: 1
+  WeightItems:
+  - Comment: 
+    MinSeconds: 7
+    MaxSeconds: 15
+    Weight: 0.7
+  - Comment: 
+    MinSeconds: 21
+    MaxSeconds: 23
+    Weight: 0.1
 --- !u!1 &9019460221457288990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,6 +1298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260e61656babc56419b6d8a9685f83b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GivenType: 0
+  WeightItems: []
 --- !u!114 &5943349709024590604
 MonoBehaviour:
   m_ObjectHideFlags: 0
