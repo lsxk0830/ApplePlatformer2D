@@ -28,6 +28,8 @@ namespace Blue
 
         private void Update()
         {
+            if(ApplePlatformer2D.IsGamePause) return; // 暂停情况下，不触发开枪
+
             if (mInputSystem.ShootDown)
             {
                 CurrentWeapon?.ShootDown();
