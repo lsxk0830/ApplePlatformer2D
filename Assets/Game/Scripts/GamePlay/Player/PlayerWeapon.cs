@@ -9,28 +9,16 @@ namespace Blue
     public class PlayerWeapon : MonoBehaviour
     {
         private IInputSystem mInputSystem;
-        private IBonfireRule mSimpleGunRule;
 
         private void Awake()
         {
             mInputSystem = ApplePlatformer2D.Interface.GetSystem<IInputSystem>();
-
-            mSimpleGunRule = ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>().GetRuleByKey(nameof(SimpleGunRule));
-            if (mSimpleGunRule.Unlocked)
-                CurrentWeapon = transform.GetComponentInChildren<SimpleGun>();
-            else
-                CurrentWeapon = null;
-            ApplePlatformer2D.OnBonfireRuleUnlocked.Register(ruleName =>
-            {
-                if (ruleName == nameof(SimpleGunRule))
-                    CurrentWeapon = transform.GetComponentInChildren<SimpleGun>();
-            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+            CurrentWeapon = transform.GetComponentInChildren<SimpleGun>(); // 默认自带简单枪
         }
 
         private void OnDestroy()
         {
             mInputSystem = null;
-            mSimpleGunRule = null;
         }
 
         /// <summary>

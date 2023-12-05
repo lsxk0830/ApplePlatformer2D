@@ -135,10 +135,12 @@ namespace Blue
                             .SecondsCost(10)
                             .Condition(self => !self.Passed && level8.Passed)
                             .AddToRules(Rules);
+            /*
             var simpleGun = new SimpleGunRule()
                 .SecondsCost(100)
                 .Condition(_ => level9.Passed)
                 .AddToRules(Rules);
+            */
 
             var level1_2 = new Level1()
                 .WithKey("Level1_2")
@@ -150,40 +152,42 @@ namespace Blue
                 .SecondsCost(20)
                 .Condition(self => !self.Passed && level1_2.Passed && doubleJump.Unlocked)
                 .AddToRules(Rules);
-            var level3_2 = new Level3()
-                .WithKey("Level3_2")
-                .SecondsCost(20)
-                .Condition(self => !self.Passed && level2_2.Passed && simpleGun.Unlocked)
-                .AddToRules(Rules);
-            var level4_2 = new Level4()
-                .WithKey("Level4_2")
-                .SecondsCost(20)
-                .Condition(self => !self.Passed && level3_2.Passed && simpleGun.Unlocked)
-                .AddToRules(Rules);
-            var level5_2 = new Level5()
-                .WithKey("Level5_2")
-                .SecondsCost(20)
-                //.Condition(self => !self.Passed && level4_2.Passed && doubleJump.Unlocked)
-                .Condition(self => false)
-                .AddToRules(Rules);
-            var level6_2 = new Level1()
-                .WithKey("Level6_2")
-                .SecondsCost(20)
-                .Condition(self => !self.Passed && level5_2.Passed && doubleJump.Unlocked)
-                .AddToRules(Rules);
-            var level7_2 = new Level7()
-                .WithKey("Level7_2")
-                .SecondsCost(20)
-                .Condition(self => !self.Passed && level6_2.Passed && doubleJump.Unlocked)
-                .AddToRules(Rules);
-            var level8_2 = new Level8()
-                .WithKey("Level8_2")
-                .SecondsCost(20)
-                .Condition(self => !self.Passed && level7_2.Passed && doubleJump.Unlocked)
-                .AddToRules(Rules);
+            // 将二次游玩关卡全部注释，之后重新设计
+            // var level3_2 = new Level3()
+            //     .WithKey("Level3_2")
+            //     .SecondsCost(20)
+            //     .Condition(self => !self.Passed && level2_2.Passed && simpleGun.Unlocked)
+            //     .AddToRules(Rules);
+            // var level4_2 = new Level4()
+            //     .WithKey("Level4_2")
+            //     .SecondsCost(20)
+            //     .Condition(self => !self.Passed && level3_2.Passed && simpleGun.Unlocked)
+            //     .AddToRules(Rules);
+            // var level5_2 = new Level5()
+            //     .WithKey("Level5_2")
+            //     .SecondsCost(20)
+            //     //.Condition(self => !self.Passed && level4_2.Passed && doubleJump.Unlocked)
+            //     .Condition(self => false)
+            //     .AddToRules(Rules);
+            // var level6_2 = new Level1()
+            //     .WithKey("Level6_2")
+            //     .SecondsCost(20)
+            //     .Condition(self => !self.Passed && level5_2.Passed && doubleJump.Unlocked)
+            //     .AddToRules(Rules);
+            // var level7_2 = new Level7()
+            //     .WithKey("Level7_2")
+            //     .SecondsCost(20)
+            //     .Condition(self => !self.Passed && level6_2.Passed && doubleJump.Unlocked)
+            //     .AddToRules(Rules);
+            // var level8_2 = new Level8()
+            //     .WithKey("Level8_2")
+            //     .SecondsCost(20)
+            //     .Condition(self => !self.Passed && level7_2.Passed && doubleJump.Unlocked)
+            //     .AddToRules(Rules);
 
+            // 第九个通过就通关
             new PassAllLevel()
-                .Condition(_ => level4_2.Passed)
+                .Condition(_ => level9.Passed)
                 .AddToRules(Rules);
         }
 

@@ -21,7 +21,7 @@ namespace Blue
             {
                 var rule = ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>().GetRuleByKey(Key);
 
-                if (rule.Unlocked)
+                if (rule != null && rule.Unlocked)
                 {
                     OnUnlock?.Invoke();
                 }

@@ -1,5 +1,6 @@
 namespace Blue
 {
+    /* 自带枪功能
     /// <summary>
     /// 简单枪规则
     /// </summary>
@@ -16,4 +17,5 @@ namespace Blue
             ApplePlatformer2D.OnBonfireRuleUnlocked.Trigger(Key);
         }
     }
+    */
 }
