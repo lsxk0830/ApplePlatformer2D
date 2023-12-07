@@ -7,6 +7,6 @@ namespace Blue
     {
         public override int NeedSeconds { get; set; } = 5;
         public override string Key { get; set; } = nameof(BonfireOpenUIRebornEnemy);
-        public override string DisplayName { get; } = "在火堆重生敌人";
+        public override string DisplayName { get; set; }= "在火堆重生敌人";
     }
 }

@@ -6,7 +6,7 @@ namespace Blue
     {
         public override int NeedSeconds { get; set; } = 10;
         public override string Key { get; set; } = nameof(MaxHPPlus1);
-        public override string DisplayName { get; } = "最大HP+1";
+        public override string DisplayName { get; set; }= "最大HP+1";
         Lazy<IBonfireRule> mHPBarRule = new Lazy<IBonfireRule>(() =>
             ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>().GetRuleByKey(nameof(HPBar)));
 

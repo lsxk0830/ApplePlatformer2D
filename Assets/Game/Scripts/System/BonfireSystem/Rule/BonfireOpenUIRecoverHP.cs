@@ -7,6 +7,6 @@ namespace Blue
     {
         public override int NeedSeconds { get; set; } = 30;
         public override string Key { get; set; } = nameof(BonfireOpenUIRecoverHP);
-        public override string DisplayName { get; } = "回到火堆恢复 HP";
+        public override string DisplayName { get; set; }= "回到火堆恢复 HP";
     };
 }

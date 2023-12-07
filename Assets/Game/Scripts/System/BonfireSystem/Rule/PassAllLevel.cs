@@ -6,7 +6,7 @@ namespace Blue
     {
         public override int NeedSeconds { get; set; } = 0;
         public override string Key { get; set; } = nameof(PassAllLevel);
-        public override string DisplayName { get; } = "通关";
+        public override string DisplayName { get; set; }= "通关";
 
         protected override void OnUnlock()
         {

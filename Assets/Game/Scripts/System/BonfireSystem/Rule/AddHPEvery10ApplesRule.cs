@@ -7,6 +7,6 @@ namespace Blue
     {
         public override int NeedSeconds { get; set; } = 50;
         public override string Key { get; set; } = nameof(AddHPEvery10ApplesRule);
-        public override string DisplayName { get; } = "每10个苹果恢复1HP";
+        public override string DisplayName { get; set; }= "每10个苹果恢复1HP";
     }
 }

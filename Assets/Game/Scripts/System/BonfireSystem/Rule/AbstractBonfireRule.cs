@@ -11,7 +11,7 @@ namespace Blue
         public abstract int NeedSeconds { get; set; }
         public abstract string Key { get; set; }
         public bool Unlocked { get; set; }
-        public abstract string DisplayName { get; }
+        public abstract string DisplayName { get; set; }
 
         public void Unlock()
         {
@@ -93,6 +93,12 @@ namespace Blue
 
     public static class AbstractBonfireRuleExtension
     {
+        public static T WithDisplayName<T>(this T self, string displayName) where T : AbstractBonfireRule
+        {
+            self.DisplayName = displayName;
+            return self;
+        }
+
         public static T WithKey<T>(this T self, string key) where T : AbstractBonfireRule
         {
             self.Key = key;

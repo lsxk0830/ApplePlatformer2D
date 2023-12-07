@@ -92,6 +92,7 @@ namespace Blue
             {
                 bonfireRule.Reset();
             }
+            Interface.GetSystem<IBonfireSystem>().GenerateRandomLevel(); // 重新生成一下关卡顺序
             Interface.GetSystem<ISaveSystem>().Clear();
             Bonfire.SetRemainSecondsWithoutChangeEvent(60);
             Bonfire.LiveSeconds = 0;
