@@ -593,9 +593,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "v0.0.24\r\n* \u706B\u5806\u6309\u952E\u63D0\u793A\u4FEE\u6539\r\n* UI
     \u652F\u6301\u952E\u76D8\u9009\u62E9\r\n* Behavior Designer :Strip Engine Code\r\n*
-    \u91CD\u7F6E\u65F6\u95F4\u7F29\u653E\r\n\r\nv0.0.23\r\n* \u5173\u5361\u751F\u6210\u987A\u5E8F\u968F\u673A\r\n\r\nv0.0.22\r\n*
-    \u8C03\u6574\u9707\u5C4F\r\n* \u4FEE\u590D\u6253\u5F00\u706B\u5806\u5F00\u67AA\u95EE\u9898\r\n*
-    \u53BB\u6389\u654C\u4EBA\u6B7B\u4EA1\u540E\u5EF6\u65F6\u7206\u70B8\u95EE\u9898\r\n*
+    \u91CD\u7F6E\u65F6\u95F4\u7F29\u653E\r\n* \u5168\u952E\u76D8\u64CD\u63A7\u652F\u6301\r\n\r\nv0.0.23\r\n*
+    \u5173\u5361\u751F\u6210\u987A\u5E8F\u968F\u673A\r\n\r\nv0.0.22\r\n* \u8C03\u6574\u9707\u5C4F\r\n*
+    \u4FEE\u590D\u6253\u5F00\u706B\u5806\u5F00\u67AA\u95EE\u9898\r\n* \u53BB\u6389\u654C\u4EBA\u6B7B\u4EA1\u540E\u5EF6\u65F6\u7206\u70B8\u95EE\u9898\r\n*
     \u589E\u52A0\u7206\u70B8\u52A8\u753B\u548C\u706F\u5149\r\n\r\nv0.0.21\r\n* \u5C04\u51FB\u4F5C\u4E3A\u81EA\u5E26\u7684\u653B\u51FB\u65B9\u5F0F\r\n*
     \u56F4\u7ED5\u5C04\u51FB\u673A\u5236\uFF0C\u4E3A\u5173\u5361\u8865\u5145\u654C\u4EBA\r\n\r\nv0.0.20\r\n*
     \u5B50\u5F39\u901F\u5EA6\u8C03\u6574\r\n* \u654C\u4EBA\u6B7B\u4EA1\u5BFF\u547D\u968F\u673A\r\n\r\nv0.0.19\r\n*
@@ -958,6 +958,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 440305284}
+  - component: {fileID: 440305285}
   m_Layer: 5
   m_Name: UIStartPanel
   m_TagString: Untagged
@@ -991,6 +992,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -924, y: -668}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &440305285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440305283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8649d8fe7e0697f4d9782335a97123fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoSelectTarget: {fileID: 1937136705}
+  InputState: 0
 --- !u!1 &667371325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,6 +1966,7 @@ GameObject:
   - component: {fileID: 1473073925}
   - component: {fileID: 1473073927}
   - component: {fileID: 1473073926}
+  - component: {fileID: 1473073928}
   m_Layer: 5
   m_Name: UIVersionPanel
   m_TagString: Untagged
@@ -2019,6 +2035,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473073924}
   m_CullTransparentMesh: 1
+--- !u!114 &1473073928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473073924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8649d8fe7e0697f4d9782335a97123fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoSelectTarget: {fileID: 1260479890}
+  InputState: 0
 --- !u!1 &1510641221
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,6 +3193,7 @@ GameObject:
   - component: {fileID: 2012300587}
   - component: {fileID: 2012300589}
   - component: {fileID: 2012300588}
+  - component: {fileID: 2012300590}
   m_Layer: 5
   m_Name: UIAboutPanel
   m_TagString: Untagged
@@ -3231,3 +3262,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012300586}
   m_CullTransparentMesh: 1
+--- !u!114 &2012300590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012300586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8649d8fe7e0697f4d9782335a97123fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoSelectTarget: {fileID: 798100745}
+  InputState: 0
