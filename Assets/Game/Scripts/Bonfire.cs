@@ -15,29 +15,19 @@ namespace Blue
         public int DebugInitPlayerHp = 5;
         public bool IsDebug = false;
 
-        /// <summary>
-        /// 对外提供一个打开UI的方法
-        /// </summary>
-        public void OpenUI()
-        {
-            ApplePlatformer2D.GamePause();
-            mOpenBonfireUI = true;
-            ApplePlatformer2D.OnOpenBonfireUI.Trigger();
-            AudioSystem.PlayUIFeedback();
-        }
-
-        /// <summary>
-        /// 对外提供一个关闭UI的方法
-        /// </summary>
-        public void CloseUI()
-        {
-            ApplePlatformer2D.GameResume();
-            mOpenBonfireUI = false;
-            AudioSystem.PlayUIFeedback();
-        }
+        private IInputSystem mInputSystem;
 
         private void Awake()
         {
+            mInputSystem = ApplePlatformer2D.Interface.GetSystem<IInputSystem>();
+
+            var bonfireUIController = transform.GetComponentInChildren<BonfireUIController>();
+            if (bonfireUIController)
+                bonfireUIController.BtnClose.onClick.AddListener(() =>
+                {
+                    CloseUI();
+                });
+
             if (IsDebug)
             {
                 SetRemainSecondsWithoutChangeEvent(DebugInitRemainSeconds);
@@ -60,6 +50,35 @@ namespace Blue
                 ApplePlatformer2D.Save(); // 每次打开火堆时进行存储操作
 
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
+        }
+
+        /// <summary>
+        /// 对外提供一个打开UI的方法
+        /// </summary>
+        public void OpenUI()
+        {
+            ApplePlatformer2D.GamePause();
+            mOpenBonfireUI = true;
+            ApplePlatformer2D.OnOpenBonfireUI.Trigger();
+            AudioSystem.PlayUIFeedback();
+
+            var bonfireUIController = transform.GetComponentInChildren<BonfireUIController>();
+            if (bonfireUIController)
+                bonfireUIController.Open();
+        }
+
+        /// <summary>
+        /// 对外提供一个关闭UI的方法
+        /// </summary>
+        public void CloseUI()
+        {
+            ApplePlatformer2D.GameResume();
+            mOpenBonfireUI = false;
+            AudioSystem.PlayUIFeedback();
+
+            var bonfireUIController = transform.GetComponentInChildren<BonfireUIController>();
+            if (bonfireUIController)
+                bonfireUIController.Close();
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -136,7 +155,7 @@ namespace Blue
             }
             else if (mOpenBonfireUI)
             {
-                if (Input.GetKeyDown(KeyCode.W))
+                if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     CloseUI();
                 }
@@ -180,70 +199,12 @@ namespace Blue
             {
                 bonfireRule.OnGUI();
             }
-
-            if (mOpenBonfireUI)
-            {
-                var windowPosition = new Rect
-                {
-                    size = new Vector2(640, 480),
-                    center = new Vector2(WIDTH * 0.5f, HEIGHT * 0.5f)
-                };
-
-                GUILayout.Window(0, windowPosition, id =>
-                {
-                    GUILayout.BeginHorizontal();
-                    GUILayout.FlexibleSpace();
-                    if (GUILayout.Button("x", GUILayout.Width(20)))
-                    {
-                        CloseUI();
-                    }
-                    GUILayout.EndHorizontal();
-
-                    foreach (var bonfireRule in mBonfireSystem.Rules)
-                    {
-                        bonfireRule.OnBonfireOnGUI();
-                    }
-                }, "火堆 UI");
-            }
-            /*
-            if (ApplePlatformer2D.IsGameOver)
-            {
-                // 游戏结束界面
-                GUILayout.BeginArea(new Rect(0, 0, WIDTH, HEIGHT));
-
-                GUILayout.FlexibleSpace();
-
-                GUILayout.BeginHorizontal();
-                {
-                    GUILayout.FlexibleSpace();
-                    GUILayout.Label("游戏结束", Styles.Biglabel.Value);
-                    GUILayout.FlexibleSpace();
-                }
-                GUILayout.EndHorizontal();
-                GUILayout.Space(50); // 设置间距
-
-                GUILayout.BeginHorizontal();
-                {
-                    GUILayout.FlexibleSpace();
-                    if (GUILayout.Button("回到主页", Styles.BigButton.Value))
-                    {
-                        //ApplePlatformer2D.ResetGameData();
-                        AudioSystem.PlayUIFeedback();
-                        SceneManager.LoadScene("GameStart");
-                    }
-                    GUILayout.FlexibleSpace();
-                }
-                GUILayout.EndHorizontal();
-
-                GUILayout.FlexibleSpace();
-                GUILayout.EndArea();
-            }
-            */
         }
 
         private void OnDestroy()
         {
             mBonfireSystem = null;
+            mInputSystem = null;
         }
     }
 }

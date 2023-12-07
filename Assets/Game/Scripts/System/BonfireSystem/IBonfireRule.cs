@@ -1,3 +1,5 @@
+using System;
+
 namespace Blue
 {
     /// <summary>
@@ -19,6 +21,10 @@ namespace Blue
         /// 是否解锁
         /// </summary>
         bool Unlocked { get; set; }
+
+        string DisplayName { get;}
+
+        Func<AbstractBonfireRule, bool> VisibleCondition { get; set; }
 
         /// <summary>
         /// 解锁

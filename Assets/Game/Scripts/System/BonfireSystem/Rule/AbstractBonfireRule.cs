@@ -6,7 +6,7 @@ namespace Blue
 {
     public abstract class AbstractBonfireRule : IBonfireRule
     {
-        public Func<AbstractBonfireRule, bool> mVisibleCondition { get; set; } = _ => true;
+        public Func<AbstractBonfireRule, bool> VisibleCondition { get; set; } = _ => true;
 
         public abstract int NeedSeconds { get; set; }
         public abstract string Key { get; set; }
@@ -32,7 +32,7 @@ namespace Blue
         public virtual void OnBonfireOnGUI()
         {
             //Debug.Log($"this:{this.DisplayName},mVisibleCondition:{!mVisibleCondition(this)}");
-            if (!mVisibleCondition(this)) return;
+            if (!VisibleCondition(this)) return;
 
             if (!Unlocked)
             {
@@ -113,7 +113,7 @@ namespace Blue
 
         public static T Condition<T>(this T self, Func<T, bool> visibleCondition) where T : AbstractBonfireRule
         {
-            self.mVisibleCondition = _ => visibleCondition(self);
+            self.VisibleCondition = _ => visibleCondition(self);
             return self;
         }
 
