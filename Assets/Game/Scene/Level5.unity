@@ -2357,6 +2357,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5480079253803950765, guid: a84df8a937835d44c8f2bff49b1ccbdc, type: 3}
+      propertyPath: m_Size.y
+      value: 0.95116043
+      objectReference: {fileID: 0}
+    - target: {fileID: 5480079253803950765, guid: a84df8a937835d44c8f2bff49b1ccbdc, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.014066696
+      objectReference: {fileID: 0}
     - target: {fileID: 5480079253803950766, guid: a84df8a937835d44c8f2bff49b1ccbdc, type: 3}
       propertyPath: m_Name
       value: Spike (1)
@@ -7321,6 +7329,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5480079253803950765, guid: a84df8a937835d44c8f2bff49b1ccbdc, type: 3}
       propertyPath: m_Size.x
+      value: 7.934965
+      objectReference: {fileID: 0}
+    - target: {fileID: 5480079253803950765, guid: a84df8a937835d44c8f2bff49b1ccbdc, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.00000035762787
+      objectReference: {fileID: 0}
+    - target: {fileID: 5480079253803950765, guid: a84df8a937835d44c8f2bff49b1ccbdc, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5480079253803950766, guid: a84df8a937835d44c8f2bff49b1ccbdc, type: 3}

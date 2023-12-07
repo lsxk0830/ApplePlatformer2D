@@ -1,3 +1,9 @@
+v0.0.24
+* 火堆按键提示修改
+* UI 支持键盘选择
+* Behavior Designer :Strip Engine Code
+* 重置时间缩放
+
 v0.0.23
 * 关卡生成顺序随机
 

@@ -1,7 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using QFramework;
-using System;
 
 namespace Blue
 {

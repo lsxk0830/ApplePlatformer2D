@@ -8,13 +8,13 @@ namespace Blue
     {
         void Start()
         {
-            transform.Find("BtnStart").GetComponent<Button>().onClick.AddListener(() =>
+            transform.Find("UIStartPanel/BtnStart").GetComponent<Button>().onClick.AddListener(() =>
             {
                 ApplePlatformer2D.ResetGameData();
                 ApplePlatformer2D.HasContinue = true;
                 SceneManager.LoadScene("Game");
             });
-            var btnContinue = transform.Find("BtnContinue").GetComponent<Button>();
+            var btnContinue = transform.Find("UIStartPanel/BtnContinue").GetComponent<Button>();
             if (ApplePlatformer2D.HasContinue)
             {
                 btnContinue.onClick.AddListener(() =>
@@ -26,7 +26,7 @@ namespace Blue
             else
                 btnContinue.gameObject.SetActive(false);
 
-            var btnVersion = transform.Find("BtnVersion").GetComponent<Button>();
+            var btnVersion = transform.Find("UIStartPanel/BtnVersion").GetComponent<Button>();
             btnVersion.GetComponentInChildren<Text>().text = "v" + Application.version;
         }
     }

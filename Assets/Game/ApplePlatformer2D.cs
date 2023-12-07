@@ -96,6 +96,7 @@ namespace Blue
             Interface.GetSystem<ISaveSystem>().Clear();
             Bonfire.SetRemainSecondsWithoutChangeEvent(60);
             Bonfire.LiveSeconds = 0;
+            Time.timeScale = 1.0f;
         }
 
         /// <summary>
@@ -116,8 +117,9 @@ namespace Blue
             {
                 bonfireRule.Load();
             }
-
             Interface.GetSystem<ISaveSystem>().Load();
+
+            Time.timeScale = 1.0f;
         }
 
         public static void Save()
