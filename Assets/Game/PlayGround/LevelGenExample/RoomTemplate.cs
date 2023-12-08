@@ -16,5 +16,8 @@ namespace Blue
         public Tilemap Ground;
         public Transform LeftConnectionPoint;
         public Transform RightConnectionPoint;
+
+        public Vector3Int RightConnectionCellPosOffset => Grid.WorldToCell(RightConnectionPoint.position) - Grid.WorldToCell(LB.position);
+        public Vector3Int LeftConnectionCellPosOffset => Grid.WorldToCell(LeftConnectionPoint.position) - Grid.WorldToCell(LB.position);
     }
 }

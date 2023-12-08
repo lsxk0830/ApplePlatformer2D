@@ -378,7 +378,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87ceda17273e694395c3fcdaffc2e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoomTemplate: {fileID: 8967824729018525023, guid: a8eb352378e1a904186ba0a1fab029c4, type: 3}
+  RoomTemplates:
+  - {fileID: 8967824729018525023, guid: a2ea1c59417be9a4f84fcb830b6fc427, type: 3}
+  - {fileID: 8967824729018525023, guid: 9a0673cf90b04c549939f046d919e184, type: 3}
+  - {fileID: 8967824729018525023, guid: f18168030bd400d42a941ceac737a2f1, type: 3}
   ToGrid: {fileID: 1864447161}
   ToGround: {fileID: 1789519851}
   ToObjects: {fileID: 627060738}
