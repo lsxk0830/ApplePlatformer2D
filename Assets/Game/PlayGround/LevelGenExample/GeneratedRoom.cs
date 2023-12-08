@@ -17,11 +17,11 @@ namespace Blue
         /// <summary>
         /// 当前房间右节点的CellPos(相对已生成地图的原点)
         /// </summary>
-        protected Vector3Int mCurrentRoomRighConnectionCellPos = Vector3Int.zero;
+        public Vector3Int CurrentRoomRighConnectionCellPos = Vector3Int.zero;
 
         public void GenerateRoomWithTemplate(RoomTemplate roomTemplate)
         {
-            mCurrentRoomRighConnectionCellPos = roomTemplate.CopyRoomTemplateToBase(mCurrentRoomRighConnectionCellPos,ToGround);
+            roomTemplate.CopyRoomTemplateToBase(this);
         }
     }
 }
