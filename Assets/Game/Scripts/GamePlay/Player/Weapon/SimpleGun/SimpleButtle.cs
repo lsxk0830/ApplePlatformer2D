@@ -35,6 +35,10 @@ namespace Blue
             }
             else if (LayerMaskUtility.Contains(groundLayer, other.collider.gameObject.layer))
             {
+                var destructableTilemap = other.collider.GetComponent<DestructableTilemap>();
+                if(destructableTilemap)
+                    destructableTilemap.DestoryTile(other, other.GetContact(0).normal * -0.01f);
+
                 //如果是墻毀自己
                 OnAttackWall?.Invoke();
                 Destroy(gameObject);

@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 5008689432004097531}
   - component: {fileID: 5802362611877036309}
   - component: {fileID: 8367727398013105257}
+  - component: {fileID: 469622918058872046}
   m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
@@ -829,3 +830,18 @@ CompositeCollider2D:
       - {x: 1.99999, y: -0.0000394}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
+--- !u!114 &469622918058872046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9199196930614512236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edcefe882a05b97468d16531015eb1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCollisionEvent:
+    m_PersistentCalls:
+      m_Calls: []

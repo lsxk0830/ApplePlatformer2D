@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 38897002}
   - component: {fileID: 38897001}
   - component: {fileID: 38897000}
+  - component: {fileID: 38897005}
   m_Layer: 3
   m_Name: Tilemap
   m_TagString: Untagged
@@ -182,13 +183,25 @@ CompositeCollider2D:
     - - X: 110000100
         Y: -80000041
       - X: 110000100
-        Y: -69999959
+        Y: -70000041
       - X: 110000041
+        Y: -70000100
+      - X: 99999959
+        Y: -70000100
+      - X: 99999900
+        Y: -70000041
+      - X: 99999900
         Y: -69999900
+      - X: -99999900
+        Y: -69999900
+      - X: -99999900
+        Y: -70000041
+      - X: -99999959
+        Y: -70000100
       - X: -110000041
-        Y: -69999900
+        Y: -70000100
       - X: -110000100
-        Y: -69999959
+        Y: -70000041
       - X: -110000100
         Y: -80000041
       - X: -110000041
@@ -213,14 +226,14 @@ CompositeCollider2D:
         Y: -80000100
   m_CompositePaths:
     m_Paths:
-    - - {x: 10.999974, y: -8.00001}
-      - {x: 10.999974, y: -6.9999905}
-      - {x: -11.00001, y: -7.0000257}
-      - {x: -10.999974, y: -8.00001}
     - - {x: 18.999975, y: -8.00001}
       - {x: 18.999975, y: -6.9999905}
       - {x: 13.99999, y: -7.0000257}
       - {x: 14.000026, y: -8.00001}
+    - - {x: 10.999974, y: -8.00001}
+      - {x: 10.999974, y: -7.0000095}
+      - {x: -11.00001, y: -7.000034}
+      - {x: -10.999974, y: -8.00001}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &38897001
@@ -641,6 +654,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &38897005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38896998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edcefe882a05b97468d16531015eb1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCollisionEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &65563369
 GameObject:
   m_ObjectHideFlags: 0
@@ -9761,6 +9789,7 @@ GameObject:
   - component: {fileID: 2101394758}
   - component: {fileID: 2101394757}
   - component: {fileID: 2101394756}
+  - component: {fileID: 2101394761}
   m_Layer: 3
   m_Name: Level4Ground
   m_TagString: Untagged
@@ -12927,6 +12956,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &2101394761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101394754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edcefe882a05b97468d16531015eb1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCollisionEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1793530567418787198
 PrefabInstance:
   m_ObjectHideFlags: 0
