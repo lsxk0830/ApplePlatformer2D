@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using QFramework;
+using System;
 
 namespace Blue
 {
@@ -72,13 +74,23 @@ namespace Blue
         /// </summary>
         public void CloseUI()
         {
-            ApplePlatformer2D.GameResume();
-            mOpenBonfireUI = false;
             AudioSystem.PlayUIFeedback();
 
             var bonfireUIController = transform.GetComponentInChildren<BonfireUIController>();
             if (bonfireUIController)
                 bonfireUIController.Close();
+
+            StartCoroutine(Delay(0.1f, () =>
+            {
+                ApplePlatformer2D.GameResume();
+                mOpenBonfireUI = false;
+            }));
+        }
+
+        IEnumerator Delay(float seconds, Action onDelayFinish)
+        {
+            yield return new WaitForSecondsRealtime(seconds); // 真实时间，不受 Time.Scale 缩放影响
+            onDelayFinish?.Invoke();
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
