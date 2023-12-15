@@ -296,10 +296,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitRoomTemplates:
   - {fileID: 8967824729018525023, guid: 3b843cb4033d32740aedbb2b7fbe0710, type: 3}
-  SomeRoomTemplates:
-  - {fileID: 8967824729018525023, guid: a2ea1c59417be9a4f84fcb830b6fc427, type: 3}
-  - {fileID: 8967824729018525023, guid: 9a0673cf90b04c549939f046d919e184, type: 3}
+  ShootRoomTemplates:
+  - {fileID: 8967824729018525023, guid: 4c95a14af17343b47a56db8089544aa1, type: 3}
+  - {fileID: 8967824729018525023, guid: 80b12f047f65b8d48bfdfc08e7af3697, type: 3}
+  EmptyRoomTemplates:
   - {fileID: 8967824729018525023, guid: f18168030bd400d42a941ceac737a2f1, type: 3}
+  - {fileID: 8967824729018525023, guid: 9a0673cf90b04c549939f046d919e184, type: 3}
   FinalRoomTemplates:
   - {fileID: 8967824729018525023, guid: f1718ead81ae8754cb4d5564bd3ba109, type: 3}
 --- !u!1001 &1624760909
@@ -319,11 +321,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6961143746032714210, guid: 5ff0237570f0e1e46b6b7a736942d533, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 71.97925
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6961143746032714210, guid: 5ff0237570f0e1e46b6b7a736942d533, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.757956
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6961143746032714210, guid: 5ff0237570f0e1e46b6b7a736942d533, type: 3}
       propertyPath: m_LocalPosition.z

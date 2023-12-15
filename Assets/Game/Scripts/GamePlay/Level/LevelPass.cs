@@ -19,10 +19,12 @@ namespace Blue
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (!other.CompareTag("Player")) return;
+
             LevelPassText.gameObject.SetActive(true);
             OnLevelPass?.Invoke();
 
-            if(TriggerEventToController)
+            if (TriggerEventToController)
                 LevelController.PassCurrentLevel();
 
             StartCoroutine(Delay(2, () =>

@@ -7,21 +7,30 @@ namespace Blue
     public class LevelR1Controller : LevelController
     {
         public List<RoomTemplate> InitRoomTemplates;
-        public List<RoomTemplate> SomeRoomTemplates;
+        public List<RoomTemplate> ShootRoomTemplates;
+        public List<RoomTemplate> EmptyRoomTemplates;
         public List<RoomTemplate> FinalRoomTemplates;
 
         void Start()
         {
             var generator = GetComponent<GeneratedRoom>();
-
+            // 先生成初始房间
             generator.GenerateRoomWithTemplate(GetRoomTemplate(InitRoomTemplates));
 
-            var generateCount = Random.Range(3, 5);
-            for (int i = 0; i < generateCount;i++)
-            {
-                generator.GenerateRoomWithTemplate(GetRoomTemplate(SomeRoomTemplates));
-            }
+            // 然后生成 1 个战斗房间
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(ShootRoomTemplates));
 
+            // 然后生成一个空白房间
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(EmptyRoomTemplates));
+
+            // 再生成 2 个战斗房间
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(ShootRoomTemplates));
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(ShootRoomTemplates));
+
+            // 生成 1 个空白房间
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(EmptyRoomTemplates));
+
+            // 生成最终房间
             generator.GenerateRoomWithTemplate(GetRoomTemplate(FinalRoomTemplates));
 
             OnCurrentLevelPassed.Register(()=>

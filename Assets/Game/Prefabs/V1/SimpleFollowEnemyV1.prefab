@@ -192,7 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2722945699050066439}
   - component: {fileID: 2722945699050066438}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SetSpriteColorRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2722945699405325894}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Actions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2722945699523557741}
   - component: {fileID: 2722945699523559058}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SetSpriteColorWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
