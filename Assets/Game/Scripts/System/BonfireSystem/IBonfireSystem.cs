@@ -38,6 +38,14 @@ namespace Blue
                 1,2,3,4,5,6,7,8
             };
 
+            // 第 0 关
+            var levelR1 = new GenericlLevel()
+                            .WithKey("LevelR1")
+                            .WithDisplayName("随机关1")
+                            .SecondsCost(30)
+                            .Condition(self => !self.Passed)
+                            .AddToRules(Rules);
+
             // 第1关
             var level1 = new GenericlLevel()
                             .WithKey("Level" + GetRandomLevelIndex(ungenratedLevels))

@@ -15,11 +15,15 @@ namespace Blue
         public UnityEvent OnLevelPass;
         public UnityEvent OnLevelPassDelayFinish; // 通关延时完成事件
         public bool ResetPlayerOriginPoint = false; // 玩家是否回到原点
+        public bool TriggerEventToController = false;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             LevelPassText.gameObject.SetActive(true);
             OnLevelPass?.Invoke();
+
+            if(TriggerEventToController)
+                LevelController.PassCurrentLevel();
 
             StartCoroutine(Delay(2, () =>
             {
