@@ -3192,6 +3192,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2626906377335046314, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
+      propertyPath: m_Text
+      value: "\u901A\u8FC7"
+      objectReference: {fileID: 0}
     - target: {fileID: 6339890823416974674, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
       propertyPath: m_Name
       value: LevelPassV1

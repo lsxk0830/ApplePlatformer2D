@@ -472,7 +472,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 30408868, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: m_Text
-      value: "\u7B2C\u4E09\u5173 \u901A\u8FC7"
+      value: "\u901A\u8FC7"
       objectReference: {fileID: 0}
     - target: {fileID: 906227183346550946, guid: 6b72a847502618943bb99ea9fc17c156, type: 3}
       propertyPath: RuleName
@@ -10388,7 +10388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2626906377335046314, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
       propertyPath: m_Text
-      value: "\u7B2C\u4E09\u5173 \u901A\u8FC7"
+      value: "\u901A\u8FC7"
       objectReference: {fileID: 0}
     - target: {fileID: 6339890823416974674, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
       propertyPath: m_Name

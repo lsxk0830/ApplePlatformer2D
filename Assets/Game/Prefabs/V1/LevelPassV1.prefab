@@ -79,7 +79,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u7B2C\u516D\u5173 \u901A\u8FC7"
+  m_Text: " \u901A\u8FC7"
 --- !u!1 &2626906378030152074
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +425,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   ResetPlayerOriginPoint: 0
+  TriggerEventToController: 0
 --- !u!114 &2626906377323511821
 MonoBehaviour:
   m_ObjectHideFlags: 0

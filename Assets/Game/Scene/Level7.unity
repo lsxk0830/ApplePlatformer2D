@@ -7273,7 +7273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2626906377335046314, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
       propertyPath: m_Text
-      value: "\u7B2C\u4E03\u5173 \u901A\u8FC7"
+      value: "\u901A\u8FC7"
       objectReference: {fileID: 0}
     - target: {fileID: 6339890823416974673, guid: 6c4029ae6fd527a44bde4ab7de3815fb, type: 3}
       propertyPath: OnLevelPass.m_PersistentCalls.m_Calls.Array.size

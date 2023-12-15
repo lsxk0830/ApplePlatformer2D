@@ -57,7 +57,8 @@ namespace Blue
         /// </summary>
         public static bool HasContinue
         {
-            get => PlayerPrefs.GetInt(nameof(HasContinue), 0) == 1;
+            //get => PlayerPrefs.GetInt(nameof(HasContinue), 0) == 1;
+            get => false; // 设置成不用继续游戏
             set => PlayerPrefs.SetInt(nameof(HasContinue), value ? 1 : 0);
         }
         protected override void Init()
