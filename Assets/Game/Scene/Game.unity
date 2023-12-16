@@ -192,6 +192,18 @@ CompositeCollider2D:
         Y: -70000041
       - X: 99999900
         Y: -69999900
+      - X: -29999900
+        Y: -69999900
+      - X: -29999900
+        Y: -70000041
+      - X: -29999959
+        Y: -70000100
+      - X: -60000041
+        Y: -70000100
+      - X: -60000100
+        Y: -70000041
+      - X: -60000100
+        Y: -69999900
       - X: -99999900
         Y: -69999900
       - X: -99999900
@@ -605,9 +617,13 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 27
     m_Data: {fileID: 11400000, guid: 443cc20c6825f5d49b48e8b48132871b, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 27
     m_Data: {fileID: 21300000, guid: 4590dd45f00b465438a7010751a396a7, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 27
     m_Data:
@@ -666,7 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edcefe882a05b97468d16531015eb1a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnCollisionEvent:
+  OnTileDestroy:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &65563369
@@ -12968,7 +12984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edcefe882a05b97468d16531015eb1a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnCollisionEvent:
+  OnTileDestroy:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &1793530567418787198

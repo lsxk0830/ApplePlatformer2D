@@ -591,7 +591,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "v0.1.3\r\n* \u53EF\u7834\u73AF\u5730\u5F62\u5B9E\u73B0\r\n\r\nv0.1.2\r\n*
+  m_Text: "v0.1.4\r\n* \u7834\u574F\u5730\u5F62\u6548\u679C\r\n\r\nv0.1.3\r\n* \u53EF\u7834\u574F\u5730\u5F62\u5B9E\u73B0\r\n\r\nv0.1.2\r\n*
     \u53BB\u6389\u5F71\u54CD\u4F53\u9A8C\u7684\u6570\u5B57\r\n* \u53BB\u6389\u5B58\u6863\u6309\u94AE\r\n\r\nv0.1.1\r\n*
     \u6E38\u620F\u7ED3\u6784\u8C03\u6574\u4E3A\u56DB\u4E2A\u968F\u673A\u5173\r\n\r\nv0.1.0\r\n*
     \u706B\u5806UI\u6539\u8FDB\r\n* \u4FEE\u590D\u6BCF\u6B21\u5173\u95ED\u706B\u5806UI\u5F00\u67AA\u6216\u8005\u8DF3\u8DC3\u95EE\u9898\r\n\r\nv0.0.25\r\n*

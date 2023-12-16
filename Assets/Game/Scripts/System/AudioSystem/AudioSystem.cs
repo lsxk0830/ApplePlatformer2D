@@ -7,6 +7,8 @@ namespace Blue
         public AudioSource UIFeedback;
         private static AudioSystem mAudioSystem;
 
+        private static AudioConfig mAudioConfig;
+
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
@@ -21,6 +23,21 @@ namespace Blue
         private void OnDestroy()
         {
             mAudioSystem = null;
+        }
+
+        /// <summary>
+        /// 播放销毁地块音效
+        /// </summary>
+        public static void PlayDestrutcTile(Vector3 point)
+        {
+            MakeSureConfig();
+            AudioSource.PlayClipAtPoint(mAudioConfig.DestructTileClip,point);
+        }
+
+        private static void MakeSureConfig()
+        {
+            if(!mAudioConfig)
+                mAudioConfig = AudioConfig.Load();
         }
     }
 }
