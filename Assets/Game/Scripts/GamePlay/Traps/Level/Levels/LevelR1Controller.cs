@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using QFramework;
 using UnityEngine;
 
@@ -13,36 +14,31 @@ namespace Blue
 
         void Start()
         {
+            var initRoomTemplates = InitRoomTemplates.ToList();
+            var shootRoomTemplates = ShootRoomTemplates.ToList();
+            var emptyRoomTemplates = EmptyRoomTemplates.ToList();
+            var finalRoomTemplates = FinalRoomTemplates.ToList();
+
             var generator = GetComponent<GeneratedRoom>();
             // 先生成初始房间
-            generator.GenerateRoomWithTemplate(GetRoomTemplate(InitRoomTemplates));
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(initRoomTemplates));
 
-            // 然后生成 1 个战斗房间
-            generator.GenerateRoomWithTemplate(GetRoomTemplate(ShootRoomTemplates));
+            // 然后生成 2 个战斗房间
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(shootRoomTemplates));
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(shootRoomTemplates));
 
-            // 然后生成一个空白房间
-            generator.GenerateRoomWithTemplate(GetRoomTemplate(EmptyRoomTemplates));
+            // 然后生成 1 个空白房间
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(emptyRoomTemplates));
 
             // 再生成 2 个战斗房间
-            generator.GenerateRoomWithTemplate(GetRoomTemplate(ShootRoomTemplates));
-            generator.GenerateRoomWithTemplate(GetRoomTemplate(ShootRoomTemplates));
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(shootRoomTemplates));
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(shootRoomTemplates));
 
             // 生成 1 个空白房间
-            generator.GenerateRoomWithTemplate(GetRoomTemplate(EmptyRoomTemplates));
-
-            // 然后生成 1 个战斗房间
-            generator.GenerateRoomWithTemplate(GetRoomTemplate(ShootRoomTemplates));
-
-            // 然后生成一个空白房间
-            generator.GenerateRoomWithTemplate(GetRoomTemplate(EmptyRoomTemplates));
-
-            // 再生成 3 个战斗房间
-            generator.GenerateRoomWithTemplate(GetRoomTemplate(ShootRoomTemplates));
-            generator.GenerateRoomWithTemplate(GetRoomTemplate(ShootRoomTemplates));
-            generator.GenerateRoomWithTemplate(GetRoomTemplate(ShootRoomTemplates));
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(emptyRoomTemplates));
 
             // 生成最终房间
-            generator.GenerateRoomWithTemplate(GetRoomTemplate(FinalRoomTemplates));
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(finalRoomTemplates));
 
             OnCurrentLevelPassed.Register(() =>
             {
@@ -57,7 +53,10 @@ namespace Blue
 
         private RoomTemplate GetRoomTemplate(List<RoomTemplate> templates)
         {
-            return templates[Random.Range(0, templates.Count)];
+            var randomIndex = Random.Range(0, templates.Count);
+            var returnRoomTemplate = templates[randomIndex];
+            templates.RemoveAt(randomIndex);
+            return returnRoomTemplate;
         }
     }
 }

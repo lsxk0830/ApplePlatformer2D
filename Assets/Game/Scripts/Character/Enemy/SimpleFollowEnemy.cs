@@ -106,7 +106,7 @@ namespace Blue
                 characterMovement.enabled = false;
             });
 
-            ForwardCheck.OnTriggerEnter.AddListener(() =>
+            ForwardCheck.OnTriggerEnterWithCollider.AddListener(_ =>
             {
                 var localScale = transform.localScale;
                 localScale.x *= -1;
