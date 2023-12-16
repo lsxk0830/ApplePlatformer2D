@@ -30,10 +30,21 @@ namespace Blue
             // 生成 1 个空白房间
             generator.GenerateRoomWithTemplate(GetRoomTemplate(EmptyRoomTemplates));
 
+            // 然后生成 1 个战斗房间
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(ShootRoomTemplates));
+
+            // 然后生成一个空白房间
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(EmptyRoomTemplates));
+
+            // 再生成 3 个战斗房间
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(ShootRoomTemplates));
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(ShootRoomTemplates));
+            generator.GenerateRoomWithTemplate(GetRoomTemplate(ShootRoomTemplates));
+
             // 生成最终房间
             generator.GenerateRoomWithTemplate(GetRoomTemplate(FinalRoomTemplates));
 
-            OnCurrentLevelPassed.Register(()=>
+            OnCurrentLevelPassed.Register(() =>
             {
                 // 处理通关的逻辑
                 var bonfireSystem = ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>();

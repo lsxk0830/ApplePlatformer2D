@@ -35,22 +35,20 @@ namespace Blue
             Rules.Clear();
             var stage1 = new List<string>() // 未生成的关卡，第九关需要二段跳，特殊处理
             {
-                "LevelR1","Level1","Level2","Level3"
+                "LevelR1"
             };
             var stage2 = new List<string>() // 未生成的关卡，第九关需要二段跳，特殊处理
             {
-                "Level4","Level5","Level6"
+                "Level1","Level2","Level3"
             };
             var stage3 = new List<string>() // 未生成的关卡，第九关需要二段跳，特殊处理
             {
-                "Level7","Level8"
+                "Level4","Level5","Level6"
             };
             var stage4 = new List<string>() // 未生成的关卡，第九关需要二段跳，特殊处理
             {
-                "Level9"
+                "Level7","Level8","Level9"
             };
-
-
 
             // 第1关
             var level1 = new GenericlLevel()

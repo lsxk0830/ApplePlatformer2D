@@ -299,9 +299,15 @@ MonoBehaviour:
   ShootRoomTemplates:
   - {fileID: 8967824729018525023, guid: 4c95a14af17343b47a56db8089544aa1, type: 3}
   - {fileID: 8967824729018525023, guid: 80b12f047f65b8d48bfdfc08e7af3697, type: 3}
+  - {fileID: 8967824729018525023, guid: 1762ecbd89ca8f74fb61168efb704364, type: 3}
+  - {fileID: 8967824729018525023, guid: c2e103ec4ad0f114eb3a1652a71a2716, type: 3}
+  - {fileID: 8967824729018525023, guid: a2ea1c59417be9a4f84fcb830b6fc427, type: 3}
   EmptyRoomTemplates:
   - {fileID: 8967824729018525023, guid: f18168030bd400d42a941ceac737a2f1, type: 3}
   - {fileID: 8967824729018525023, guid: 9a0673cf90b04c549939f046d919e184, type: 3}
+  - {fileID: 8967824729018525023, guid: a304444f32d276846b2ab3dd9fc0869b, type: 3}
+  - {fileID: 8967824729018525023, guid: d9cbc65dbfe53ea44bf3aec3de2a2cee, type: 3}
+  - {fileID: 8967824729018525023, guid: aa8f4e46c37e6b64e923f655c04034bf, type: 3}
   FinalRoomTemplates:
   - {fileID: 8967824729018525023, guid: f1718ead81ae8754cb4d5564bd3ba109, type: 3}
 --- !u!1001 &1624760909
@@ -478,8 +484,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933893491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.6838, y: -16.466, z: 0}
-  m_LocalScale: {x: 203.57, y: 6.6442, z: 1}
+  m_LocalPosition: {x: 152.841, y: -49.7, z: 0}
+  m_LocalScale: {x: 400, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
