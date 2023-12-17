@@ -707,6 +707,7 @@ GameObject:
   - component: {fileID: 1082469932}
   - component: {fileID: 6959077017439214403}
   - component: {fileID: 7518564826175282076}
+  - component: {fileID: 1636131533081055012}
   m_Layer: 6
   m_Name: PlayerV1
   m_TagString: Player
@@ -1066,6 +1067,21 @@ MonoBehaviour:
   Speed: 30
   Duration: 0.2
   GroundCheck: {fileID: 971788691330412920}
+--- !u!114 &1636131533081055012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971788690143902497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6e025f3a0827e42aeebbcc59ec60eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0.5
+  Speed: 3
+  Rolling: 0
 --- !u!1 &971788691330412935
 GameObject:
   m_ObjectHideFlags: 0

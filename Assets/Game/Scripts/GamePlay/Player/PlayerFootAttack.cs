@@ -20,6 +20,8 @@ namespace Blue
 
             FootAttackCheck.OnTriggerEnterWithCollider.AddListener(collider=>
             {
+                if(!enabled) return;
+
                 collider.GetComponent<CharacterHit>().Hit();
 
                 mRigidbody2D.velocity = new Vector2(mRigidbody2D.velocity.x,JumpSpeed);
