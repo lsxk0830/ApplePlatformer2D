@@ -50,6 +50,10 @@ namespace Blue
                 "Level7","Level8","Level9"
             };
 
+            var dash = new DashRule()
+                .SecondsCost(1)
+                .AddToRules(Rules);
+
             // 第1关
             var level1 = new GenericlLevel()
                 .WithKey(GetRandomLevelIndexName(stage1))

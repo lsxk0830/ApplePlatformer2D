@@ -93,30 +93,45 @@ namespace Blue
 
     public static class AbstractBonfireRuleExtension
     {
+        /// <summary>
+        /// 显示的名称
+        /// </summary>
         public static T WithDisplayName<T>(this T self, string displayName) where T : AbstractBonfireRule
         {
             self.DisplayName = displayName;
             return self;
         }
 
+        /// <summary>
+        /// 设置 Key
+        /// </summary>
         public static T WithKey<T>(this T self, string key) where T : AbstractBonfireRule
         {
             self.Key = key;
             return self;
         }
 
+        /// <summary>
+        /// 花费的秒数
+        /// </summary>
         public static T SecondsCost<T>(this T self, int needSeconds) where T : AbstractBonfireRule
         {
             self.NeedSeconds = needSeconds;
             return self;
         }
 
+        /// <summary>
+        /// 状态
+        /// </summary>
         public static T Condition<T>(this T self, Func<T, bool> visibleCondition) where T : AbstractBonfireRule
         {
             self.VisibleCondition = _ => visibleCondition(self);
             return self;
         }
 
+        /// <summary>
+        /// 添加到规则
+        /// </summary>
         public static T AddToRules<T>(this T self, List<IBonfireRule> rules) where T : IBonfireRule
         {
             rules.Add(self);

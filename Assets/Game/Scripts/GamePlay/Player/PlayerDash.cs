@@ -8,6 +8,7 @@ namespace Blue
     public class PlayerDash : MonoBehaviour
     {
         private Rigidbody2D mRigidbody2D;
+        private DashRule mDashRule;
         public float Speed = 20;
 
         /// <summary>
@@ -23,35 +24,40 @@ namespace Blue
         private void Awake()
         {
             mRigidbody2D = GetComponent<Rigidbody2D>();
+            mDashRule = ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>().GetRuleByKey(nameof(DashRule)) as DashRule;
         }
 
         private float mDashStartTime = 0f;
         private bool Dashing = false;
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (mDashRule.Unlocked)
             {
-                mRigidbody2D.velocity = Vector2.right * Speed * Mathf.Sign(transform.localScale.x);
-                GetComponent<PlayerMovement>().enabled = false;
+                if (Input.GetKeyDown(KeyCode.O))
+                {
+                    mRigidbody2D.velocity = Vector2.right * Speed * Mathf.Sign(transform.localScale.x);
+                    GetComponent<PlayerMovement>().enabled = false;
 
-                mCachedGravityScale = mRigidbody2D.gravityScale;
-                mRigidbody2D.gravityScale = 0;
+                    mCachedGravityScale = mRigidbody2D.gravityScale;
+                    mRigidbody2D.gravityScale = 0;
 
-                mDashStartTime = Time.time;
-                Dashing = true;
-            }
+                    mDashStartTime = Time.time;
+                    Dashing = true;
+                }
 
-            if (Dashing && mDashStartTime + Duration < Time.time)
-            {
-                Dashing = false;
-                mRigidbody2D.gravityScale = mCachedGravityScale;
-                GetComponent<PlayerMovement>().enabled = true;
+                if (Dashing && mDashStartTime + Duration < Time.time)
+                {
+                    Dashing = false;
+                    mRigidbody2D.gravityScale = mCachedGravityScale;
+                    GetComponent<PlayerMovement>().enabled = true;
+                }
             }
         }
 
         private void OnDestroy()
         {
             mRigidbody2D = null;
+            mDashRule = null;
         }
     }
 }
