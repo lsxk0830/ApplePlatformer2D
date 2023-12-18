@@ -57,7 +57,7 @@ namespace Blue
                 //.SecondsCost(1) // 测试
                 .AddToRules(Rules);
             var wallGrab = new WallGrabRule()
-                .SecondsCost(1) // 测试
+                //.SecondsCost(1) // 测试
                 .AddToRules(Rules);
 
             // 第1关
