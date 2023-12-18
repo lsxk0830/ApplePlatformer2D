@@ -51,10 +51,10 @@ namespace Blue
             };
 
             var dash = new DashRule()
-                .SecondsCost(1)
+                //.SecondsCost(1) // 测试
                 .AddToRules(Rules);
             var roll = new RollRule()
-                .SecondsCost(1)
+                //.SecondsCost(1) // 测试
                 .AddToRules(Rules);
 
             // 第1关

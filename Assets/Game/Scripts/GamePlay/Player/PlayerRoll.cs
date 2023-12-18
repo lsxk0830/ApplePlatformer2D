@@ -39,6 +39,7 @@ namespace Blue
                 GetComponent<PlayerDash>().enabled = false;
                 GetComponent<PlayerHit>().SetCanHit(false);
                 GetComponent<PlayerFootAttack>().enabled = false;
+                GetComponent<PlayerWeapon>().enabled = false;
                 gameObject.tag = "Untagged";
                 gameObject.layer = LayerMask.NameToLayer("WithoutEnemy");
             }
@@ -68,6 +69,7 @@ namespace Blue
                     GetComponent<PlayerDash>().enabled = true;
                     GetComponent<PlayerHit>().SetCanHit(true);
                     GetComponent<PlayerFootAttack>().enabled = true;
+                    GetComponent<PlayerWeapon>().enabled = true;
                     gameObject.tag = "Player";
                     gameObject.layer = LayerMask.NameToLayer("Player");
                     mSpriteRenderer.color = new Color(1, 1, 1, 1);
