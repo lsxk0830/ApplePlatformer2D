@@ -9,6 +9,8 @@ namespace Blue
     {
         private Rigidbody2D mRigdbody2D;
 
+        private SpriteRenderer mSpriteRenderer;
+
         /// <summary>
         /// 翻滚时长
         /// </summary>
@@ -17,14 +19,18 @@ namespace Blue
         private float mRollStartTime = 0;
         public bool Rolling = false;
 
+        private RollRule mRollRule;
+
         private void Awake()
         {
             mRigdbody2D = GetComponent<Rigidbody2D>();
+            mSpriteRenderer = GetComponent<SpriteRenderer>();
+            mRollRule = ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>().GetRuleByKey(nameof(RollRule)) as RollRule;
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.L) && !Rolling)
+            if (Input.GetKeyDown(KeyCode.L) && !Rolling && mRollRule.Unlocked)
             {
                 Rolling = true;
 
@@ -38,7 +44,23 @@ namespace Blue
             }
             else if (Rolling)
             {
-                mRigdbody2D.velocity = new Vector2(Mathf.Sign(transform.localScale.x) * 5, mRigdbody2D.velocity.y);
+                mRigdbody2D.velocity = new Vector2(Mathf.Sign(transform.localScale.x) * Speed, mRigdbody2D.velocity.y);
+
+                // 从 0 ~0.1f秒，开始逐渐透明
+                var fromStart = Time.time - mRollStartTime;
+                if (fromStart < 0.1f)
+                {
+                    var alpha = Mathf.Lerp(1f, 0.5f, fromStart * 10f);
+                    mSpriteRenderer.color = new Color(1, 1, 1, alpha);
+                }
+                // 从 Duration - 0.1秒 ~ Duration 秒，开始逐渐恢复
+                var toEnd = mRollStartTime + Duration - Time.time;
+                if (toEnd > 0 && toEnd < 0.1f)
+                {
+                    var alpha = Mathf.Lerp(0.5f, 1f, (0.1f - toEnd) * 10f);
+                    mSpriteRenderer.color = new Color(1, 1, 1, alpha);
+                }
+
                 if (Time.time > mRollStartTime + Duration)
                 {
                     Rolling = false;
@@ -48,6 +70,7 @@ namespace Blue
                     GetComponent<PlayerFootAttack>().enabled = true;
                     gameObject.tag = "Player";
                     gameObject.layer = LayerMask.NameToLayer("Player");
+                    mSpriteRenderer.color = new Color(1, 1, 1, 1);
                 }
             }
         }
@@ -55,6 +78,8 @@ namespace Blue
         private void OnDestroy()
         {
             mRigdbody2D = null;
+            mRollRule = null;
+            mSpriteRenderer = null;
         }
     }
 }

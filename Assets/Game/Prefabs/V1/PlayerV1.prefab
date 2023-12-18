@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Duration: 0.5
-  Speed: 3
+  Speed: 6
   Rolling: 0
 --- !u!1 &971788691330412935
 GameObject:

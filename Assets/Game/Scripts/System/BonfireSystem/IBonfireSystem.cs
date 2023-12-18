@@ -53,6 +53,9 @@ namespace Blue
             var dash = new DashRule()
                 .SecondsCost(1)
                 .AddToRules(Rules);
+            var roll = new RollRule()
+                .SecondsCost(1)
+                .AddToRules(Rules);
 
             // 第1关
             var level1 = new GenericlLevel()
