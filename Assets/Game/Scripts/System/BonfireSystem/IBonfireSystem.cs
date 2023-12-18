@@ -56,6 +56,9 @@ namespace Blue
             var roll = new RollRule()
                 //.SecondsCost(1) // 测试
                 .AddToRules(Rules);
+            var wallGrab = new WallGrabRule()
+                .SecondsCost(1) // 测试
+                .AddToRules(Rules);
 
             // 第1关
             var level1 = new GenericlLevel()

@@ -7,6 +7,7 @@ namespace Blue
         public Trigger2D WallCheck;
         public Trigger2D GroundCheck;
         private Rigidbody2D mRigidbody2D;
+        private WallGrabRule mWallGrabRule;
 
         /// <summary>
         /// 在墙上
@@ -28,10 +29,13 @@ namespace Blue
 
         private void Awake()
         {
+            mWallGrabRule =ApplePlatformer2D.Interface.GetSystem<IBonfireSystem>().GetRuleByKey(nameof(WallGrabRule)) as WallGrabRule;
             mRigidbody2D = GetComponent<Rigidbody2D>();
 
             WallCheck.OnTriggerEnter.AddListener(() =>
             {
+                if(!mWallGrabRule.Unlocked) return;
+
                 if (!OnWall)
                 {
                     var horizontalInput = ApplePlatformer2D.Interface.GetSystem<IInputSystem>().HorizontalInput;
@@ -51,10 +55,22 @@ namespace Blue
                             // 重置跳跃次数
                             GetComponent<PlayerMovement>().CurrentJumpCount = 0;
                             GetComponent<PlayerMovement>().OnWall = true;
+
+                            GetComponent<PlayerDash>().enabled = false;
+                            GetComponent<PlayerRoll>().enabled = false;
+                            GetComponent<PlayerWeapon>().enabled = false;
                         }
                     }
                 }
             });
+        }
+
+        private void StopOnWall()
+        {
+            GetComponent<PlayerMovement>().OnWall = false;
+            GetComponent<PlayerDash>().enabled = true;
+            GetComponent<PlayerRoll>().enabled = true;
+            GetComponent<PlayerWeapon>().enabled = true;
         }
 
         private void Update()
@@ -72,6 +88,8 @@ namespace Blue
                         GetComponent<PlayerMovement>().enabled = true;
                         var rigidbody2D = GetComponent<Rigidbody2D>();
                         rigidbody2D.gravityScale = mCachedGravityScale;
+
+                        StopOnWall();
                     }
                 }
 
@@ -93,6 +111,8 @@ namespace Blue
                     mWallJumpDirection = Mathf.Sign(localScale.x);
                     GetComponent<PlayerMovement>().JumpState = PlayerMovement.JumpStates.NotJump;
                     GetComponent<PlayerMovement>().JumpStart();
+
+                    StopOnWall();
                 }
             }
 
@@ -106,6 +126,11 @@ namespace Blue
                     GetComponent<PlayerMovement>().controlleredHorizontalInput = 0;
                 }
             }
+        }
+
+        private void OnDestroy()
+        {
+            mWallGrabRule = null;
         }
     }
 }
