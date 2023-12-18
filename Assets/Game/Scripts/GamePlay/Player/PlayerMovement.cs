@@ -8,6 +8,10 @@ namespace Blue
     /// </summary>
     public class PlayerMovement : MonoBehaviour
     {
+        /// <summary>
+        /// 从外界输入的横向移动数值
+        /// </summary>
+        public float controlleredHorizontalInput=0;
         private Rigidbody2D mRigidbody2D;
         public float HorizontalMovementSpeed = 5; // 水平移动速度
         public float JumpSpeed = 5; // 跳跃速度
@@ -92,11 +96,15 @@ namespace Blue
         }
 
         public int CurrentJumpCount;
+
+        public bool OnWall;
+        private bool mOnGroundOrWall => GroundCheck.Triggered || OnWall;
+
         bool mCanJump => CurrentJumpCount == 0 && Time.frameCount - LeaveGroundFrame <= 10 || // 10帧约0.15秒左右
-                         CurrentJumpCount == 0 && GroundCheck.Triggered ||
+                         CurrentJumpCount == 0 && mOnGroundOrWall || // 在落地或者攀墙时可以跳跃
                          mDoubleJumpRule.Unlocked && CurrentJumpCount > 0 && CurrentJumpCount < 2;
 
-        private void JumpStart()
+        public void JumpStart()
         {
             OnJump?.Invoke();
             mJumpPressed = true;
@@ -113,7 +121,7 @@ namespace Blue
         {
             if (ApplePlatformer2D.IsGameOver) return;
 
-            mHorizontalInput = mInputSystem.HorizontalInput;
+            mHorizontalInput = mInputSystem.HorizontalInput+controlleredHorizontalInput;
 
             if (mHorizontalInput * transform.localScale.x < 0)
             {
